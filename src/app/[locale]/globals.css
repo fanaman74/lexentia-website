@@ -188,7 +188,8 @@ html.js:not(.intro-done) [data-intro] { opacity: 0; }
 }
 
 /* Square editorial practice cards: dedicated sky/artwork above a compact summary. */
-.practice-panel { display: grid; grid-template-rows: 44% 56%; aspect-ratio: 1; container-type: inline-size; }
+.practice-grid { max-width: 864px; margin-inline: auto; }
+.practice-panel { display: grid; grid-template-rows: 44% 56%; width: 100%; max-width: 420px; justify-self: center; aspect-ratio: 1; container-type: inline-size; }
 .practice-panel-europe { background: #eaf5f0; border-color: #c8e0d5; }
 .practice-panel-private { background: #f5eff9; border-color: #e0d3e9; }
 .practice-art { position: relative; min-height: 0; overflow: hidden; border-bottom: 1px solid #d4e5dd; }
@@ -218,7 +219,7 @@ html.js:not(.intro-done) [data-intro] { opacity: 0; }
 @keyframes bird-wingbeat { from { transform: scaleY(1); } to { transform: scaleY(-0.25); } }
 @keyframes bird-sky-crossing { 0% { transform: translateX(-60px); opacity: 0; } 12%, 80% { opacity: 0.7; } 100% { transform: translateX(450px); opacity: 0; } }
 @media (max-width: 767px) {
-  .practice-panel { grid-template-rows: 38% 62%; }
+  .practice-panel { max-width: 320px; grid-template-rows: 38% 62%; }
   /* A clear strip between the 78px header and the hero's 135px copy inset. */
   .flying-birds-hero { inset: calc(94px - 430px) 12% auto; height: 28px; }
   .flying-birds-hero .sky-bird { animation-name: bird-sky-crossing; }
@@ -253,10 +254,15 @@ html.js:not(.intro-done) [data-intro] { opacity: 0; }
 .carousel-arrow { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid var(--color-ink); border-radius: 50%; color: var(--color-ink); background: transparent; transition: background-color 180ms, color 180ms; }
 .carousel-arrow:hover:not(:disabled) { background: var(--color-bronze); border-color: var(--color-bronze); color: white; }
 .carousel-arrow:disabled { opacity: 0.35; cursor: default; }
-.insights-carousel-viewport { min-width: 0; margin-left: -160px; padding-left: 160px; overflow: hidden; touch-action: pan-y pinch-zoom; mask-image: linear-gradient(to right, transparent, #000 160px, #000); }
-.insights-carousel-track { display: flex; align-items: stretch; gap: 24px; transition: transform 750ms cubic-bezier(0.22,1,0.36,1); }
+.insights-carousel-viewport { min-width: 0; margin-left: calc(-85% - clamp(3rem, 6vw, 7rem)); padding-left: calc(85% + clamp(3rem, 6vw, 7rem)); overflow: hidden; touch-action: pan-y pinch-zoom; mask-image: linear-gradient(to right, transparent, #000 45%, #000); }
+.insights-carousel-track { display: flex; align-items: stretch; gap: 24px; transition: transform 900ms cubic-bezier(0.22,1,0.36,1); }
 .insights-carousel-track.is-dragging, .insights-carousel-track.is-resetting { transition: none; }
-.insights-carousel-card { flex: 0 0 100%; min-width: 0; min-height: 400px; display: flex; flex-direction: column; align-items: flex-start; padding: clamp(1.75rem, 3vw, 2.5rem); background: white; border-radius: 28px; transition: opacity 650ms cubic-bezier(0.22,1,0.36,1); }
+.insights-carousel-card { flex: 0 0 100%; min-width: 0; min-height: 400px; display: flex; flex-direction: column; align-items: flex-start; padding: clamp(1.75rem, 3vw, 2.5rem); background: white; border-radius: 28px; transition: opacity 900ms linear; }
+.insights-carousel-card[aria-hidden="false"] { transition: opacity 650ms cubic-bezier(0.22,1,0.36,1); }
+.insights-carousel-card-content { display: flex; flex: 1; flex-direction: column; align-items: flex-start; opacity: 0; transition: opacity 180ms ease-out; }
+.insights-carousel-card[aria-hidden="false"] .insights-carousel-card-content { opacity: 1; transition-duration: 350ms; }
+.insights-carousel-track.is-dragging .insights-carousel-card-content { opacity: 1; transition: none; }
+.insights-carousel-track.is-resetting .insights-carousel-card-content { transition: none; }
 .insights-carousel-track.is-dragging .insights-carousel-card, .insights-carousel-track.is-resetting .insights-carousel-card { transition: none; }
 .insights-carousel-card h3 { font-size: clamp(1.55rem, 2.3vw, 2rem); line-height: 1.2; }
 .insights-carousel-card .btn { margin-top: auto; padding-top: 12px; padding-bottom: 12px; transform: translateY(0); }
@@ -268,5 +274,5 @@ html.js:not(.intro-done) [data-intro] { opacity: 0; }
   .insights-carousel-viewport { margin-left: 0; padding-left: 0; mask-image: linear-gradient(to right, transparent, #000 24px, #000); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .insights-carousel-track, .insights-carousel-card, .carousel-arrow { transition: none !important; }
+  .insights-carousel-track, .insights-carousel-card, .insights-carousel-card-content, .carousel-arrow { transition: none !important; }
 }

@@ -14,7 +14,7 @@ export function ExpertisePage({ locale, dict }: { locale: Locale; dict: Dictiona
     <>
       <PageHero eyebrow={t.eyebrow} lines={[t.title]} intro={t.intro} />
       <Section className="!pt-0">
-        <StaggerGroup className="grid gap-5 lg:grid-cols-2">
+        <StaggerGroup className="practice-grid grid gap-5 lg:grid-cols-2">
           {practiceAreas.map((area, i) => (
             <PracticePanel key={area.id} area={area} locale={locale} index={pad(i + 1)} cta={t.explore} />
           ))}

@@ -37,7 +37,7 @@ export function InsightsCarousel({ items, locale, dict, title, archiveHref }: { 
     const timer = window.setTimeout(() => {
       setResetting(true);
       setIndex(0);
-    }, reduced ? 0 : 800);
+    }, reduced ? 0 : 950);
     return () => clearTimeout(timer);
   }, [index, items.length, reduced]);
 
@@ -102,11 +102,13 @@ export function InsightsCarousel({ items, locale, dict, title, archiveHref }: { 
     <div ref={viewport} id="insights-carousel-slides" className="insights-carousel-viewport" onPointerDown={startDrag} onPointerMove={moveDrag} onPointerUp={event => endDrag(event)} onPointerCancel={event => endDrag(event, true)} onClickCapture={event => { if (performance.now() < suppressClickUntil.current) { event.preventDefault(); event.stopPropagation(); suppressClickUntil.current = 0; } }} onDragStart={event => event.preventDefault()}>
       <div className={`insights-carousel-track ${dragX ? "is-dragging" : ""} ${resetting ? "is-resetting" : ""}`} style={{ transform: `translate3d(calc(-${index} * (100% + 24px) + ${dragX}px), 0, 0)` }}>
         {slides.map((item, slide) => <article key={`${item.slug}-${slide}`} className="insights-carousel-card" style={{ opacity: slide === index ? 1 - dragProgress : dragX && slide === index + (dragX < 0 ? 1 : -1) ? dragProgress : 0 }} role="group" aria-roledescription={fr ? "diapositive" : "slide"} aria-label={`${slide % items.length + 1} / ${items.length}`} aria-hidden={slide !== index} inert={slide !== index}>
+          <div className="insights-carousel-card-content">
           <p className="meta text-[var(--color-ink-soft)]">{item.courtRecord ? `${item.courtRecord.caseNumber} · ` : ""}<time dateTime={item.publishedAt}>{formatDate(item.publishedAt, locale)}</time></p>
           <h3 lang={item.language} className="display mt-3">{item.title}</h3>
           {item.excerpt ? <p lang={item.courtRecord ? "en" : undefined} className="mt-5 leading-relaxed text-[var(--color-ink-soft)]">{item.excerpt[locale]}</p> : null}
           <p className="meta mt-5 text-[var(--color-purple)]">{item.courtRecord ? courtLabel(item.courtRecord.court, locale) : insightCategories[item.categories[0]][locale]}</p>
           <Link href={pathFor(locale, { key: "insight", slug: item.slug })} className="btn btn-secondary group mt-7 self-start">{item.courtRecord ? (fr ? "Consulter la décision" : "Explore this ruling") : dict.common.readMore}<Icon name="arrow" size={17} className="arrow" /></Link>
+          </div>
         </article>)}
       </div>
     </div>

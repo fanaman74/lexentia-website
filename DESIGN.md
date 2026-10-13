@@ -119,6 +119,10 @@ components:
     rounded: "50%"
     width: "48px"
     height: "48px"
+  practice-panel:
+    width: "min(100%, 420px)"
+  practice-panel-mobile:
+    width: "min(100%, 320px)"
 ---
 
 # Design System: Lexentia
@@ -172,9 +176,9 @@ Content is centered within a 1144px maximum width, with 24px horizontal section 
 
 Desktop hero copy sits beside the Brussels landmark. Below 768px it centers above the illustration; section headings stack, and article rows move the date above the title. At 1024px the header replaces its disclosure menu with full navigation. Footer columns expand at 640px and 1024px. Filters wrap, and search/sort fields become a two-column group at 768px.
 
-The homepage carousel uses a two-column layout: heading and navigation at left, one white card at right. Columns are proportioned 0.85fr/1fr with a fluid 3–7rem gap; below 768px they stack with a 2rem gap. Slides are separated by 24px. On desktop the viewport extends 160px into the left copy region with a matching fade mask; the copy stays above it. On phones the viewport has a 24px fade edge. Court catalogue rows use a 100px date column, a flexible title/body column and a 180px case-reference column. Below 768px the date and case number share the top line above the title; secondary court metadata and the row arrow are hidden. Court search spans the filter panel above three fields at desktop widths.
+The homepage carousel uses a two-column layout: heading and navigation at left, one white card at right. Columns are proportioned 0.85fr/1fr with a fluid 3–7rem gap; below 768px they stack with a 2rem gap. Slides are separated by 24px. On desktop the viewport extends across the entire left copy column using `margin-left: calc(-85% - clamp(3rem, 6vw, 7rem))` and equal positive left padding. Its mask becomes fully opaque at 45% of the expanded window, allowing the entire departing white card to travel beneath the fixed copy at z-index 2. The outer carousel contains the moving track. On phones the viewport has no extension and retains a 24px fade edge. Court catalogue rows use a 100px date column, a flexible title/body column and a 180px case-reference column. Below 768px the date and case number share the top line above the title; secondary court metadata and the row arrow are hidden. Court search spans the filter panel above three fields at desktop widths.
 
-Practice cards retain a 1:1 aspect ratio with dedicated artwork above the text: 44%/56% rows on desktop and 38%/62% below 768px. The original summaries use three clamped lines, reduced to two below 360px; titles and the reading footer remain visible. Full service descriptions and tags stay on the practice pages.
+Practice cards sit within a centered group capped at 864px, with a 20px gap. Individual cards are centered and capped at 420px, reduced to 320px below 768px. The homepage pair becomes two columns at 768px; the expertise page does so at 1024px. Cards retain a 1:1 aspect ratio with dedicated artwork above the text: 44%/56% rows on desktop and 38%/62% below 768px. The original summaries use three clamped lines, reduced to two below 360px; titles and the reading footer remain visible. Full service descriptions and tags stay on the practice pages.
 
 Allow French labels and long article titles to wrap. Locale switching preserves the equivalent route, and articles retain their original-language annotation.
 
@@ -205,9 +209,9 @@ The homepage uses a pale-green Brussels Palace of Justice illustration. Slow arc
 
 ### Homepage Latest News carousel
 
-The five latest external court records are ordered by decision date. Each card contains a date and case number, an upright serif official title, a source excerpt, purple court metadata and a bordered reading action. Cards are white on the warm section, with a 400px minimum height (430px below 768px). The active card moves horizontally with a 750ms `cubic-bezier(0.22, 1, 0.36, 1)` transition; departing and incoming cards fade over 650ms with the same easing, including the desktop fade into the left copy region. Mouse/touch drag tracks the pointer directly and proportionally crossfades adjacent cards. A horizontal swipe beyond 45px advances one card; vertical scroll and pinch zoom remain available.
+The five latest external court records are ordered by decision date. Each card contains a date and case number, an upright serif official title, a source excerpt, purple court metadata and a bordered reading action. Cards are white on the warm section, with a 400px minimum height (430px below 768px). The parent track moves the entire card horizontally over 900ms with `cubic-bezier(0.22, 1, 0.36, 1)`. Departing articles fade over 900ms linearly as the full white surface passes under the left copy; incoming articles fade over 650ms with the track easing. A separate content wrapper clears outgoing glyphs over 180ms with `ease-out`, keeping the fixed heading and controls readable, and restores incoming content over 350ms. Mouse/touch drag tracks the pointer directly and proportionally crossfades adjacent articles while keeping their content opaque and disabling transitions. A horizontal swipe beyond 45px advances one card; vertical scroll and pinch zoom remain available.
 
-Automatic advance runs every 6.5 seconds. A copy of the leading card follows the fifth card, allowing each cycle to continue left; after 800ms the track resets to the identical first card without a backward animation. Previous/next controls reflect the current bounds; a dedicated pause control exposes the manual pause state. Autoplay also pauses on hover, focus, dragging, offscreen visibility and hidden tabs. The slide count uses `aria-live="off"` during autoplay and `polite` otherwise. Inactive cards are inert and hidden from assistive technology. Reduced motion disables autoplay and changes slides immediately. The archive link opens Latest News. The earlier homepage Insights preview and four quick-link cards have been removed.
+Automatic advance runs every 6.5 seconds. A copy of the leading card follows the fifth card, allowing each cycle to continue left; after 950ms the track resets to the identical first card without a backward animation. Track, article and content transitions are disabled during that reset. Previous/next controls reflect the current bounds; a dedicated pause control exposes the manual pause state. Autoplay also pauses on hover, focus, dragging, offscreen visibility and hidden tabs. The slide count uses `aria-live="off"` during autoplay and `polite` otherwise. Inactive cards are inert and hidden from assistive technology. Reduced motion disables autoplay and changes slides immediately. The archive link opens Latest News. The earlier homepage Insights preview and four quick-link cards have been removed.
 
 ### Court catalogue and source pages
 

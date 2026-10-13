@@ -53,7 +53,7 @@ export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary })
 
     <Section labelledBy="expertise-title">
       <div className="section-heading"><h2 id="expertise-title" className="display text-h2 max-w-[24ch]">{t.expertiseTitle}</h2><ArrowLink href={href(locale, "expertise")}>{dict.nav.expertise}</ArrowLink></div>
-      <StaggerGroup className="grid gap-5 md:grid-cols-2">{practiceAreas.map((area, i) => <PracticePanel key={area.id} area={area} locale={locale} index={pad(i + 1)} cta={area.id === "eu-civil-service" ? t.exploreEu : t.explorePrivate} />)}</StaggerGroup>
+      <StaggerGroup className="practice-grid grid gap-5 md:grid-cols-2">{practiceAreas.map((area, i) => <PracticePanel key={area.id} area={area} locale={locale} index={pad(i + 1)} cta={area.id === "eu-civil-service" ? t.exploreEu : t.explorePrivate} />)}</StaggerGroup>
     </Section>
 
     <Section tone="warm" className="insights-carousel-section" labelledBy="insights-title">
