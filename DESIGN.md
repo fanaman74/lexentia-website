@@ -45,6 +45,18 @@ typography:
     fontWeight: 400
     lineHeight: 1.15
     letterSpacing: "-0.035em"
+  practice-summary:
+    fontFamily: "Fraunces, Georgia, serif"
+    fontSize: "clamp(1.35rem, 2.2vw, 1.9rem)"
+    fontWeight: 400
+    lineHeight: 1.07
+    letterSpacing: "-0.035em"
+  situation-title:
+    fontFamily: "Fraunces, Georgia, serif"
+    fontSize: "clamp(1.4rem, 2.1vw, 1.8rem)"
+    fontWeight: 400
+    lineHeight: 1.18
+    letterSpacing: "-0.025em"
   body:
     fontFamily: 'Geist, "Helvetica Neue", Arial, sans-serif'
     fontSize: "1.0625rem"
@@ -123,6 +135,23 @@ components:
     width: "min(100%, 420px)"
   practice-panel-mobile:
     width: "min(100%, 320px)"
+  practice-disclosure-summary:
+    backgroundColor: "transparent"
+    textColor: "{colors.ink}"
+    typography: "{typography.practice-summary}"
+    padding: "1.5rem 0"
+  practice-disclosure-summary-mobile:
+    padding: "1.25rem 0"
+  situation-link:
+    textColor: "{colors.ink}"
+    typography: "{typography.situation-title}"
+  situation-link-hover:
+    textColor: "#06666b"
+  situation-action:
+    textColor: "#06666b"
+  situation-image:
+    rounded: "{rounded.lg}"
+    width: "100%"
 ---
 
 # Design System: Lexentia
@@ -142,6 +171,7 @@ The system pairs spacious page introductions with compact navigation, filters, a
 - Equivalent French/English layouts and explicit article-language labels.
 - Square practice panels with architectural images above compact summaries and controlled distant bird flocks.
 - Separate source-backed Latest News and firm-authored Insights archives; a forward-looping Latest News carousel.
+- Illustrated situation links and native practice-section disclosures with direct fragment navigation.
 
 ## Colors
 
@@ -168,7 +198,7 @@ The frontmatter preserves the CSS token names; several names predate the referen
 
 Fraunces and Geist are self-hosted through `next/font/google` with swap loading. Use the frontmatter hierarchy for headings; the body token describes the legal reading style, whose measure is capped at 70 characters. Introductions use larger sans-serif text, while metadata uses tabular numerals.
 
-Hero and page headlines use balanced wrapping and upright, regular-weight Fraunces. Insight-card titles use a tighter card-specific treatment (1.5rem, 1.25 line height, −0.025em tracking). Eyebrows remain mixed-case sans-serif labels. The footer repeats the name at a fluid, oversized sans-serif scale.
+Hero and page headlines use balanced wrapping and upright, regular-weight Fraunces. Page headlines can break long words at narrow widths with `overflow-wrap: anywhere`. Insight-card titles use a tighter card-specific treatment (1.5rem, 1.25 line height, −0.025em tracking). Eyebrows remain mixed-case sans-serif labels. The footer repeats the name at a fluid, oversized sans-serif scale.
 
 ## Layout
 
@@ -180,6 +210,10 @@ The homepage carousel uses a two-column layout: heading and navigation at left, 
 
 Practice cards sit within a centered group capped at 864px, with a 20px gap. Individual cards are centered and capped at 420px, reduced to 320px below 768px. The homepage pair becomes two columns at 768px; the expertise page does so at 1024px. Cards retain a 1:1 aspect ratio with dedicated artwork above the text: 44%/56% rows on desktop and 38%/62% below 768px. The original summaries use three clamped lines, reduced to two below 360px; titles and the reading footer remain visible. Full service descriptions and tags stay on the practice pages.
 
+The homepage situation browser places its heading and manual navigation beside two illustrated links, using 0.85fr/1.5fr columns and a fluid 2–5rem gap. Below 1024px the introduction sits above the track; below 768px each card fills 86% of the track, leaving a preview of the next card, with a 16px gap. Wider tracks show two cards separated by 24px. Image panels retain a 4:3 aspect ratio. The native horizontal scroll track snaps to each link and includes 4px focus clearance.
+
+Practice detail pages group all content sections into fine-rule disclosures. Summary rows have an 88px minimum height, reduced to 76px below 768px, so wrapped labels expand naturally. Fragment targets reserve 144px above them for the fixed header and sticky section navigation.
+
 Allow French labels and long article titles to wrap. Locale switching preserves the equivalent route, and articles retain their original-language annotation.
 
 ## Elevation & Depth
@@ -190,7 +224,7 @@ Exact shadows, focus treatments, easing, and responsive boundaries are recorded 
 
 ## Shapes
 
-Controls use the small radius; panels and archive cards use the medium radius. Homepage carousel cards use 28px corners; navigation controls are 48px circles. Square practice panels use 12px corners and separate artwork/text regions; their image-region pause controls are 34px circles. Filters and light tags use fully rounded ends. Dark editorial tags instead have compact, lightly rounded rectangular silhouettes. The wordmark uses serif teal-to-purple lettering and an eight-square pattern. Dark sections have straight boundaries.
+Controls use the small radius; panels and archive cards use the medium radius. Homepage carousel cards use 28px corners; navigation controls are 48px circles. Situation-image panels use the large radius with 4:3 artwork. Square practice panels use 12px corners and separate artwork/text regions; their image-region pause controls are 34px circles. Filters and light tags use fully rounded ends. Dark editorial tags instead have compact, lightly rounded rectangular silhouettes. The wordmark uses serif teal-to-purple lettering and an eight-square pattern. Dark sections have straight boundaries.
 
 ## Components
 
@@ -200,8 +234,23 @@ Controls use the small radius; panels and archive cards use the medium radius. H
 - **Cards:** insight cards have serif titles, muted metadata, category tags, and a ruled reading footer. The linked title covers the card. Dark variants preserve the structure with violet-black surfaces, pale text, and soft-green arrows. Lawyer cards use bordered white panels and truthful portrait placeholders while commissioned images are pending.
 - **Navigation:** the fixed header includes separate Insights and Latest News destinations with an underlined active destination, equivalent-route language switching, and a compact contact action. The mobile disclosure exposes `aria-expanded`; Escape closes it and returns focus to its toggle. Route changes close it. The footer also links to both archives; its links underline on hover and keyboard focus.
 - **Wordmark and icons:** preserve the supplied serif Lexentia mark and coloured-square pattern. Use the shared stroked SVG icons, including external-link arrows, rather than relying on font glyph coverage.
-- **Disclosures:** client situations use native disclosure rows. Their text remains available without an animation dependency.
+- **Disclosures:** both practice detail pages use native `details`/`summary` rows for their overview, service groups, approach, related analyses where present, and lawyers. Their content remains available through native interaction without JavaScript.
+- **Situation links:** the six homepage situations are whole-card links with architectural artwork, the existing title and description, and an underlined Explore action. They lead directly to the matching practice disclosure.
 
+
+### Practice-section disclosures
+
+Every practice content section starts closed. Clicking the summary, or activating it with Enter or Space, opens or closes that section; several sections may stay open together. The summary pairs the upright serif practice-summary title with a teal 22px chevron. Hover and open states turn the summary teal; the chevron rotates 180 degrees over 220ms with the shared editorial easing. Fine strong-neutral borders separate rows, and open bodies retain 2.5rem bottom spacing. Reduced motion removes the chevron transition. Keep the native disclosure semantics and visible keyboard focus rather than adding a competing button or exclusive accordion behavior.
+
+Sticky in-page links open their target before the browser follows the native anchor. Selecting the same fragment again reopens a section the reader has closed. On arrival with a URL fragment, or during hash/history navigation, the matching disclosure opens before an immediate scroll; fragments inside a disclosure also open their containing section. Without JavaScript, ordinary fragment links and native summary activation remain usable.
+
+### Homepage situation browser
+
+This manual browser replaces the earlier disclosure rows while retaining all six translated titles and descriptions. Each entire card is one semantic link, including its decorative image, upright serif situation-title, muted description and darker-teal underlined Explore action; do not nest a separate button inside it. Card hover and keyboard focus turn the title the same darker teal used for the action, preserving readable contrast on the warm section surface, and hover shifts the action arrow 4px over 180ms with the editorial easing. Phone titles use 1.5rem. Image panels use pale green or pale lavender within the existing architectural illustration style.
+
+The six images, in order, show the Brussels Palace of Justice, Cinquantenaire, Atomium, European institutions, Brussels townhouses and the Bruges belfry. The Atomium, Cinquantenaire and Bruges assets extend the existing generated landmark family; exact prompts and provenance accompany the assets in [SOURCES.md](public/images/SOURCES.md). Images have empty alt text because the link title supplies the meaning. Their matching section fragments are `career`, `investigations`, `medical`, `career`, `business` and `private-international`; the first four open civil-service sections, and the last two open private-law sections in the selected locale.
+
+Previous/next controls reuse the 48px circular arrow treatment, move by one card and disable at the scroll boundaries. A polite status reports the visible range out of six. Native scrolling and snapping support touch and keyboard navigation; all six links remain in the document and reachable. Manual scrolling is smooth unless reduced motion requests an immediate move. This browser has no autoplay. Without JavaScript, its navigation controls are hidden and the native scroll track and destination links remain available.
 
 ### Landmark and editorial motion
 

@@ -8,6 +8,7 @@ import { ProcessRail } from "@/components/motion/ProcessRail";
 import { PracticePanel } from "@/components/cards/PracticePanel";
 import { LawyerCard } from "@/components/cards/LawyerCard";
 import { ContactCta } from "@/components/sections/ContactCta";
+import { SituationLinks } from "@/components/sections/SituationLinks";
 import { Section } from "@/components/ui/Section";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { JsonLd } from "@/components/ui/JsonLd";
@@ -60,12 +61,8 @@ export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary })
       <InsightsCarousel items={insightsByDate().filter(item => item.courtRecord).slice(0, 5)} locale={locale} dict={dict} title={dict.nav.latestNews} archiveHref={href(locale, "latestNews")} />
     </Section>
 
-    <Section className="!pt-0" labelledBy="needs-title">
-      <h2 id="needs-title" className="display text-h3 max-w-[42ch]">{t.needsTitle}</h2>
-      <div className="mt-8 grid gap-x-12 md:grid-cols-2">{t.needs.map(need => <details key={need.title} className="group border-t border-[var(--color-line)] py-5">
-        <summary className="flex min-h-11 list-none items-center justify-between gap-6 text-lg font-medium [&::-webkit-details-marker]:hidden">{need.title}<Icon name="chevron" size={18} className="transition-transform group-open:rotate-180" /></summary>
-        <p className="mt-3 max-w-[60ch] leading-relaxed text-[var(--color-ink-soft)]">{need.body}</p>
-      </details>)}</div>
+    <Section tone="warm" labelledBy="needs-title">
+      <SituationLinks locale={locale} dict={dict} />
     </Section>
 
     <Section tone="forest" labelledBy="eu-title">

@@ -106,7 +106,7 @@
   .site-footer { padding: 4rem 1.5rem 1.5rem; border-top: 1px solid var(--color-line); }
   .footer-name { color: #88789b; font-size: clamp(3.6rem, 11.8vw, 10rem); font-weight: 600; letter-spacing: -0.04em; line-height: 1; }
   .page-hero { padding: 145px 1.5rem 3rem; }
-  .page-hero h1 { max-width: 24ch; }
+  .page-hero h1 { max-width: 24ch; overflow-wrap: anywhere; }
   .page-hero p { font-size: 1.1rem; line-height: 1.65; }
 }
 
@@ -254,6 +254,51 @@ html.js:not(.intro-done) [data-intro] { opacity: 0; }
 .carousel-arrow { display: grid; place-items: center; width: 48px; height: 48px; border: 1px solid var(--color-ink); border-radius: 50%; color: var(--color-ink); background: transparent; transition: background-color 180ms, color 180ms; }
 .carousel-arrow:hover:not(:disabled) { background: var(--color-bronze); border-color: var(--color-bronze); color: white; }
 .carousel-arrow:disabled { opacity: 0.35; cursor: default; }
+
+/* Practice details remain native disclosures, including without JavaScript. */
+.practice-disclosure { border-bottom: 1px solid var(--color-line-strong); scroll-margin-top: 144px; }
+.practice-disclosure:first-child { border-top: 1px solid var(--color-line-strong); }
+.practice-disclosure > summary { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; min-height: 88px; padding-block: 1.5rem; cursor: pointer; list-style: none; }
+.practice-disclosure > summary::-webkit-details-marker { display: none; }
+.practice-disclosure > summary > h2 { font-size: clamp(1.35rem, 2.2vw, 1.9rem); }
+.practice-disclosure > summary > svg { color: var(--color-bronze); transition: transform 220ms var(--ease-editorial); }
+.practice-disclosure[open] > summary > svg { transform: rotate(180deg); }
+.practice-disclosure > summary:hover, .practice-disclosure[open] > summary { color: var(--color-bronze); }
+.practice-disclosure-body { padding: 0 0 2.5rem; }
+.practice-disclosure-body :target { scroll-margin-top: 144px; }
+
+/* Image buttons follow the supplied two-up feature-browser reference. */
+.situation-browser { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.5fr); align-items: start; gap: clamp(2rem, 5vw, 5rem); }
+.situation-copy h2 { max-width: 18ch; font-size: clamp(1.8rem, 3.2vw, 2.7rem); }
+.situation-navigation { display: flex; align-items: center; gap: 1rem; margin-top: 2rem; }
+html:not(.js) .situation-navigation { display: none; }
+.situation-track { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 1.5rem) / 2); gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px; margin: -4px; scroll-padding-inline: 4px; }
+.situation-track::-webkit-scrollbar { display: none; }
+.situation-link { display: flex; flex-direction: column; align-items: start; min-width: 0; scroll-snap-align: start; }
+.situation-image { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 14px; background: #e6f0e5; }
+.situation-image img { object-fit: cover; }
+.situation-image-0 img { width: 145% !important; max-width: none; left: -45% !important; }
+.situation-image-3 img, .situation-image-4 img { width: 135% !important; max-width: none; left: -35% !important; object-fit: contain; object-position: right bottom; }
+.situation-image-1, .situation-image-4 { background: var(--color-pink); }
+.situation-link h3 { margin-top: 1.35rem; font-size: clamp(1.4rem, 2.1vw, 1.8rem); line-height: 1.18; letter-spacing: -0.025em; }
+.situation-link p { margin-block: 1rem 1.25rem; font-size: 0.95rem; line-height: 1.6; color: var(--color-ink-soft); }
+.situation-action { display: inline-flex; align-items: center; gap: 0.75rem; min-height: 44px; margin-top: auto; font-size: 0.9rem; color: #06666b; text-decoration: underline; text-underline-offset: 6px; }
+.situation-link:hover h3, .situation-link:focus-visible h3 { color: #06666b; }
+.situation-link:hover .situation-action svg { transform: translateX(4px); }
+.situation-action svg { transition: transform 180ms var(--ease-editorial); }
+@media (max-width: 1023px) {
+  .situation-browser { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
+  .situation-copy h2 { max-width: 28ch; }
+  .situation-navigation { margin-top: 1.5rem; }
+}
+@media (max-width: 767px) {
+  .situation-track { grid-auto-columns: 86%; gap: 1rem; }
+  .situation-link h3 { font-size: 1.5rem; }
+  .practice-disclosure > summary { min-height: 76px; padding-block: 1.25rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .practice-disclosure > summary > svg, .situation-action svg { transition: none; }
+}
 .insights-carousel-viewport { min-width: 0; margin-left: calc(-85% - clamp(3rem, 6vw, 7rem)); padding-left: calc(85% + clamp(3rem, 6vw, 7rem)); overflow: hidden; touch-action: pan-y pinch-zoom; mask-image: linear-gradient(to right, transparent, #000 45%, #000); }
 .insights-carousel-track { display: flex; align-items: stretch; gap: 24px; transition: transform 900ms cubic-bezier(0.22,1,0.36,1); }
 .insights-carousel-track.is-dragging, .insights-carousel-track.is-resetting { transition: none; }

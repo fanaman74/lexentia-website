@@ -1,17 +1,15 @@
 import Link from "next/link";
-import { Reveal } from "@/components/motion/Reveal";
-import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { LawyerCard } from "@/components/cards/LawyerCard";
 import { InsightCard } from "@/components/cards/InsightCard";
 import { PageHero } from "@/components/sections/PageHero";
 import { ContactCta } from "@/components/sections/ContactCta";
 import { SubNav } from "@/components/sections/SubNav";
+import { PracticeDisclosure } from "@/components/sections/PracticeDisclosure";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Section } from "@/components/ui/Section";
 import { getLawyer, insightsInCategories, type Dictionary, type PracticeArea } from "@/content";
 import { href, pathFor, type Locale } from "@/lib/i18n";
-import { pad } from "@/lib/format";
 import { site } from "@/lib/site";
 
 export function PracticePage({ locale, dict, area }: { locale: Locale; dict: Dictionary; area: PracticeArea }) {
@@ -69,83 +67,53 @@ export function PracticePage({ locale, dict, area }: { locale: Locale; dict: Dic
 
       <SubNav items={navItems} label={dict.a11y.onThisPage} />
 
-      <Section labelledBy="overview-title" className="!pb-12" id="overview">
-        <div className="grid gap-10 lg:grid-cols-12">
-          <h2 id="overview-title" className="eyebrow lg:col-span-4">{t.overview}</h2>
-          <Reveal className="prose-legal text-xl lg:col-span-8">
-            {area.body[locale].map((p) => (
-              <p key={p}>{p}</p>
-            ))}
-          </Reveal>
-        </div>
-      </Section>
+      <Section className="!py-8">
+        <div className="practice-disclosures">
+          <PracticeDisclosure id="overview" title={t.overview}>
+            <div className="prose-legal text-lg">
+              {area.body[locale].map(p => <p key={p}>{p}</p>)}
+            </div>
+          </PracticeDisclosure>
 
-      <Section className="!pt-0">
-        <h2 className="sr-only">{t.services}</h2>
-        <div className="border-t border-[var(--color-line-strong)]">
-          {area.serviceGroups.map((group, i) => (
-            <section
-              key={group.id}
-              id={group.id}
-              aria-labelledby={`${group.id}-title`}
-              className="grid gap-6 border-b border-[var(--color-line-strong)] py-12 md:py-16 lg:grid-cols-12"
-            >
-              <div className="lg:col-span-5">
-                <h3 id={`${group.id}-title`} className="display text-h3 mt-3">
-                  <a href={`#${group.id}`} className="hover:underline decoration-1 underline-offset-8">
-                    {group.title[locale]}
-                  </a>
-                </h3>
-                {group.intro ? <p className="mt-4 max-w-[40ch] text-[var(--color-ink-soft)]">{group.intro[locale]}</p> : null}
+          {area.serviceGroups.map(group => (
+            <PracticeDisclosure key={group.id} id={group.id} title={group.title[locale]}>
+              <div className="grid gap-8 lg:grid-cols-[1fr_1.5fr]">
+                {group.intro ? <p className="max-w-[45ch] text-lg text-[var(--color-ink-soft)]">{group.intro[locale]}</p> : null}
+                <ul className={group.intro ? "" : "lg:col-span-2 max-w-[75ch]"}>
+                  {group.items[locale].map(item => (
+                    <li key={item} className="flex gap-4 border-t border-[var(--color-line)] py-4 text-lg first:border-t-0 first:pt-0">
+                      <span aria-hidden className="mt-[0.7em] h-px w-4 shrink-0 bg-[var(--color-bronze)]" />{item}
+                    </li>
+                  ))}
+                </ul>
               </div>
-              <StaggerGroup as="ul" className="space-y-0 lg:col-span-7 lg:pt-8" stagger={0.05}>
-                {group.items[locale].map((item) => (
-                  <li key={item} data-stagger className="flex gap-4 border-t border-[var(--color-line)] py-4 text-lg first:border-t-0 lg:first:border-t">
-                    <span aria-hidden className="mt-[0.7em] h-px w-4 shrink-0 bg-[var(--color-ink-soft)]" />
-                    {item}
-                  </li>
-                ))}
-              </StaggerGroup>
-            </section>
+            </PracticeDisclosure>
           ))}
+
+          <PracticeDisclosure id="approach" title={t.howTitle}>
+            <p className="max-w-[65ch] text-lg text-[var(--color-ink-soft)]">{t.howIntro}</p>
+            <ol className="mt-8 grid gap-px bg-[var(--color-line)] sm:grid-cols-2">
+              {t.how.map(step => (
+                <li key={step.title} className="bg-[var(--color-paper-warm)] p-7">
+                  <h3 className="text-xl font-medium">{step.title}</h3>
+                  <p className="mt-3 text-[var(--color-ink-soft)]">{step.body}</p>
+                </li>
+              ))}
+            </ol>
+          </PracticeDisclosure>
+
+          {related.length ? <PracticeDisclosure id="insights" title={t.insightsTitle}>
+            <div className="grid gap-6 md:grid-cols-3">
+              {related.map(insight => <InsightCard key={insight.slug} insight={insight} locale={locale} dict={dict} />)}
+            </div>
+          </PracticeDisclosure> : null}
+
+          <PracticeDisclosure id="lawyers" title={t.lawyersTitle}>
+            <div className="grid gap-10 md:grid-cols-2 lg:grid-cols-3">
+              {team.map(lawyer => <LawyerCard key={lawyer.slug} lawyer={lawyer} locale={locale} dict={dict} />)}
+            </div>
+          </PracticeDisclosure>
         </div>
-      </Section>
-
-      <Section tone="warm" id="approach" labelledBy="approach-title">
-        <div className="grid gap-10 lg:grid-cols-12">
-          <div className="lg:col-span-4">
-            <h2 id="approach-title" className="display text-h3">{t.howTitle}</h2>
-            <p className="mt-4 text-[var(--color-ink-soft)]">{t.howIntro}</p>
-          </div>
-          <StaggerGroup as="ol" className="grid gap-px bg-[var(--color-line-strong)] sm:grid-cols-2 lg:col-span-8">
-            {t.how.map((step, i) => (
-              <li key={step.title} data-stagger className="bg-[var(--color-paper-warm)] p-7 md:p-9">
-                <h3 className="mt-6 text-xl font-medium">{step.title}</h3>
-                <p className="mt-3 text-[var(--color-ink-soft)]">{step.body}</p>
-              </li>
-            ))}
-          </StaggerGroup>
-        </div>
-      </Section>
-
-      {related.length ? (
-        <Section id="insights" labelledBy="related-title">
-          <h2 id="related-title" className="display text-h3">{t.insightsTitle}</h2>
-          <StaggerGroup className="mt-10 grid gap-10 md:grid-cols-3">
-            {related.map((insight) => (
-              <InsightCard key={insight.slug} insight={insight} locale={locale} dict={dict} />
-            ))}
-          </StaggerGroup>
-        </Section>
-      ) : null}
-
-      <Section tone="cream" id="lawyers" labelledBy="lawyers-title">
-        <h2 id="lawyers-title" className="display text-h3">{t.lawyersTitle}</h2>
-        <StaggerGroup className="mt-10 grid gap-14 md:grid-cols-2 lg:grid-cols-3">
-          {team.map((lawyer) => (
-            <LawyerCard key={lawyer.slug} lawyer={lawyer} locale={locale} dict={dict} />
-          ))}
-        </StaggerGroup>
       </Section>
 
       <ContactCta locale={locale} dict={dict} title={area.cta[locale]} />

@@ -31,6 +31,11 @@ export function SubNav({ items, label }: { items: { id: string; label: string }[
           <li key={item.id}>
             <a
               href={`#${item.id}`}
+              onClick={() => {
+                const target = document.getElementById(item.id);
+                if (target instanceof HTMLDetailsElement) target.open = true;
+                setActive(item.id);
+              }}
               aria-current={active === item.id ? "location" : undefined}
               className={`inline-flex min-h-12 items-center border-b-2 transition-colors ${
                 active === item.id

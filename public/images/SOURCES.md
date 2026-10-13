@@ -9,3 +9,9 @@
 - `practice-european-institutions.png`: generated transparent editorial interpretation of the European Parliament complex, same fine sage linework as the hero, concentrated at the lower-right for use beneath card text. Original: `/workspace/generated_images/exec-a9a5936f-9518-485b-9071-47a51206605a.png`.
 - `practice-brussels-private-law.png`: generated transparent illustration of three Brussels townhouses/business facades, same pale sage outlines and flat fills, no text or people. Original: `/workspace/generated_images/exec-0a8d6265-1269-4bd4-a4b5-658a181fd97e.png`.
 - Lexentia wordmark: SVG reconstruction in `src/components/ui/Wordmark.tsx` from the user-supplied logo preview, preserving serif lettering, teal/purple palette, bilingual tagline, and square motif. The animation is applied to the individual squares; the provided raster is not available as a downloadable workspace file.
+
+- `landmark-atomium.png`: generated editorial Belgian landmark illustration for the homepage situation buttons, preserving the existing pale sage architecture style. Original: `/workspace/generated_images/exec-141c0784-9d9b-4d22-a5e2-d8ef98355f10.png`. Exact generation prompt embedded in the PNG. Illustrative rather than an architectural record.
+
+- `landmark-bruges-belfry.png`: generated editorial Belgian landmark illustration for the homepage situation buttons, preserving the existing pale sage architecture style. Original: `/workspace/generated_images/exec-aed064e2-60db-48ab-aa91-91096ed36ecb.png`. Exact generation prompt embedded in the PNG. Illustrative rather than an architectural record.
+
+- `landmark-cinquantenaire.png`: generated editorial Belgian landmark illustration for the homepage situation buttons, preserving the existing pale sage architecture style. Original: `/workspace/generated_images/exec-92ad2e53-345b-4735-b089-2313987ad1e2.png`. Exact generation prompt embedded in the PNG. Illustrative rather than an architectural record.
