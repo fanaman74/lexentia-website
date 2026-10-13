@@ -43,7 +43,7 @@ export function ProcessRail({ steps }: { steps: Step[] }) {
   }, []);
 
   return (
-    <ol ref={ref} className="relative mt-14 space-y-12 pl-10 md:pl-14">
+    <ol ref={ref} className="relative mt-2 space-y-9 pl-10 md:pl-14">
       <span aria-hidden className="absolute left-0 top-1 bottom-1 w-px bg-[var(--color-line-dark)]" />
       <span
         aria-hidden

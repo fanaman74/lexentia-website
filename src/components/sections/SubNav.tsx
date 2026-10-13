@@ -25,8 +25,8 @@ export function SubNav({ items, label }: { items: { id: string; label: string }[
   }, [items]);
 
   return (
-    <nav aria-label={label} className="sticky top-[4.25rem] z-30 border-y border-[var(--color-line)] bg-[color-mix(in_srgb,var(--color-paper)_92%,transparent)] backdrop-blur-md">
-      <ul className="mx-auto flex max-w-[1440px] gap-6 overflow-x-auto px-5 text-sm whitespace-nowrap md:px-8 lg:px-12 [scrollbar-width:none]">
+    <nav aria-label={label} className="sticky top-[78px] z-30 border-y border-[var(--color-line)] bg-[var(--color-paper)]">
+      <ul className="mx-auto flex max-w-[1192px] gap-6 overflow-x-auto px-6 text-sm whitespace-nowrap  [scrollbar-width:none]">
         {items.map((item) => (
           <li key={item.id}>
             <a

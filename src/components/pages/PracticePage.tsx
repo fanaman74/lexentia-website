@@ -52,7 +52,7 @@ export function PracticePage({ locale, dict, area }: { locale: Locale; dict: Dic
         lines={[area.headline[locale]]}
         intro={area.intro[locale]}
         aside={
-          <ul className="divide-y divide-[var(--color-line)] border-y border-[var(--color-line)]">
+          <ul className="info-panel divide-y divide-[var(--color-line)]">
             {area.sideFacts[locale].map((fact) => (
               <li key={fact} className="flex items-center gap-3 py-3.5">
                 <span aria-hidden className="h-1 w-1 rounded-full bg-[var(--color-bronze)]" />
@@ -91,7 +91,6 @@ export function PracticePage({ locale, dict, area }: { locale: Locale; dict: Dic
               className="grid gap-6 border-b border-[var(--color-line-strong)] py-12 md:py-16 lg:grid-cols-12"
             >
               <div className="lg:col-span-5">
-                <p className="meta tabular-nums text-[var(--color-bronze)]">{pad(i + 1)}</p>
                 <h3 id={`${group.id}-title`} className="display text-h3 mt-3">
                   <a href={`#${group.id}`} className="hover:underline decoration-1 underline-offset-8">
                     {group.title[locale]}
@@ -121,7 +120,6 @@ export function PracticePage({ locale, dict, area }: { locale: Locale; dict: Dic
           <StaggerGroup as="ol" className="grid gap-px bg-[var(--color-line-strong)] sm:grid-cols-2 lg:col-span-8">
             {t.how.map((step, i) => (
               <li key={step.title} data-stagger className="bg-[var(--color-paper-warm)] p-7 md:p-9">
-                <p className="meta tabular-nums text-[var(--color-bronze)]">{pad(i + 1)}</p>
                 <h3 className="mt-6 text-xl font-medium">{step.title}</h3>
                 <p className="mt-3 text-[var(--color-ink-soft)]">{step.body}</p>
               </li>

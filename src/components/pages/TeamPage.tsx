@@ -12,9 +12,9 @@ export function TeamPage({ locale, dict }: { locale: Locale; dict: Dictionary })
     <>
       <PageHero eyebrow={t.eyebrow} lines={[t.title]} intro={t.intro} />
       <Section className="!pt-0">
-        <StaggerGroup className="grid gap-16 md:grid-cols-2 lg:gap-24">
+        <StaggerGroup className="grid gap-8 md:grid-cols-2">
           {lawyers.map((lawyer, i) => (
-            <div key={lawyer.slug} className={i === 1 ? "md:mt-28" : ""}>
+            <div key={lawyer.slug} className="">
               <LawyerCard lawyer={lawyer} locale={locale} dict={dict} />
               <p className="mt-6 max-w-[56ch] text-[var(--color-ink-soft)]">{lawyer.shortBio[locale]}</p>
             </div>

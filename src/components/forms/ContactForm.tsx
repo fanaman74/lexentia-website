@@ -18,7 +18,7 @@ export function ContactForm({ dict, privacyHref, defaultLanguage }: Props) {
 
   if (state.status === "success") {
     return (
-      <div ref={statusRef} tabIndex={-1} role="status" className="border-l-2 border-[var(--color-forest)] bg-[var(--color-cream)] p-8 outline-none">
+      <div ref={statusRef} tabIndex={-1} role="status" className="rounded-xl border border-[var(--color-line)] bg-[var(--color-paper-warm)] p-8 outline-none">
         <p className="display text-[2rem] leading-tight">{dict.successTitle}</p>
         <p className="mt-3 text-[var(--color-ink-soft)]">{dict.successBody}</p>
       </div>
@@ -42,7 +42,7 @@ export function ContactForm({ dict, privacyHref, defaultLanguage }: Props) {
     // key forces defaultValues to refresh with the values returned by the server
     <form key={JSON.stringify(state.values ?? {})} action={action} noValidate className="space-y-7">
       <div ref={statusRef} tabIndex={-1} role="alert" className="outline-none">
-        {banner ? <p className="border-l-2 border-[#9b2c1f] bg-[var(--color-cream)] p-4 text-sm">{banner}</p> : null}
+        {banner ? <p className="rounded-lg border border-[#dbada6] bg-[#fff4f1] p-4 text-sm">{banner}</p> : null}
       </div>
 
       <div className="grid gap-7 md:grid-cols-2">
@@ -58,7 +58,8 @@ export function ContactForm({ dict, privacyHref, defaultLanguage }: Props) {
         </div>
         <div>
           <label htmlFor="phone" className="mb-2 block text-sm font-medium">{dict.phone}</label>
-          <input id="phone" name="phone" type="tel" autoComplete="tel" defaultValue={val("phone")} aria-invalid={err("phone")} className="field" />
+          <input id="phone" name="phone" type="tel" autoComplete="tel" defaultValue={val("phone")} aria-invalid={err("phone")} aria-describedby={described("phone")} className="field" />
+          <ErrorText f="phone" />
         </div>
         <div>
           <label htmlFor="language" className="mb-2 block text-sm font-medium">{dict.language}</label>

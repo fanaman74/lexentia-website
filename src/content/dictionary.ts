@@ -203,6 +203,7 @@ const en = {
       errors: {
         name: "Please enter your name.",
         email: "Please enter a valid email address.",
+        phone: "Use a telephone number with digits, spaces, +, parentheses or hyphens, or leave this field empty.",
         matterType: "Please choose a matter type.",
         language: "Please choose a language.",
         subject: "Please enter a subject.",
@@ -434,6 +435,7 @@ const fr: Dictionary = {
       errors: {
         name: "Veuillez indiquer votre nom.",
         email: "Veuillez indiquer une adresse e-mail valide.",
+        phone: "Utilisez un numéro avec des chiffres, espaces, +, parenthèses ou tirets, ou laissez ce champ vide.",
         matterType: "Veuillez choisir un type de dossier.",
         language: "Veuillez choisir une langue.",
         subject: "Veuillez indiquer un objet.",

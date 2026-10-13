@@ -13,15 +13,12 @@ type Props = {
 /** Standard page hero: eyebrow, line-masked H1, intro and optional actions/aside. */
 export function PageHero({ eyebrow, lines, intro, children, aside, top }: Props) {
   return (
-    <section className="px-5 pb-16 pt-32 md:px-8 md:pb-24 md:pt-40 lg:px-12">
-      <PageIntro className="mx-auto max-w-[1440px]">
+    <section className="page-hero">
+      <PageIntro className="section-inner">
         {top}
         <div className="grid gap-12 lg:grid-cols-12">
           <div className={aside ? "lg:col-span-8" : "lg:col-span-11"}>
-            <p data-intro="label" className="eyebrow text-[var(--color-ink-soft)]">
-              {eyebrow}
-            </p>
-            <h1 className="display text-h1 mt-6">
+            <h1 className="display text-h1">
               {lines.map((line, i) => (
                 <span key={i} data-intro="line" className="line-mask">
                   <span className="line-inner">{line}</span>
@@ -30,7 +27,7 @@ export function PageHero({ eyebrow, lines, intro, children, aside, top }: Props)
               ))}
             </h1>
             {intro ? (
-              <p data-intro="body" className="mt-8 max-w-[60ch] text-xl leading-relaxed text-[var(--color-ink-soft)] md:text-[1.375rem]">
+              <p data-intro="body" className="mt-8 max-w-[60ch] leading-relaxed text-[var(--color-ink-soft)]">
                 {intro}
               </p>
             ) : null}

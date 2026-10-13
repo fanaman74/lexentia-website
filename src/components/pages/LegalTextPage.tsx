@@ -11,7 +11,7 @@ export function LegalTextPage({ locale, dict, page }: { locale: Locale; dict: Di
       <Section className="!pt-0">
         <div className="grid gap-12 lg:grid-cols-12">
           <aside className="lg:col-span-4">
-            <div className="border-l-2 border-[var(--color-bronze)] bg-[var(--color-paper-warm)] p-5 text-sm leading-relaxed lg:sticky lg:top-28">
+            <div className="rounded-xl border border-[var(--color-line)] bg-[var(--color-paper-warm)] p-5 text-sm leading-relaxed lg:sticky lg:top-28">
               <p className="font-medium">{dict.common.draftNotice}</p>
               <p className="mt-2">
                 <a href={page.legacyUrl[locale]} className="link-underline" rel="noopener">

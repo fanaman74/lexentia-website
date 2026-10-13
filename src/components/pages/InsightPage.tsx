@@ -1,3 +1,4 @@
+import { Icon } from "@/components/ui/Icon";
 import Link from "next/link";
 import { PageIntro } from "@/components/motion/PageIntro";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
@@ -74,11 +75,11 @@ export function InsightPage({ locale, dict, insight }: { locale: Locale; dict: D
               ) : null}
             </div>
             {!insight.body ? (
-              <div className="mt-12 max-w-[68ch] border-l-2 border-[var(--color-bronze)] bg-[var(--color-paper-warm)] p-6">
+              <div className="mt-12 max-w-[68ch] rounded-xl border border-[var(--color-line)] bg-[var(--color-paper-warm)] p-6">
                 <p>{dict.insights.migrationNotice}</p>
                 <a href={insight.legacyUrl} className="group mt-4 inline-flex items-center gap-2 font-medium" rel="noopener">
                   <span className="link-underline">{dict.common.readOriginal}</span>
-                  <span aria-hidden className="arrow">↗</span>
+                  <Icon name="external" size={17} className="arrow" />
                 </a>
               </div>
             ) : null}

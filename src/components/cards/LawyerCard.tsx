@@ -6,14 +6,14 @@ import { pathFor, type Locale } from "@/lib/i18n";
 export function LawyerCard({ lawyer, locale, dict, large = false }: { lawyer: Lawyer; locale: Locale; dict: Dictionary; large?: boolean }) {
   const url = pathFor(locale, { key: "lawyer", slug: lawyer.slug });
   return (
-    <article data-stagger className="group">
+    <article data-stagger className="group rounded-xl border border-[var(--color-line)] bg-white p-6 md:p-8">
       <Link href={url} className="block" aria-label={`${lawyer.name}, ${lawyer.role[locale]}`}>
         <Portrait
           name={lawyer.name}
           src={lawyer.portrait?.src}
           alt={lawyer.portrait?.alt[locale]}
           pendingLabel={dict.common.portraitPending}
-          className={large ? "aspect-[4/5]" : "aspect-[4/5]"}
+          className={large ? "!aspect-[4/3]" : "!aspect-[16/9]"}
         />
       </Link>
       <div className="mt-6 flex flex-wrap items-baseline justify-between gap-x-6 gap-y-2 border-t border-[var(--color-line)] pt-5">

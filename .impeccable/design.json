@@ -1,0 +1,276 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-13T16:13:07Z",
+  "title": "Design System: Lexentia",
+  "extensions": {
+    "colorMeta": {
+      "lime": {
+        "role": "primary",
+        "displayName": "Lime"
+      },
+      "bronze": {
+        "role": "primary",
+        "displayName": "Bronze focus green"
+      },
+      "sage": {
+        "role": "secondary",
+        "displayName": "Sage"
+      },
+      "lime-soft": {
+        "role": "secondary",
+        "displayName": "Soft lime"
+      },
+      "pink": {
+        "role": "secondary",
+        "displayName": "Pink"
+      },
+      "purple": {
+        "role": "secondary",
+        "displayName": "Purple"
+      },
+      "paper": {
+        "role": "neutral",
+        "displayName": "Pale paper"
+      },
+      "paper-warm": {
+        "role": "neutral",
+        "displayName": "Grouped surface"
+      },
+      "cream": {
+        "role": "neutral",
+        "displayName": "White"
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink"
+      },
+      "ink-soft": {
+        "role": "neutral",
+        "displayName": "Secondary ink"
+      },
+      "forest": {
+        "role": "neutral",
+        "displayName": "Editorial dark"
+      },
+      "forest-deep": {
+        "role": "neutral",
+        "displayName": "Deep editorial surface"
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Fine line"
+      },
+      "line-strong": {
+        "role": "neutral",
+        "displayName": "Strong line"
+      },
+      "line-dark": {
+        "role": "neutral",
+        "displayName": "Dark line"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Hero",
+        "purpose": "Homepage headline."
+      },
+      "headline": {
+        "displayName": "Page headline",
+        "purpose": "Interior page introductions."
+      },
+      "section-heading": {
+        "displayName": "Section heading",
+        "purpose": "Shared section titles."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Smaller display headings."
+      },
+      "body": {
+        "displayName": "Legal body",
+        "purpose": "Long-form legal copy with a 70ch measure."
+      },
+      "label": {
+        "displayName": "Eyebrow",
+        "purpose": "Short section labels."
+      },
+      "meta": {
+        "displayName": "Metadata",
+        "purpose": "Dates and language annotations; tabular numerals."
+      }
+    },
+    "shadows": [
+      {
+        "name": "button-rest",
+        "value": "2px 3px 0 var(--color-ink)",
+        "purpose": "Primary action at rest."
+      },
+      {
+        "name": "button-hover",
+        "value": "2px 4px 0 var(--color-ink)",
+        "purpose": "Primary action on hover."
+      },
+      {
+        "name": "button-active",
+        "value": "1px 1px 0 var(--color-ink)",
+        "purpose": "Compressed primary action."
+      },
+      {
+        "name": "feed",
+        "value": "0 3px 0 #34382e",
+        "purpose": "Homepage feed base."
+      },
+      {
+        "name": "quick-link",
+        "value": "3px 4px 0 var(--color-ink)",
+        "purpose": "Quick-link hover or keyboard focus."
+      }
+    ],
+    "motion": [
+      {
+        "name": "editorial-ease",
+        "value": "cubic-bezier(0.22, 1, 0.36, 1)",
+        "purpose": "Arrow movement easing."
+      },
+      {
+        "name": "arrow",
+        "value": "transform 200ms var(--ease-editorial)",
+        "purpose": "Horizontal 4px arrow shift on hover or group keyboard focus."
+      },
+      {
+        "name": "control",
+        "value": "background-color 180ms, transform 180ms, box-shadow 180ms",
+        "purpose": "Button state transitions."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms",
+        "purpose": "Animation and transition duration override under prefers-reduced-motion: reduce; introductory content stays visible."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "sm",
+        "value": "640px"
+      },
+      {
+        "name": "md",
+        "value": "768px"
+      },
+      {
+        "name": "lg",
+        "value": "1024px"
+      }
+    ],
+    "focus": [
+      {
+        "name": "light",
+        "value": "2px solid var(--color-bronze); outline-offset: 4px",
+        "purpose": "Global visible focus."
+      },
+      {
+        "name": "dark",
+        "value": "outline-color: var(--color-lime)",
+        "purpose": "Focus in dark sections."
+      },
+      {
+        "name": "field",
+        "value": "outline-offset: 2px; border-color: var(--color-bronze)",
+        "purpose": "Input focus."
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary button",
+      "kind": "button",
+      "description": "Reference-style lime action with a hard offset shadow.",
+      "html": "<button type=\"button\" class=\"ds-primary\">Explore our expertise<svg aria-hidden=\"true\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-primary{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:0.7rem;min-height:46px;padding:0.65rem 1.2rem;border-radius:var(--radius-sm,6px);font-size:0.9rem;font-weight:600;cursor:pointer;transition:background-color 180ms,transform 180ms,box-shadow 180ms;background:var(--color-lime,#a4e82a);color:var(--color-ink,#262626);border:1px solid var(--color-ink,#262626);box-shadow:2px 3px 0 var(--color-ink,#262626)}.ds-primary:hover{background:#b7f24e;transform:translateY(-1px);box-shadow:2px 4px 0 var(--color-ink,#262626)}.ds-primary:active{transform:translate(1px,2px);box-shadow:1px 1px 0 var(--color-ink,#262626)}.ds-primary:focus-visible{outline:2px solid var(--color-bronze,#4e7028);outline-offset:4px;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
+      "refersTo": "button-primary"
+    },
+    {
+      "name": "Secondary button",
+      "kind": "button",
+      "description": "Bordered supporting action on a pale surface.",
+      "html": "<button type=\"button\" class=\"ds-secondary\">Contact the firm<svg aria-hidden=\"true\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-secondary{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:0.7rem;min-height:46px;padding:0.65rem 1.2rem;border-radius:var(--radius-sm,6px);font-size:0.9rem;font-weight:600;cursor:pointer;transition:background-color 180ms,transform 180ms,box-shadow 180ms;background:transparent;color:var(--color-ink,#262626);border:1px solid var(--color-line-strong,#bac5ac)}.ds-secondary:hover{background:var(--color-paper-warm,#f0f3e9);border-color:var(--color-ink,#262626)}.ds-secondary:focus-visible{outline:2px solid var(--color-bronze,#4e7028);outline-offset:4px;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
+      "refersTo": "button-secondary"
+    },
+    {
+      "name": "Search field",
+      "kind": "input",
+      "description": "Visible label and white input used in the insight search panel.",
+      "html": "<div class=\"ds-field-wrap\"><label class=\"ds-label\" for=\"ds-search\">Search</label><input class=\"ds-field\" id=\"ds-search\" type=\"search\" placeholder=\"Title, topic or words from the article\"></div>",
+      "css": ".ds-field-wrap{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);max-width:480px}.ds-label{display:block;margin-bottom:0.5rem;font-size:0.875rem;font-weight:500;color:var(--color-ink,#262626)}.ds-field{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);width:100%;min-height:48px;padding:0.75rem 1rem;background:var(--color-cream,#ffffff);border:1px solid var(--color-line-strong,#bac5ac);border-radius:var(--radius-sm,6px);font-size:1rem;color:var(--color-ink,#262626);caret-color:var(--color-bronze,#4e7028)}.ds-field::placeholder{color:#69735f}.ds-field:focus-visible{outline:2px solid var(--color-bronze,#4e7028);outline-offset:4px;outline-offset:2px;border-color:var(--color-bronze,#4e7028)}.ds-field[aria-invalid=\"true\"]{border-color:#9b2c1f}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
+      "refersTo": "field"
+    },
+    {
+      "name": "Primary navigation",
+      "kind": "nav",
+      "description": "Desktop links with a current-page underline and hover border.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Primary\"><a href=\"/en/expertise\" aria-current=\"page\">Expertise</a><a href=\"/en/team\">Team</a><a href=\"/en/about\">About</a><a href=\"/en/insights\">Insights</a><a href=\"/en/contact\">Contact</a></nav>",
+      "css": ".ds-nav{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:flex;flex-wrap:wrap;align-items:center;gap:1.75rem;font-size:0.875rem;color:var(--color-ink,#262626)}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:none;border-bottom:2px solid transparent}.ds-nav a:hover{border-color:var(--color-line-strong,#bac5ac)}.ds-nav a[aria-current=\"page\"]{border-color:var(--color-bronze,#4e7028);font-weight:600}.ds-nav a:focus-visible{outline:2px solid var(--color-bronze,#4e7028);outline-offset:4px;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}"
+    },
+    {
+      "name": "Category tag",
+      "kind": "chip",
+      "description": "Light noninteractive category annotation.",
+      "html": "<span class=\"ds-chip\">Droit des affaires</span>",
+      "css": ".ds-chip{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:inline-flex;align-items:center;padding:0.3rem 0.65rem;background:var(--color-paper-warm,#f0f3e9);color:#425436;border-radius:999px;font-size:0.75rem;line-height:1.4}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
+      "refersTo": "chip"
+    },
+    {
+      "name": "Category filters",
+      "kind": "chip",
+      "description": "Pressed and unpressed category buttons from the insight archive.",
+      "html": "<div class=\"ds-filters\" role=\"group\" aria-label=\"Insights\"><button class=\"ds-pill\" type=\"button\" aria-pressed=\"true\">All</button><button class=\"ds-pill\" type=\"button\" aria-pressed=\"false\">EU civil service law</button></div>",
+      "css": ".ds-filters{display:flex;flex-wrap:wrap;gap:0.5rem}.ds-pill{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0.55rem 0.95rem;border:1px solid var(--color-line-strong,#bac5ac);border-radius:999px;background:var(--color-cream,#ffffff);color:var(--color-ink,#262626);font-size:0.8rem;cursor:pointer}.ds-pill:hover{border-color:var(--color-ink,#262626)}.ds-pill[aria-pressed=\"true\"]{background:var(--color-ink,#262626);border-color:var(--color-ink,#262626);color:var(--color-cream,#ffffff)}.ds-pill:focus-visible{outline:2px solid var(--color-bronze,#4e7028);outline-offset:4px;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
+      "refersTo": "filter-pill"
+    },
+    {
+      "name": "Insight card",
+      "kind": "card",
+      "description": "Light archive card using an actual source article.",
+      "html": "<article class=\"ds-card\"><p class=\"ds-meta\"><time datetime=\"2021-08-04\">4 août 2021</time></p><h3 class=\"ds-card-title\"><a href=\"/fr/analyses/du-neuf-en-matiere-dinsolvabilite-des-entreprises\">Du neuf en matière d’insolvabilité des entreprises</a></h3><div class=\"ds-card-tags\"><span class=\"ds-card-chip\">Droit des affaires</span></div><p class=\"ds-excerpt\">Le failli personne physique peut demander au tribunal d’être libéré de ses dettes résiduelles en vertu du Code de droit économique.</p><p class=\"ds-card-footer\"><span>Lire la suite</span><svg aria-hidden=\"true\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></p></article>",
+      "css": ".ds-card{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);position:relative;display:flex;flex-direction:column;min-height:300px;padding:1.65rem;border:1px solid var(--color-line,#dce2d3);border-radius:12px;background:var(--color-cream,#ffffff);color:var(--color-ink,#262626);transition:border-color 180ms}.ds-card:hover{border-color:var(--color-bronze,#4e7028)}.ds-meta{margin:0;color:var(--color-ink-soft,#5d6358);font-size:0.8rem;line-height:1.55;font-variant-numeric:tabular-nums}.ds-card-title{font-family:var(--font-serif,Fraunces,Georgia,serif);margin:1.25rem 0 0;font-weight:400;letter-spacing:-0.025em;font-size:1.5rem;line-height:1.25}.ds-card-title a{color:inherit;text-decoration:none}.ds-card-title a::after{content:\"\";position:absolute;inset:0}.ds-card-title a:focus-visible{outline:2px solid var(--color-bronze,#4e7028);outline-offset:4px;}.ds-card-tags{margin-top:1.25rem}.ds-card-chip{display:inline-flex;padding:0.3rem 0.65rem;background:var(--color-paper-warm,#f0f3e9);color:#425436;border-radius:999px;font-size:0.75rem;line-height:1.4}.ds-excerpt{margin:1.25rem 0;color:var(--color-ink-soft,#5d6358);font-size:0.875rem;line-height:1.625}.ds-card-footer{display:flex;align-items:center;justify-content:space-between;gap:0.75rem;margin:auto 0 0;padding-top:2.75rem;border-top:1px solid var(--color-line,#dce2d3);font-size:0.875rem}.ds-card-footer svg{transition:transform 200ms cubic-bezier(0.22,1,0.36,1)}.ds-card:hover .ds-card-footer svg{transform:translateX(4px)}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
+      "refersTo": "insight-card"
+    },
+    {
+      "name": "Dark insight card",
+      "kind": "card",
+      "description": "Editorial variant with pale copy and lime reading arrow.",
+      "html": "<div class=\"ds-dark\"><article class=\"ds-card\"><p class=\"ds-meta\"><time datetime=\"2021-08-04\">4 août 2021</time></p><h3 class=\"ds-card-title\"><a href=\"/fr/analyses/du-neuf-en-matiere-dinsolvabilite-des-entreprises\">Du neuf en matière d’insolvabilité des entreprises</a></h3><div class=\"ds-card-tags\"><span class=\"ds-card-chip\">Droit des affaires</span></div><p class=\"ds-excerpt\">Le failli personne physique peut demander au tribunal d’être libéré de ses dettes résiduelles en vertu du Code de droit économique.</p><p class=\"ds-card-footer\"><span>Lire la suite</span><svg aria-hidden=\"true\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></p></article></div>",
+      "css": ".ds-card{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);position:relative;display:flex;flex-direction:column;min-height:300px;padding:1.65rem;border:1px solid var(--color-line,#dce2d3);border-radius:12px;background:var(--color-cream,#ffffff);color:var(--color-ink,#262626);transition:border-color 180ms}.ds-card:hover{border-color:var(--color-bronze,#4e7028)}.ds-meta{margin:0;color:var(--color-ink-soft,#5d6358);font-size:0.8rem;line-height:1.55;font-variant-numeric:tabular-nums}.ds-card-title{font-family:var(--font-serif,Fraunces,Georgia,serif);margin:1.25rem 0 0;font-weight:400;letter-spacing:-0.025em;font-size:1.5rem;line-height:1.25}.ds-card-title a{color:inherit;text-decoration:none}.ds-card-title a::after{content:\"\";position:absolute;inset:0}.ds-card-title a:focus-visible{outline:2px solid var(--color-bronze,#4e7028);outline-offset:4px;}.ds-card-tags{margin-top:1.25rem}.ds-card-chip{display:inline-flex;padding:0.3rem 0.65rem;background:var(--color-paper-warm,#f0f3e9);color:#425436;border-radius:999px;font-size:0.75rem;line-height:1.4}.ds-excerpt{margin:1.25rem 0;color:var(--color-ink-soft,#5d6358);font-size:0.875rem;line-height:1.625}.ds-card-footer{display:flex;align-items:center;justify-content:space-between;gap:0.75rem;margin:auto 0 0;padding-top:2.75rem;border-top:1px solid var(--color-line,#dce2d3);font-size:0.875rem}.ds-card-footer svg{transition:transform 200ms cubic-bezier(0.22,1,0.36,1)}.ds-card:hover .ds-card-footer svg{transform:translateX(4px)}.ds-dark{padding:1.5rem;background:var(--color-forest,#0d0d13)}.ds-dark .ds-card{background:#171520;border-color:#393246;color:#f2eff8}.ds-dark .ds-card:hover{border-color:var(--color-lime,#a4e82a)}.ds-dark .ds-meta,.ds-dark .ds-excerpt{color:#c3bdcf}.ds-dark .ds-card-footer{border-color:#393246}.ds-dark .ds-card-footer svg{color:var(--color-lime,#a4e82a)}.ds-dark .ds-card-chip{background:#24212f;color:#d1cadd;border:1px solid #494355;border-radius:5px}.ds-dark .ds-card-title a:focus-visible{outline-color:var(--color-lime,#a4e82a)}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}"
+    },
+    {
+      "name": "Lexentia wordmark",
+      "kind": "custom",
+      "description": "Shared lime initial tile and uppercase firm name.",
+      "html": "<a class=\"ds-wordmark\" href=\"/en\" aria-label=\"Lexentia\"><span class=\"ds-tile\">L</span><span>LEXENTIA</span></a>",
+      "css": ".ds-wordmark{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:inline-flex;align-items:center;gap:0.55rem;color:var(--color-ink,#262626);text-decoration:none;font-size:1.05rem;font-weight:650;letter-spacing:-0.035em}.ds-tile{display:grid;place-items:center;width:31px;height:31px;background:var(--color-lime,#a4e82a);border:1px solid var(--color-ink,#262626);border-radius:5px;font-size:1.45rem;font-weight:600}.ds-wordmark:focus-visible{outline:2px solid var(--color-bronze,#4e7028);outline-offset:4px;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}"
+    }
+  ],
+  "narrative": {
+    "overview": "The user-selected visual reference is [EU JUST](https://eujust.online). Its pale canvas, upright serif headlines, lime controls, fine borders, and dark editorial passages define the implemented atmosphere. Lexentia keeps its own wordmark, firm content, and French/English routes.\n\nThe system pairs spacious page introductions with compact navigation, filters, and article metadata. Motion supports reading and navigation; reduced-motion users receive visible content without waiting for the introductory animation.",
+    "keyCharacteristics": [
+      "Pale surfaces with ink text and lime actions.",
+      "Upright Fraunces headings paired with Geist interface text.",
+      "Fine borders, gently rounded panels, and offset control shadows.",
+      "Dark editorial sections with lime navigation cues.",
+      "Equivalent French/English layouts and explicit article-language labels."
+    ],
+    "rules": [],
+    "dos": [
+      "**Do** retain the EU JUST reference grammar across shared routes and components.",
+      "**Do** use upright Fraunces headings, Geist interface text, and the implemented palette.",
+      "**Do** preserve visible focus, reduced-motion behavior, translated labels, and equivalent language routes.",
+      "**Do** retain source links, draft notices, article-language labels, and truthful portrait placeholders."
+    ],
+    "donts": [
+      "**Don't** restore the replaced grid backdrop or italic green hero treatment.",
+      "**Don't** replace shared SVG arrows with characters that depend on font glyph coverage.",
+      "**Don't** invent firm claims, credentials, testimonials, or photography to fill a component."
+    ]
+  }
+}

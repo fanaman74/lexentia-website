@@ -35,18 +35,18 @@ export function LawyerPage({ locale, dict, lawyer }: { locale: Locale; dict: Dic
           url: `${site.url}${pathFor(locale, { key: "lawyer", slug: lawyer.slug })}`,
         }}
       />
-      <section className="px-5 pb-16 pt-32 md:px-8 md:pt-40 lg:px-12">
-        <PageIntro className="mx-auto grid max-w-[1440px] gap-12 lg:grid-cols-12">
+      <section className="page-hero">
+        <PageIntro className="mx-auto grid max-w-[1144px] gap-12 lg:grid-cols-12">
           <div className="lg:col-span-7">
             <Breadcrumbs items={[{ name: dict.nav.team, href: href(locale, "team") }, { name: lawyer.name }]} label={dict.a11y.breadcrumb} />
-            <p data-intro="label" className="eyebrow mt-10 text-[var(--color-ink-soft)]">
-              {lawyer.role[locale]}
-            </p>
-            <h1 className="display text-h1 mt-6">
+            <h1 className="display text-h1 mt-8">
               <span data-intro="line" className="line-mask">
                 <span className="line-inner">{lawyer.name}</span>
               </span>
             </h1>
+            <p data-intro="label" className="eyebrow mt-5 text-[var(--color-ink-soft)]">
+              {lawyer.role[locale]}
+            </p>
             <p data-intro="body" className="mt-6 max-w-[48ch] text-xl text-[var(--color-ink-soft)]">
               {lawyer.descriptor[locale]}
             </p>
