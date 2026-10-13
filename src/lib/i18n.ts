@@ -29,6 +29,7 @@ export const staticRoutes = {
   team: { en: "team", fr: "equipe" },
   about: { en: "about", fr: "cabinet" },
   insights: { en: "insights", fr: "analyses" },
+  latestNews: { en: "latest-news", fr: "actualites" },
   contact: { en: "contact", fr: "contact" },
   legalNotices: { en: "legal-notices", fr: "mentions-legales" },
   terms: { en: "terms", fr: "conditions-generales" },
@@ -45,7 +46,7 @@ export type RouteRef =
 
 export function pathFor(locale: Locale, ref: RouteRef): string {
   if (ref.key === "lawyer") return `/${locale}/${staticRoutes.team[locale]}/${ref.slug}`;
-  if (ref.key === "insight") return `/${locale}/${staticRoutes.insights[locale]}/${ref.slug}`;
+  if (ref.key === "insight") return `/${locale}/${ref.slug.startsWith("court-") ? staticRoutes.latestNews[locale] : staticRoutes.insights[locale]}/${ref.slug}`;
   const segment = staticRoutes[ref.key][locale];
   return segment ? `/${locale}/${segment}` : `/${locale}`;
 }
@@ -64,6 +65,9 @@ export function resolvePath(locale: Locale, segments: string[]): RouteRef | null
     return { key: "lawyer", slug: segments[1] };
   }
   if (segments.length === 2 && segments[0] === staticRoutes.insights[locale]) {
+    return { key: "insight", slug: segments[1] };
+  }
+  if (segments.length === 2 && segments[0] === staticRoutes.latestNews[locale] && segments[1].startsWith("court-")) {
     return { key: "insight", slug: segments[1] };
   }
   return null;

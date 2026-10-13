@@ -44,6 +44,7 @@ export default async function LocaleLayout({ children, params }: LayoutProps<"/[
     { label: dict.nav.team, href: href(locale, "team") },
     { label: dict.nav.about, href: href(locale, "about") },
     { label: dict.nav.insights, href: href(locale, "insights") },
+    { label: dict.nav.latestNews, href: href(locale, "latestNews") },
     { label: dict.nav.contact, href: href(locale, "contact") },
   ];
 

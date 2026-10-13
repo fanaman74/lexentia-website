@@ -19,7 +19,7 @@ export const insightsByDate = () =>
 
 export const insightsInCategories = (categories: InsightCategoryId[], limit = 3) =>
   insightsByDate()
-    .filter((i) => i.categories.some((c) => categories.includes(c)))
+    .filter((i) => !i.courtRecord && i.categories.some((c) => categories.includes(c)))
     .slice(0, limit);
 
 export const featuredInsights = (limit = 3) =>

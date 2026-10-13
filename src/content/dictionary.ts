@@ -26,6 +26,7 @@ const en = {
     team: "Team",
     about: "About",
     insights: "Insights",
+    latestNews: "Latest News",
     contact: "Contact",
     cta: "Contact the firm",
   },
@@ -39,6 +40,7 @@ const en = {
     hours: "Office hours",
     map: "View on map",
     allInsights: "All insights",
+    allNews: "All latest news",
     draftNotice: "Draft text awaiting the firm's approval.",
     portraitPending: "Portrait to come",
     languageNames: { fr: "French", en: "English", nl: "Dutch", es: "Spanish" } as Record<string, string>,
@@ -164,7 +166,7 @@ const en = {
   insights: {
     eyebrow: "Insights",
     title: "Notes on EU staff law and business law.",
-    intro: "Explore Court of Justice and General Court rulings on workplace rights, alongside case-law and legislative analysis by the firm's lawyers.",
+    intro: "Analysis of case law and legislative changes, written by the firm's lawyers.",
     all: "All",
     empty: "No articles in this category yet.",
     migrationNotice:
@@ -263,6 +265,7 @@ const fr: Dictionary = {
     team: "Équipe",
     about: "Le cabinet",
     insights: "Analyses",
+    latestNews: "Actualités",
     contact: "Contact",
     cta: "Contacter le cabinet",
   },
@@ -276,6 +279,7 @@ const fr: Dictionary = {
     hours: "Heures d'ouverture",
     map: "Voir sur la carte",
     allInsights: "Toutes les analyses",
+    allNews: "Toutes les actualités",
     draftNotice: "Texte provisoire, en attente de validation par le cabinet.",
     portraitPending: "Portrait à venir",
     languageNames: { fr: "Français", en: "Anglais", nl: "Néerlandais", es: "Espagnol" },
@@ -401,7 +405,7 @@ const fr: Dictionary = {
   insights: {
     eyebrow: "Analyses",
     title: "Chroniques de fonction publique européenne et de droit des affaires.",
-    intro: "Explorez la jurisprudence de la Cour de justice et du Tribunal sur les droits au travail, ainsi que les analyses des avocates du cabinet.",
+    intro: "Analyses de jurisprudence et d'évolutions législatives, rédigées par les avocates du cabinet.",
     all: "Toutes",
     empty: "Aucun article dans cette catégorie pour le moment.",
     migrationNotice:

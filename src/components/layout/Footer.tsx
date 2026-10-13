@@ -9,7 +9,7 @@ export function Footer({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const t = dict.footer;
   const columns = [
     { title: t.expertise, links: practiceAreas.map(p => ({ label: p.title[locale], href: pathFor(locale, { key: p.routeKey }) })) },
-    { title: t.firm, links: [{ label: t.aboutLink, href: href(locale, "about") }, { label: dict.nav.team, href: href(locale, "team") }, { label: dict.nav.insights, href: href(locale, "insights") }, { label: dict.nav.contact, href: href(locale, "contact") }] },
+    { title: t.firm, links: [{ label: t.aboutLink, href: href(locale, "about") }, { label: dict.nav.team, href: href(locale, "team") }, { label: dict.nav.insights, href: href(locale, "insights") }, { label: dict.nav.latestNews, href: href(locale, "latestNews") }, { label: dict.nav.contact, href: href(locale, "contact") }] },
     { title: t.legal, links: [{ label: t.legalLinks.legalNotices, href: href(locale, "legalNotices") }, { label: t.legalLinks.privacy, href: href(locale, "privacy") }, { label: t.legalLinks.terms, href: href(locale, "terms") }, { label: t.legalLinks.fees, href: href(locale, "fees") }] },
   ];
   return <footer className="site-footer">

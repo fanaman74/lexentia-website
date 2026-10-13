@@ -11,7 +11,7 @@ import { Icon } from "@/components/ui/Icon";
 const PAGE_SIZE = 20;
 const normalise = (text: string) => text.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase();
 
-export function CourtRulingsBrowser({ records, importedAt, locale }: { records: CourtRuling[]; importedAt: string; locale: Locale }) {
+export function CourtRulingsBrowser({ records, importedAt, locale, firmArchiveHref }: { records: CourtRuling[]; importedAt: string; locale: Locale; firmArchiveHref: string }) {
   const [query, setQuery] = useState("");
   const [court, setCourt] = useState("");
   const [topic, setTopic] = useState("");
@@ -51,7 +51,7 @@ export function CourtRulingsBrowser({ records, importedAt, locale }: { records: 
   };
 
   return <>
-    <div className="section-heading"><h2 id="court-rulings-title" className="display text-h2">{labels.title}</h2><a href="#practice-insights" className="inline-flex items-center gap-2 text-sm">{labels.articles}<Icon name="arrow" size={17} /></a></div>
+    <div className="section-heading"><h2 id="court-rulings-title" className="display text-h2">{labels.title}</h2><a href={firmArchiveHref} className="inline-flex items-center gap-2 text-sm">{labels.articles}<Icon name="arrow" size={17} /></a></div>
     <p className="max-w-[70ch] leading-relaxed text-[var(--color-ink-soft)]">{labels.intro}</p>
     <details className="court-coverage mt-6 border-y border-[var(--color-line)] py-4 text-sm">
       <summary className="cursor-pointer font-medium">{labels.coverage}</summary>

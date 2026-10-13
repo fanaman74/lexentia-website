@@ -13,7 +13,7 @@ export function CourtRulingPage({ record, locale, dict }: { record: CourtRuling;
   const fr = locale === "fr";
   return <>
     <JsonLd data={{ "@context": "https://schema.org", "@type": "CreativeWork", name: record.title, inLanguage: "en", identifier: record.celex, citation: record.officialUrl, isBasedOn: record.eujustUrl }} />
-    <PageHero contentLanguage="en" eyebrow={dict.nav.insights} lines={[record.title]} intro={record.formation} top={<Breadcrumbs label={dict.a11y.breadcrumb} items={[{ name: dict.nav.insights, href: href(locale, "insights") }, { name: record.caseNumber }]} />}>
+    <PageHero contentLanguage="en" eyebrow={dict.nav.latestNews} lines={[record.title]} intro={record.formation} top={<Breadcrumbs label={dict.a11y.breadcrumb} items={[{ name: dict.nav.latestNews, href: href(locale, "latestNews") }, { name: record.caseNumber }]} />}>
       <a href={record.officialUrl} className="btn btn-primary">{fr ? "Lire le document officiel" : "Read the official document"}<Icon name="external" size={17} /></a>
       <a href={record.eujustUrl} className="btn btn-secondary">{fr ? "Consulter sur EU JUST" : "View on EU JUST"}<Icon name="external" size={17} /></a>
     </PageHero>
@@ -25,7 +25,7 @@ export function CourtRulingPage({ record, locale, dict }: { record: CourtRuling;
         <div><h2 className="display text-h3">{fr ? "Titre officiel" : "Official title"}</h2><div lang="en" className="prose-legal mt-6">{record.officialTitle.split("#").filter(Boolean).map((part, index) => <p key={index}>{part.trim()}</p>)}</div></div>
         <aside><h2 className="display text-h3">{fr ? "Thèmes de recherche" : "Research topics"}</h2><div className="mt-6 flex flex-wrap gap-2">{record.topics.map(t => <span key={t} className="chip">{topicLabel(t, locale)}</span>)}</div><p className="mt-5 text-sm leading-relaxed text-[var(--color-ink-soft)]">{fr ? "Thèmes attribués par correspondance de mots-clés. Le document officiel précise les faits, le raisonnement et le dispositif." : "Topics are assigned by keyword match. Read the official document for the facts, reasoning and outcome."}</p><p className="mt-5 text-sm text-[var(--color-ink-soft)]">{fr ? "Version source anglaise. Importé d’EU JUST le" : "English source version. Imported from EU JUST on"} {formatDate(courtImportDate, locale)}.</p></aside>
       </div>
-      <Link href={`${href(locale, "insights")}#court-rulings`} className="mt-12 inline-flex min-h-11 items-center gap-2 link-underline">{fr ? "Toutes les décisions" : "All court rulings"}<Icon name="arrow" size={17} /></Link>
+      <Link href={`${href(locale, "latestNews")}#court-rulings`} className="mt-12 inline-flex min-h-11 items-center gap-2 link-underline">{fr ? "Toutes les décisions" : "All court rulings"}<Icon name="arrow" size={17} /></Link>
     </Section>
   </>;
 }

@@ -20,9 +20,9 @@ npm run build && npm start
 
 See `docs/review.md` (open questions for the firm) and `docs/migration-inventory.md`. Every legal page is a draft that needs lawyer approval.
 
-## Court rulings in Insights
+## Court rulings in Latest News
 
-Insights includes a snapshot of EU JUST’s public Court of Justice and General Court collection: 84 records imported on 13 October 2026, alongside the firm's 28 original analyses. Court records keep the source's English official title, decision date, court, case number, CELEX identifier and EUR-Lex link. Matched topics are research aids; court records are not attributed to the firm's lawyers. Localised case pages are statically generated in both languages.
+Latest News includes a snapshot of EU JUST’s public Court of Justice and General Court collection: 84 records imported on 13 October 2026, with the firm's 28 original analyses kept on the separate Insights page. Court records keep the source's English official title, decision date, court, case number, CELEX identifier and EUR-Lex link. Matched topics are research aids; court records are not attributed to the firm's lawyers. Localised case pages are statically generated in both languages under `/en/latest-news` and `/fr/actualites`. Previous court-record URLs under Insights redirect to their new locations. The homepage promotes the five latest records in a carousel that advances every 6.5 seconds, pausing offscreen, in hidden tabs, on hover/focus and for reduced motion; visitors can also pause it manually.
 
 The EU JUST repository stores its records in PostgreSQL; they are not checked into that repository. This site imports the published collection with Chromium rather than requiring access to that database. To refresh the snapshot:
 

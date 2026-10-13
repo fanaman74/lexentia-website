@@ -41,10 +41,10 @@ export function Header({ locale, items, homeHref, cta, labels }: Props) {
   }, [open]);
   const isCurrent = (url: string) => pathname === url || pathname.startsWith(`${url}/`);
   return <header ref={headerRef} className="fixed inset-x-0 top-0 z-40 border-b border-[var(--color-line)] bg-[var(--color-paper)]">
-    <div className="mx-auto flex h-[78px] max-w-[1600px] items-center justify-between gap-5 px-6 lg:px-12">
+    <div className="mx-auto flex h-[78px] max-w-[1600px] items-center justify-between gap-5 px-6 xl:px-12">
       <Link href={homeHref} aria-label="Lexentia"><Wordmark /></Link>
       <nav aria-label={labels.primaryNav} className="hidden lg:block">
-        <ul className="flex items-center gap-7 text-sm">
+        <ul className="flex items-center gap-5 whitespace-nowrap text-sm xl:gap-7">
           {items.map(item => <li key={item.href}><Link href={item.href} aria-current={isCurrent(item.href) ? "page" : undefined} className={`inline-flex min-h-11 items-center border-b-2 ${isCurrent(item.href) ? "border-[var(--color-bronze)] font-semibold" : "border-transparent hover:border-[var(--color-line-strong)]"}`}>{item.label}</Link></li>)}
         </ul>
       </nav>

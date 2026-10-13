@@ -127,7 +127,7 @@ components:
 
 The user-selected visual reference is [EU JUST](https://eujust.online). Its pale canvas, upright serif headlines, teal controls, fine borders, and dark editorial passages define the implemented atmosphere. Lexentia keeps its own wordmark, firm content, and French/English routes.
 
-The system pairs spacious page introductions with compact navigation, filters, and article metadata. Lexentia’s supplied logo guides the teal and purple palette. Motion supports reading and navigation; reduced-motion users receive visible content without waiting for the introductory animation. The homepage Insights carousel follows the user’s WhatsApp screenshot layout; its easing is an implemented interpretation because the live reference could not be loaded under the cloud network allowlist.
+The system pairs spacious page introductions with compact navigation, filters, and article metadata. Lexentia’s supplied logo guides the teal and purple palette. Motion supports reading and navigation; reduced-motion users receive visible content without waiting for the introductory animation. The homepage Latest News carousel follows the user’s WhatsApp screenshot layout; its easing is an implemented interpretation because the live reference could not be loaded under the cloud network allowlist.
 
 **Key Characteristics:**
 
@@ -136,6 +136,8 @@ The system pairs spacious page introductions with compact navigation, filters, a
 - Fine borders, gently rounded panels, and offset control shadows.
 - Dark editorial sections with soft-green navigation cues.
 - Equivalent French/English layouts and explicit article-language labels.
+- Square practice panels with architectural images above compact summaries and controlled distant bird flocks.
+- Separate source-backed Latest News and firm-authored Insights archives; a forward-looping Latest News carousel.
 
 ## Colors
 
@@ -170,19 +172,21 @@ Content is centered within a 1144px maximum width, with 24px horizontal section 
 
 Desktop hero copy sits beside the Brussels landmark. Below 768px it centers above the illustration; section headings stack, and article rows move the date above the title. At 1024px the header replaces its disclosure menu with full navigation. Footer columns expand at 640px and 1024px. Filters wrap, and search/sort fields become a two-column group at 768px.
 
-The homepage carousel uses a two-column layout: heading and navigation at left, one white card at right. Columns are proportioned 0.85fr/1fr with a fluid 3–7rem gap; below 768px they stack with a 2rem gap. Slides are separated by 24px. Court catalogue rows use a 100px date column, a flexible title/body column and a 180px case-reference column. Below 768px the date and case number share the top line above the title; secondary court metadata and the row arrow are hidden. Court search spans the filter panel above three fields at desktop widths.
+The homepage carousel uses a two-column layout: heading and navigation at left, one white card at right. Columns are proportioned 0.85fr/1fr with a fluid 3–7rem gap; below 768px they stack with a 2rem gap. Slides are separated by 24px. On desktop the viewport extends 160px into the left copy region with a matching fade mask; the copy stays above it. On phones the viewport has a 24px fade edge. Court catalogue rows use a 100px date column, a flexible title/body column and a 180px case-reference column. Below 768px the date and case number share the top line above the title; secondary court metadata and the row arrow are hidden. Court search spans the filter panel above three fields at desktop widths.
+
+Practice cards retain a 1:1 aspect ratio with dedicated artwork above the text: 44%/56% rows on desktop and 38%/62% below 768px. The original summaries use three clamped lines, reduced to two below 360px; titles and the reading footer remain visible. Full service descriptions and tags stay on the practice pages.
 
 Allow French labels and long article titles to wrap. Locale switching preserves the equivalent route, and articles retain their original-language annotation.
 
 ## Elevation & Depth
 
-Most surfaces are flat and distinguished by tone or hairline borders. Primary buttons use a hard ink offset shadow, shifting subtly on hover and compressing on activation. The homepage feed has a shallow offset base; quick-link cards acquire an offset shadow on hover or keyboard focus. These are structural edges rather than diffuse ambient glows.
+Most surfaces are flat and distinguished by tone or hairline borders. Primary buttons use a hard ink offset shadow, shifting subtly on hover and compressing on activation. These are structural edges rather than diffuse ambient glows.
 
 Exact shadows, focus treatments, easing, and responsive boundaries are recorded in the sidecar. Arrow movement uses a short horizontal shift; reduced motion collapses animation and transition durations.
 
 ## Shapes
 
-Controls use the small radius; panels and archive cards use the medium radius. Homepage carousel cards and their clipped viewport use 28px corners; navigation controls are 48px circles. Filters and light tags use fully rounded ends. Dark editorial tags instead have compact, lightly rounded rectangular silhouettes. The wordmark uses serif teal-to-purple lettering and an eight-square pattern. Dark sections have straight boundaries.
+Controls use the small radius; panels and archive cards use the medium radius. Homepage carousel cards use 28px corners; navigation controls are 48px circles. Square practice panels use 12px corners and separate artwork/text regions; their image-region pause controls are 34px circles. Filters and light tags use fully rounded ends. Dark editorial tags instead have compact, lightly rounded rectangular silhouettes. The wordmark uses serif teal-to-purple lettering and an eight-square pattern. Dark sections have straight boundaries.
 
 ## Components
 
@@ -190,28 +194,30 @@ Controls use the small radius; panels and archive cards use the medium radius. H
 - **Fields:** white search, select, and contact fields with a small radius, a 48px minimum height, and a strong neutral border. Focus changes the border to teal; invalid contact fields use a red border. Keep visible labels.
 - **Tags and filters:** light tags identify categories or languages. Category filter buttons expose selection through `aria-pressed`, switching from white to ink with white text. Filtering, search, and sorting update immediately with a visible live result count and clear-filters actions.
 - **Cards:** insight cards have serif titles, muted metadata, category tags, and a ruled reading footer. The linked title covers the card. Dark variants preserve the structure with violet-black surfaces, pale text, and soft-green arrows. Lawyer cards use bordered white panels and truthful portrait placeholders while commissioned images are pending.
-- **Navigation:** the fixed header has an underlined active destination, equivalent-route language switching, and a compact contact action. The mobile disclosure exposes `aria-expanded`; Escape closes it and returns focus to its toggle. Route changes close it. Footer links underline on hover and keyboard focus.
+- **Navigation:** the fixed header includes separate Insights and Latest News destinations with an underlined active destination, equivalent-route language switching, and a compact contact action. The mobile disclosure exposes `aria-expanded`; Escape closes it and returns focus to its toggle. Route changes close it. The footer also links to both archives; its links underline on hover and keyboard focus.
 - **Wordmark and icons:** preserve the supplied serif Lexentia mark and coloured-square pattern. Use the shared stroked SVG icons, including external-link arrows, rather than relying on font glyph coverage.
 - **Disclosures:** client situations use native disclosure rows. Their text remains available without an animation dependency.
 
 
 ### Landmark and editorial motion
 
-The homepage uses a pale-green Brussels Palace of Justice illustration. Slow architectural drift and sparse drifting leaves stay in the artwork region, with a pause control. Decorative loops pause offscreen and in hidden tabs; reduced-motion preferences keep the artwork static and content visible.
+The homepage uses a pale-green Brussels Palace of Justice illustration. Slow architectural drift and sparse drifting leaves stay in the artwork region. A flock of three distant geometric wing marks crosses the hero sky, controlled by the existing animation pause button alongside the camera and leaves. On phones, the birds sit outside the clipped landmark artwork in a clear 94–122px strip between the 78px fixed header and the hero’s 135px copy inset; horizontal crossings keep the text clear. Decorative loops pause offscreen and in hidden tabs; reduced-motion preferences keep the artwork and birds static and content visible.
 
-### Homepage Insights carousel
+### Homepage Latest News carousel
 
-The five latest Insights are ordered by decision/publication date. Each card contains a date and optional case number, an upright serif title, an excerpt, purple court/category metadata and a bordered reading action. Cards are white on the warm section, with a 400px minimum height (430px below 768px). The active card moves horizontally with a 750ms `cubic-bezier(0.22, 1, 0.36, 1)` transition; departing and incoming cards fade over 650ms with the same easing. Mouse/touch drag tracks the pointer directly and proportionally crossfades adjacent cards. A horizontal swipe beyond 45px advances one card; vertical scroll and pinch zoom remain available.
+The five latest external court records are ordered by decision date. Each card contains a date and case number, an upright serif official title, a source excerpt, purple court metadata and a bordered reading action. Cards are white on the warm section, with a 400px minimum height (430px below 768px). The active card moves horizontally with a 750ms `cubic-bezier(0.22, 1, 0.36, 1)` transition; departing and incoming cards fade over 650ms with the same easing, including the desktop fade into the left copy region. Mouse/touch drag tracks the pointer directly and proportionally crossfades adjacent cards. A horizontal swipe beyond 45px advances one card; vertical scroll and pinch zoom remain available.
 
-Previous/next controls are bounded, disabled at the ends, and accompanied by a polite live slide count. There is no autoplay. Inactive slides are inert and hidden from assistive technology. Reduced motion changes slides immediately. The archive link continues to the complete searchable Insights page.
+Automatic advance runs every 6.5 seconds. A copy of the leading card follows the fifth card, allowing each cycle to continue left; after 800ms the track resets to the identical first card without a backward animation. Previous/next controls reflect the current bounds; a dedicated pause control exposes the manual pause state. Autoplay also pauses on hover, focus, dragging, offscreen visibility and hidden tabs. The slide count uses `aria-live="off"` during autoplay and `polite` otherwise. Inactive cards are inert and hidden from assistive technology. Reduced motion disables autoplay and changes slides immediately. The archive link opens Latest News. The earlier homepage Insights preview and four quick-link cards have been removed.
 
 ### Court catalogue and source pages
 
-The Insights archive leads with 84 imported Court of Justice and General Court records, presented as fine-rule date/title/case-reference rows. Search, court and matched-topic filters, decision-date/name sorting, a live result count, clear-filter recovery and 20-row pagination support scanning. Each row opens a local case page with official English text, decision date, case number, CELEX, translated navigation, source links and import-date/topic-match disclosures. This is a dated static snapshot, with no automatic monitoring claim or attributed firm author. The 28 firm-authored analyses retain their separate warm section and existing archive controls.
+Latest News (`/en/latest-news`, `/fr/actualites`) holds 84 imported Court of Justice and General Court records, presented as fine-rule date/title/case-reference rows. Search, court and matched-topic filters, decision-date/name sorting, a live result count, clear-filter recovery and 20-row pagination support scanning. Each row opens a local case page under the same archive with official English text, decision date, case number, CELEX, translated navigation and breadcrumbs, source links and import-date/topic-match disclosures. This is a dated static snapshot, with no automatic monitoring claim or attributed firm author. Legacy court detail URLs under Insights redirect with HTTP 301 to the new canonical routes; equivalent-language links and sitemap entries use those routes.
+
+Insights (`/en/insights`, `/fr/analyses`) contains the 28 firm-authored analyses and keeps its existing category/search/sort controls. Related firm-analysis blocks exclude imported court records. Each archive remains accessible from header and footer navigation.
 
 ### Practice artwork and section reveals
 
-Both practice cards carry decorative, transparent architectural illustrations in the hero’s fine-line style. European institutions sit behind civil-service law; Brussels townhouses sit behind private law. Use low opacity and a directional fade so all copy, chips and actions remain readable. Ordinary sections reveal once as they enter the viewport; reduced motion keeps them visible immediately.
+Both square practice cards carry decorative architectural images above their text in the hero’s fine-line style. European institutions illustrate civil-service law; Brussels townhouses illustrate private law. Artwork is contained at the bottom of its dedicated panel with 0.85 opacity, rather than placed behind copy. Each sky contains three small geometric birds, drawn as two stroked wing paths; staggered 15s, 19s and 17s flights and 0.9–1.25s wingbeats give them quiet movement. Each image panel has its own translated 34px circular pause/resume control. Wing marks remain static under reduced motion, and the controls are then hidden. Original compact summaries and the reading footer sit below, without tag chips; the practice detail pages retain all services and tags. Ordinary sections reveal once as they enter the viewport; reduced motion keeps them visible immediately.
 
 ### Supplied logo
 

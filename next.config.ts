@@ -1,5 +1,6 @@
 import type { NextConfig } from "next";
 import { practiceInsights } from "./src/content/insights";
+import { courtInsights } from "./src/content/court-rulings";
 
 const moved = (source: string, destination: string) => ({ source, destination, statusCode: 301 as const });
 
@@ -10,6 +11,7 @@ const moved = (source: string, destination: string) => ({ source, destination, s
  * live sitemap before launch.
  */
 const legacyRedirects = [
+  ...courtInsights.flatMap(i => [moved(`/en/insights/${i.slug}`, `/en/latest-news/${i.slug}`), moved(`/fr/analyses/${i.slug}`, `/fr/actualites/${i.slug}`)]),
   // English
   moved("/en/practice/eu-civil-service-law", "/en/expertise/eu-civil-service-law"),
   moved("/en/practice/belgian-and-international-private-law", "/en/expertise/private-business-law"),

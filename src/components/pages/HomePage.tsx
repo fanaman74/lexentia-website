@@ -14,18 +14,11 @@ import { JsonLd } from "@/components/ui/JsonLd";
 import { Icon } from "@/components/ui/Icon";
 import { insightsByDate, lawyers, practiceAreas, type Dictionary } from "@/content";
 import { href, pathFor, type Locale } from "@/lib/i18n";
-import { formatDate, pad } from "@/lib/format";
+import { pad } from "@/lib/format";
 import { site } from "@/lib/site";
 
 export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const t = dict.home;
-  const feed = insightsByDate().slice(0, 3);
-  const quickLinks = [
-    { icon: "scales" as const, label: dict.nav.expertise, copy: dict.expertise.intro, route: "expertise" as const, action: t.ctaPrimary },
-    { icon: "people" as const, label: dict.nav.team, copy: t.teamTitle, route: "team" as const, action: dict.common.viewProfile },
-    { icon: "book" as const, label: dict.nav.insights, copy: t.insightsTitle, route: "insights" as const, action: dict.common.allInsights },
-    { icon: "mail" as const, label: dict.nav.contact, copy: t.contactBody, route: "contact" as const, action: dict.nav.cta },
-  ];
   return <>
     <JsonLd data={{ "@context": "https://schema.org", "@type": "LegalService", name: site.legalName, url: `${site.url}${href(locale, "home")}`, telephone: site.phone.tel, email: site.email, vatID: site.vat, foundingDate: String(site.founded), address: { "@type": "PostalAddress", streetAddress: site.address.street, postalCode: site.address.postalCode, addressLocality: "Schaerbeek", addressRegion: "Brussels", addressCountry: site.address.country }, openingHours: "Mo-Fr 08:30-17:00", areaServed: "EU", knowsLanguage: ["fr", "en", "nl", "es"], employee: lawyers.map(l => ({ "@type": "Person", name: l.name, jobTitle: l.role[locale] })), sameAs: [site.linkedin] }} />
 
@@ -63,26 +56,8 @@ export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary })
       <StaggerGroup className="grid gap-5 md:grid-cols-2">{practiceAreas.map((area, i) => <PracticePanel key={area.id} area={area} locale={locale} index={pad(i + 1)} cta={area.id === "eu-civil-service" ? t.exploreEu : t.explorePrivate} />)}</StaggerGroup>
     </Section>
 
-    <Section className="!pt-4 !pb-12" labelledBy="feed-title">
-      <div className="home-feed">
-        <div className="flex items-center justify-between gap-4 border-b border-[var(--color-line)] bg-[var(--color-paper-warm)] px-6 py-3 text-xs"><span>Lexentia / {dict.nav.insights}</span><span className="text-[var(--color-ink-soft)]">{t.insightsLabel}</span></div>
-        <div className="px-6 py-6 md:px-9">
-          <h2 id="feed-title" className="display text-h3">{t.insightsTitle}</h2>
-          <div className="mt-3">{feed.map(insight => <Link key={insight.slug} href={pathFor(locale, { key: "insight", slug: insight.slug })} className="feed-row group">
-            <p className="meta text-[var(--color-ink-soft)]"><time dateTime={insight.publishedAt}>{formatDate(insight.publishedAt, locale)}</time></p>
-            <div className="mt-2 flex items-start justify-between gap-6"><h3 className="max-w-[95ch] text-sm font-medium" lang={insight.language}>{insight.title}</h3><Icon name="arrow" size={17} className="arrow text-[var(--color-bronze)]" /></div>
-          </Link>)}</div>
-          <ArrowLink href={href(locale, "insights")} className="mt-4 text-sm">{dict.common.allInsights}</ArrowLink>
-        </div>
-      </div>
-      <ul className="mt-7 grid gap-x-10 gap-y-4 md:grid-cols-3">{t.proof.map(item => <li key={item} className="border-b border-[var(--color-line)] py-4 text-sm text-[var(--color-ink-soft)]">{item}</li>)}</ul>
-      <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">{quickLinks.map(item => <Link className="quick-link group" key={item.route} href={href(locale, item.route)}>
-        <Icon name={item.icon} size={25} /><h2 className="text-sm font-semibold">{item.label}</h2><p className="text-sm leading-relaxed text-[var(--color-ink-soft)]">{item.copy}</p><span className="mt-auto flex items-center justify-between gap-2 pt-3 text-xs font-medium">{item.action}<Icon name="arrow" size={17} className="arrow" /></span>
-      </Link>)}</div>
-    </Section>
-
     <Section tone="warm" className="insights-carousel-section" labelledBy="insights-title">
-      <InsightsCarousel items={insightsByDate().slice(0, 5)} locale={locale} dict={dict} title={t.insightsTitle} archiveHref={href(locale, "insights")} />
+      <InsightsCarousel items={insightsByDate().filter(item => item.courtRecord).slice(0, 5)} locale={locale} dict={dict} title={dict.nav.latestNews} archiveHref={href(locale, "latestNews")} />
     </Section>
 
     <Section className="!pt-0" labelledBy="needs-title">

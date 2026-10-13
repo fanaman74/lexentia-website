@@ -17,6 +17,7 @@ import { TeamPage } from "@/components/pages/TeamPage";
 import { LawyerPage } from "@/components/pages/LawyerPage";
 import { AboutPage } from "@/components/pages/AboutPage";
 import { InsightsPage } from "@/components/pages/InsightsPage";
+import { LatestNewsPage } from "@/components/pages/LatestNewsPage";
 import { InsightPage } from "@/components/pages/InsightPage";
 import { ContactPage } from "@/components/pages/ContactPage";
 import { LegalTextPage } from "@/components/pages/LegalTextPage";
@@ -77,6 +78,8 @@ function pageSeo(locale: Locale, ref: RouteRef): { title: string; description: s
       return { title: d.about.eyebrow, description: d.about.title };
     case "insights":
       return { title: d.insights.eyebrow, description: d.insights.intro };
+    case "latestNews":
+      return { title: d.nav.latestNews, description: locale === "fr" ? "Jurisprudence de la Cour de justice et du Tribunal, avec liens vers les décisions officielles." : "Court of Justice and General Court rulings, linked to official judgments." };
     case "contact":
       return { title: d.contact.eyebrow, description: d.contact.intro };
     case "lawyer": {
@@ -144,6 +147,8 @@ export default async function Page({ params }: PageProps<"/[locale]/[[...slug]]"
       return <AboutPage {...props} />;
     case "insights":
       return <InsightsPage {...props} />;
+    case "latestNews":
+      return <LatestNewsPage {...props} />;
     case "insight":
       return <InsightPage {...props} insight={getInsight(ref.slug)!} />;
     case "contact":

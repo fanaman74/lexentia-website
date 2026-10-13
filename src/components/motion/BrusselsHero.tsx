@@ -4,6 +4,7 @@ import Image from "next/image";
 import type { Locale } from "@/lib/i18n";
 import { Icon } from "@/components/ui/Icon";
 import { useAnimationState } from "./useAnimationState";
+import { FlyingBirds } from "./FlyingBirds";
 
 export function BrusselsHero({ locale }: { locale: Locale }) {
   const { ref, paused, setPaused, reduced, running } = useAnimationState();
@@ -20,6 +21,7 @@ export function BrusselsHero({ locale }: { locale: Locale }) {
         </svg>)}
       </div>
     </div>
+    <FlyingBirds running={running} hero />
     <div className="hero-art-caption">
       <span>{locale === "fr" ? "Palais de Justice · Bruxelles" : "Palace of Justice · Brussels"}</span>
       {!reduced ? <button type="button" className="hero-motion-toggle" aria-label={paused ? playLabel : pauseLabel} aria-pressed={paused} onClick={() => setPaused(!paused)}><Icon name={paused ? "play" : "pause"} size={16} /></button> : null}
