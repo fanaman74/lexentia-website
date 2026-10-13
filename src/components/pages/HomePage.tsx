@@ -1,26 +1,24 @@
 import Link from "next/link";
 import { BrusselsHero } from "@/components/motion/BrusselsHero";
-import { AnimatedInsights } from "@/components/motion/AnimatedInsights";
+import { InsightsCarousel } from "@/components/motion/InsightsCarousel";
 import { PageIntro } from "@/components/motion/PageIntro";
 import { RevealLines } from "@/components/motion/RevealLines";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import { ProcessRail } from "@/components/motion/ProcessRail";
 import { PracticePanel } from "@/components/cards/PracticePanel";
 import { LawyerCard } from "@/components/cards/LawyerCard";
-import { InsightCard } from "@/components/cards/InsightCard";
 import { ContactCta } from "@/components/sections/ContactCta";
 import { Section } from "@/components/ui/Section";
 import { ArrowLink } from "@/components/ui/ArrowLink";
 import { JsonLd } from "@/components/ui/JsonLd";
 import { Icon } from "@/components/ui/Icon";
-import { featuredInsights, insightsByDate, lawyers, practiceAreas, type Dictionary } from "@/content";
+import { insightsByDate, lawyers, practiceAreas, type Dictionary } from "@/content";
 import { href, pathFor, type Locale } from "@/lib/i18n";
 import { formatDate, pad } from "@/lib/format";
 import { site } from "@/lib/site";
 
 export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary }) {
   const t = dict.home;
-  const selected = featuredInsights(3);
   const feed = insightsByDate().slice(0, 3);
   const quickLinks = [
     { icon: "scales" as const, label: dict.nav.expertise, copy: dict.expertise.intro, route: "expertise" as const, action: t.ctaPrimary },
@@ -83,9 +81,9 @@ export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary })
       </Link>)}</div>
     </Section>
 
-    <AnimatedInsights locale={locale} title={t.insightsTitle} archiveHref={href(locale, "insights")} archiveLabel={dict.common.allInsights}>
-      {selected.map(insight => <InsightCard key={insight.slug} insight={insight} locale={locale} dict={dict} />)}
-    </AnimatedInsights>
+    <Section tone="warm" className="insights-carousel-section" labelledBy="insights-title">
+      <InsightsCarousel items={insightsByDate().slice(0, 5)} locale={locale} dict={dict} title={t.insightsTitle} archiveHref={href(locale, "insights")} />
+    </Section>
 
     <Section className="!pt-0" labelledBy="needs-title">
       <h2 id="needs-title" className="display text-h3 max-w-[42ch]">{t.needsTitle}</h2>

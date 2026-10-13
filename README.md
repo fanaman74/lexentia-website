@@ -19,3 +19,18 @@ npm run build && npm start
 ## Before launch
 
 See `docs/review.md` (open questions for the firm) and `docs/migration-inventory.md`. Every legal page is a draft that needs lawyer approval.
+
+## Court rulings in Insights
+
+Insights includes a snapshot of EU JUST’s public Court of Justice and General Court collection: 84 records imported on 13 October 2026, alongside the firm's 28 original analyses. Court records keep the source's English official title, decision date, court, case number, CELEX identifier and EUR-Lex link. Matched topics are research aids; court records are not attributed to the firm's lawyers. Localised case pages are statically generated in both languages.
+
+The EU JUST repository stores its records in PostgreSQL; they are not checked into that repository. This site imports the published collection with Chromium rather than requiring access to that database. To refresh the snapshot:
+
+```bash
+python -m pip install playwright
+python -m playwright install chromium
+python scripts/import-court-rulings.py
+npm run build
+```
+
+`CHROMIUM_PATH` can select an installed Chromium executable. The importer respects `HTTPS_PROXY`, follows all result pages and imports each record’s source metadata. It validates counts, unique CELEX identifiers, dates and official URLs before atomically replacing `src/content/court-rulings-snapshot.json`. Failed or incomplete imports leave the previous collection intact. Review and commit the updated snapshot, then rebuild to publish it. This is a dated collection, not an automatic monitoring service; its coverage disclosure links to the current EU JUST feed. Source: https://github.com/fanaman74/eujust and https://www.eujust.online/cases.

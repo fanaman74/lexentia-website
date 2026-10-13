@@ -11,8 +11,10 @@ import { getLawyer, insightCategories, insightsInCategories, type Dictionary, ty
 import { formatDate } from "@/lib/format";
 import { href, pathFor, type Locale } from "@/lib/i18n";
 import { site } from "@/lib/site";
+import { CourtRulingPage } from "./CourtRulingPage";
 
 export function InsightPage({ locale, dict, insight }: { locale: Locale; dict: Dictionary; insight: Insight }) {
+  if (insight.courtRecord) return <CourtRulingPage locale={locale} dict={dict} record={insight.courtRecord} />;
   const author = getLawyer(insight.author);
   const related = insightsInCategories(insight.categories, 4)
     .filter((i) => i.slug !== insight.slug)

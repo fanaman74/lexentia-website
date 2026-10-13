@@ -1,5 +1,6 @@
 import type { Insight, InsightCategoryId } from "./types";
 import type { Localised } from "@/lib/i18n";
+import { courtInsights } from "./court-rulings";
 
 export const insightCategories: Record<InsightCategoryId, Localised> = {
   "eu-civil-service": { en: "EU civil service law", fr: "Fonction publique européenne" },
@@ -19,7 +20,7 @@ const author = "nathalie-de-montigny";
  * Nathalie de Montigny. Two recruitment notices from 2018 are left out.
  * Excerpts paraphrase the listing excerpts; full bodies are migrated in Phase 6.
  */
-export const insights: Insight[] = [
+export const practiceInsights: Insight[] = [
   {
     slug: "mieux-vaut-etre-vigilant-lorsquil-sagit-de-publier-des-actes-ou-bien-assure",
     title: "Mieux vaut être vigilant lorsqu'il s'agit de publier des actes (ou bien assuré…)",
@@ -275,4 +276,5 @@ export const insights: Insight[] = [
   },
 ].map((i) => ({ ...i, author, legacyUrl: legacy(i.slug) }) as Insight);
 
+export const insights: Insight[] = [...practiceInsights, ...courtInsights];
 export const getInsight = (slug: string) => insights.find((i) => i.slug === slug);

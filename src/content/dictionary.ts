@@ -164,7 +164,7 @@ const en = {
   insights: {
     eyebrow: "Insights",
     title: "Notes on EU staff law and business law.",
-    intro: "Analysis of case law and legislative changes, written by the firm's lawyers.",
+    intro: "Explore Court of Justice and General Court rulings on workplace rights, alongside case-law and legislative analysis by the firm's lawyers.",
     all: "All",
     empty: "No articles in this category yet.",
     migrationNotice:
@@ -401,7 +401,7 @@ const fr: Dictionary = {
   insights: {
     eyebrow: "Analyses",
     title: "Chroniques de fonction publique européenne et de droit des affaires.",
-    intro: "Analyses de jurisprudence et d'évolutions législatives, rédigées par les avocates du cabinet.",
+    intro: "Explorez la jurisprudence de la Cour de justice et du Tribunal sur les droits au travail, ainsi que les analyses des avocates du cabinet.",
     all: "Toutes",
     empty: "Aucun article dans cette catégorie pour le moment.",
     migrationNotice:

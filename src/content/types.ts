@@ -92,4 +92,20 @@ export type Insight = {
   legacyUrl: string;
   /** Evergreen pieces eligible for the homepage "Selected insights" block. */
   featured?: boolean;
+  /** Source record, separate from a lawyer-authored analysis. */
+  courtRecord?: CourtRuling;
+};
+
+export type CourtRuling = {
+  title: string;
+  date: string;
+  caseNumber: string;
+  court: string;
+  eujustUrl: string;
+  topics: string[];
+  officialTitle: string;
+  formation: string;
+  subjects: string[];
+  officialUrl: string;
+  celex: string;
 };

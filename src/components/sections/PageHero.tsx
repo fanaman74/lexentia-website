@@ -8,17 +8,18 @@ type Props = {
   children?: ReactNode;
   aside?: ReactNode;
   top?: ReactNode;
+  contentLanguage?: string;
 };
 
 /** Standard page hero: eyebrow, line-masked H1, intro and optional actions/aside. */
-export function PageHero({ eyebrow, lines, intro, children, aside, top }: Props) {
+export function PageHero({ eyebrow, lines, intro, children, aside, top, contentLanguage }: Props) {
   return (
     <section className="page-hero">
       <PageIntro className="section-inner">
         {top}
         <div className="grid gap-12 lg:grid-cols-12">
           <div className={aside ? "lg:col-span-8" : "lg:col-span-11"}>
-            <h1 className="display text-h1">
+            <h1 lang={contentLanguage} className="display text-h1">
               {lines.map((line, i) => (
                 <span key={i} data-intro="line" className="line-mask">
                   <span className="line-inner">{line}</span>
@@ -27,7 +28,7 @@ export function PageHero({ eyebrow, lines, intro, children, aside, top }: Props)
               ))}
             </h1>
             {intro ? (
-              <p data-intro="body" className="mt-8 max-w-[60ch] leading-relaxed text-[var(--color-ink-soft)]">
+              <p lang={contentLanguage} data-intro="body" className="mt-8 max-w-[60ch] leading-relaxed text-[var(--color-ink-soft)]">
                 {intro}
               </p>
             ) : null}

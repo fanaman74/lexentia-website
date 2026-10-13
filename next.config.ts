@@ -1,5 +1,5 @@
 import type { NextConfig } from "next";
-import { insights } from "./src/content/insights";
+import { practiceInsights } from "./src/content/insights";
 
 const moved = (source: string, destination: string) => ({ source, destination, statusCode: 301 as const });
 
@@ -22,7 +22,7 @@ const legacyRedirects = [
   moved("/en/:year(\\d{4})/:rest*", "/en/insights"),
   moved("/en/terms-and-conditions", "/en/terms"),
   moved("/en/fees-and-billings", "/en/fees"),
-  ...insights.map((i) => moved(`/en/${i.slug}`, `/en/insights/${i.slug}`)),
+  ...practiceInsights.map((i) => moved(`/en/${i.slug}`, `/en/insights/${i.slug}`)),
   // French (served at the root on the old site)
   moved("/practice/matieres-et-droit-europeen", "/fr/expertise/droit-fonction-publique-europeenne"),
   moved("/practice/matiere-et-droit-national", "/fr/expertise/droit-prive-et-des-affaires"),
@@ -36,7 +36,7 @@ const legacyRedirects = [
   moved("/mentions-legales", "/fr/mentions-legales"),
   moved("/conditions-generales", "/fr/conditions-generales"),
   moved("/honoraires-et-facturation", "/fr/honoraires-et-facturation"),
-  ...insights.map((i) => moved(`/${i.slug}`, `/fr/analyses/${i.slug}`)),
+  ...practiceInsights.map((i) => moved(`/${i.slug}`, `/fr/analyses/${i.slug}`)),
 ];
 
 const securityHeaders = [

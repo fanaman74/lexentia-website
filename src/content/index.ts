@@ -4,7 +4,7 @@
  */
 export { practiceAreas, euCivilService, privateBusiness } from "./practice";
 export { lawyers, getLawyer } from "./team";
-export { insights, getInsight, insightCategories } from "./insights";
+export { insights, practiceInsights, getInsight, insightCategories } from "./insights";
 export { legalPages } from "./legal";
 export type { LegalPageKey } from "./legal";
 export { getDictionary } from "./dictionary";

@@ -1,16 +1,16 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-13T16:13:07Z",
+  "generatedAt": "2026-10-13T18:04:56Z",
   "title": "Design System: Lexentia",
   "extensions": {
     "colorMeta": {
       "lime": {
         "role": "primary",
-        "displayName": "Lime"
+        "displayName": "Dark teal action (legacy lime token)"
       },
       "bronze": {
         "role": "primary",
-        "displayName": "Bronze focus green"
+        "displayName": "Dark teal focus (legacy bronze token)"
       },
       "sage": {
         "role": "secondary",
@@ -18,11 +18,11 @@
       },
       "lime-soft": {
         "role": "secondary",
-        "displayName": "Soft lime"
+        "displayName": "Soft mint"
       },
       "pink": {
         "role": "secondary",
-        "displayName": "Pink"
+        "displayName": "Pale lavender"
       },
       "purple": {
         "role": "secondary",
@@ -67,6 +67,14 @@
       "line-dark": {
         "role": "neutral",
         "displayName": "Dark line"
+      },
+      "teal": {
+        "role": "primary",
+        "displayName": "Logo teal"
+      },
+      "amber": {
+        "role": "secondary",
+        "displayName": "Logo amber"
       }
     },
     "typographyMeta": {
@@ -153,19 +161,29 @@
         "purpose": "Subtle landmark camera move, paused when offscreen/hidden/user-paused or reduced motion."
       },
       {
-        "name": "analysis-wave-flow",
-        "value": "30s linear infinite",
-        "purpose": "Reference-matched flowing edge, paused with section visibility and controls."
-      },
-      {
-        "name": "analysis-scan",
-        "value": "3s linear forwards",
-        "purpose": "Once-on-entry scan; replay re-runs the scan and card highlight."
-      },
-      {
         "name": "leaf-breeze",
         "value": "15–20s ease-in-out infinite",
         "purpose": "Sparse leaf movement confined to the landmark illustration."
+      },
+      {
+        "name": "logo-pixel-arrive",
+        "value": "2.8s ease-out once, 90ms stagger",
+        "purpose": "Small square motif above the supplied wordmark i, with reduced-motion and visibility handling."
+      },
+      {
+        "name": "section-reveal",
+        "value": "800ms power3.out; translateY(18px) to 0; autoAlpha 0 to 1",
+        "purpose": "Shared section reveal once at top 88% of viewport; immediately visible without JavaScript or under reduced motion."
+      },
+      {
+        "name": "carousel-slide",
+        "value": "transform 750ms cubic-bezier(0.22,1,0.36,1)",
+        "purpose": "Bounded horizontal slide between five latest Insights, separated by 24px; pointer drag bypasses transition."
+      },
+      {
+        "name": "carousel-fade",
+        "value": "opacity 650ms cubic-bezier(0.22,1,0.36,1)",
+        "purpose": "Departing/incoming fade; direct pointer drag crossfades proportionally. No autoplay; reduced motion makes slide and fade immediate."
       }
     ],
     "breakpoints": [
@@ -190,7 +208,7 @@
       },
       {
         "name": "dark",
-        "value": "outline-color: var(--color-lime)",
+        "value": "outline-color: var(--color-sage)",
         "purpose": "Focus in dark sections."
       },
       {
@@ -204,9 +222,9 @@
     {
       "name": "Primary button",
       "kind": "button",
-      "description": "Reference-style lime action with a hard offset shadow.",
+      "description": "Dark-teal action with a hard offset shadow.",
       "html": "<button type=\"button\" class=\"ds-primary\">Explore our expertise<svg aria-hidden=\"true\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
-      "css": ".ds-primary{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:0.7rem;min-height:46px;padding:0.65rem 1.2rem;border-radius:var(--radius-sm,6px);font-size:0.9rem;font-weight:600;cursor:pointer;transition:background-color 180ms,transform 180ms,box-shadow 180ms;background:var(--color-lime,#a4e82a);color:var(--color-ink,#262626);border:1px solid var(--color-ink,#262626);box-shadow:2px 3px 0 var(--color-ink,#262626)}.ds-primary:hover{background:#b7f24e;transform:translateY(-1px);box-shadow:2px 4px 0 var(--color-ink,#262626)}.ds-primary:active{transform:translate(1px,2px);box-shadow:1px 1px 0 var(--color-ink,#262626)}.ds-primary:focus-visible{outline:2px solid var(--color-bronze,#4e7028);outline-offset:4px;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
+      "css": ".ds-primary{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:0.7rem;min-height:46px;padding:0.65rem 1.2rem;border-radius:var(--radius-sm,6px);font-size:0.9rem;font-weight:600;cursor:pointer;transition:background-color 180ms,transform 180ms,box-shadow 180ms;background:var(--color-lime,#087b80);color:var(--color-cream,#ffffff);border:1px solid var(--color-ink,#272734);box-shadow:2px 3px 0 var(--color-ink,#272734)}.ds-primary:hover{background:#06666b;transform:translateY(-1px);box-shadow:2px 4px 0 var(--color-ink,#272734)}.ds-primary:active{transform:translate(1px,2px);box-shadow:1px 1px 0 var(--color-ink,#272734)}.ds-primary:focus-visible{outline:2px solid var(--color-bronze,#087b80);outline-offset:4px;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
       "refersTo": "button-primary"
     },
     {
@@ -214,7 +232,7 @@
       "kind": "button",
       "description": "Bordered supporting action on a pale surface.",
       "html": "<button type=\"button\" class=\"ds-secondary\">Contact the firm<svg aria-hidden=\"true\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button>",
-      "css": ".ds-secondary{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:0.7rem;min-height:46px;padding:0.65rem 1.2rem;border-radius:var(--radius-sm,6px);font-size:0.9rem;font-weight:600;cursor:pointer;transition:background-color 180ms,transform 180ms,box-shadow 180ms;background:transparent;color:var(--color-ink,#262626);border:1px solid var(--color-line-strong,#bac5ac)}.ds-secondary:hover{background:var(--color-paper-warm,#f0f3e9);border-color:var(--color-ink,#262626)}.ds-secondary:focus-visible{outline:2px solid var(--color-bronze,#4e7028);outline-offset:4px;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
+      "css": ".ds-secondary{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;gap:0.7rem;min-height:46px;padding:0.65rem 1.2rem;border-radius:var(--radius-sm,6px);font-size:0.9rem;font-weight:600;cursor:pointer;transition:background-color 180ms,transform 180ms,box-shadow 180ms;background:transparent;color:var(--color-ink,#272734);border:1px solid var(--color-line-strong,#baccca)}.ds-secondary:hover{background:var(--color-paper-warm,#edf3f1);border-color:var(--color-ink,#272734)}.ds-secondary:focus-visible{outline:2px solid var(--color-bronze,#087b80);outline-offset:4px;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
       "refersTo": "button-secondary"
     },
     {
@@ -222,7 +240,7 @@
       "kind": "input",
       "description": "Visible label and white input used in the insight search panel.",
       "html": "<div class=\"ds-field-wrap\"><label class=\"ds-label\" for=\"ds-search\">Search</label><input class=\"ds-field\" id=\"ds-search\" type=\"search\" placeholder=\"Title, topic or words from the article\"></div>",
-      "css": ".ds-field-wrap{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);max-width:480px}.ds-label{display:block;margin-bottom:0.5rem;font-size:0.875rem;font-weight:500;color:var(--color-ink,#262626)}.ds-field{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);width:100%;min-height:48px;padding:0.75rem 1rem;background:var(--color-cream,#ffffff);border:1px solid var(--color-line-strong,#bac5ac);border-radius:var(--radius-sm,6px);font-size:1rem;color:var(--color-ink,#262626);caret-color:var(--color-bronze,#4e7028)}.ds-field::placeholder{color:#69735f}.ds-field:focus-visible{outline:2px solid var(--color-bronze,#4e7028);outline-offset:4px;outline-offset:2px;border-color:var(--color-bronze,#4e7028)}.ds-field[aria-invalid=\"true\"]{border-color:#9b2c1f}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
+      "css": ".ds-field-wrap{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);max-width:480px}.ds-label{display:block;margin-bottom:0.5rem;font-size:0.875rem;font-weight:500;color:var(--color-ink,#272734)}.ds-field{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);width:100%;min-height:48px;padding:0.75rem 1rem;background:var(--color-cream,#ffffff);border:1px solid var(--color-line-strong,#baccca);border-radius:var(--radius-sm,6px);font-size:1rem;color:var(--color-ink,#272734);caret-color:var(--color-bronze,#087b80)}.ds-field::placeholder{color:#69735f}.ds-field:focus-visible{outline:2px solid var(--color-bronze,#087b80);outline-offset:4px;outline-offset:2px;border-color:var(--color-bronze,#087b80)}.ds-field[aria-invalid=\"true\"]{border-color:#9b2c1f}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
       "refersTo": "field"
     },
     {
@@ -230,14 +248,14 @@
       "kind": "nav",
       "description": "Desktop links with a current-page underline and hover border.",
       "html": "<nav class=\"ds-nav\" aria-label=\"Primary\"><a href=\"/en/expertise\" aria-current=\"page\">Expertise</a><a href=\"/en/team\">Team</a><a href=\"/en/about\">About</a><a href=\"/en/insights\">Insights</a><a href=\"/en/contact\">Contact</a></nav>",
-      "css": ".ds-nav{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:flex;flex-wrap:wrap;align-items:center;gap:1.75rem;font-size:0.875rem;color:var(--color-ink,#262626)}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:none;border-bottom:2px solid transparent}.ds-nav a:hover{border-color:var(--color-line-strong,#bac5ac)}.ds-nav a[aria-current=\"page\"]{border-color:var(--color-bronze,#4e7028);font-weight:600}.ds-nav a:focus-visible{outline:2px solid var(--color-bronze,#4e7028);outline-offset:4px;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}"
+      "css": ".ds-nav{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:flex;flex-wrap:wrap;align-items:center;gap:1.75rem;font-size:0.875rem;color:var(--color-ink,#272734)}.ds-nav a{display:inline-flex;align-items:center;min-height:44px;color:inherit;text-decoration:none;border-bottom:2px solid transparent}.ds-nav a:hover{border-color:var(--color-line-strong,#baccca)}.ds-nav a[aria-current=\"page\"]{border-color:var(--color-bronze,#087b80);font-weight:600}.ds-nav a:focus-visible{outline:2px solid var(--color-bronze,#087b80);outline-offset:4px;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}"
     },
     {
       "name": "Category tag",
       "kind": "chip",
       "description": "Light noninteractive category annotation.",
       "html": "<span class=\"ds-chip\">Droit des affaires</span>",
-      "css": ".ds-chip{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:inline-flex;align-items:center;padding:0.3rem 0.65rem;background:var(--color-paper-warm,#f0f3e9);color:#425436;border-radius:999px;font-size:0.75rem;line-height:1.4}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
+      "css": ".ds-chip{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:inline-flex;align-items:center;padding:0.3rem 0.65rem;background:var(--color-paper-warm,#edf3f1);color:#326866;border-radius:999px;font-size:0.75rem;line-height:1.4}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
       "refersTo": "chip"
     },
     {
@@ -245,7 +263,7 @@
       "kind": "chip",
       "description": "Pressed and unpressed category buttons from the insight archive.",
       "html": "<div class=\"ds-filters\" role=\"group\" aria-label=\"Insights\"><button class=\"ds-pill\" type=\"button\" aria-pressed=\"true\">All</button><button class=\"ds-pill\" type=\"button\" aria-pressed=\"false\">EU civil service law</button></div>",
-      "css": ".ds-filters{display:flex;flex-wrap:wrap;gap:0.5rem}.ds-pill{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0.55rem 0.95rem;border:1px solid var(--color-line-strong,#bac5ac);border-radius:999px;background:var(--color-cream,#ffffff);color:var(--color-ink,#262626);font-size:0.8rem;cursor:pointer}.ds-pill:hover{border-color:var(--color-ink,#262626)}.ds-pill[aria-pressed=\"true\"]{background:var(--color-ink,#262626);border-color:var(--color-ink,#262626);color:var(--color-cream,#ffffff)}.ds-pill:focus-visible{outline:2px solid var(--color-bronze,#4e7028);outline-offset:4px;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
+      "css": ".ds-filters{display:flex;flex-wrap:wrap;gap:0.5rem}.ds-pill{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:inline-flex;align-items:center;justify-content:center;min-height:40px;padding:0.55rem 0.95rem;border:1px solid var(--color-line-strong,#baccca);border-radius:999px;background:var(--color-cream,#ffffff);color:var(--color-ink,#272734);font-size:0.8rem;cursor:pointer}.ds-pill:hover{border-color:var(--color-ink,#272734)}.ds-pill[aria-pressed=\"true\"]{background:var(--color-ink,#272734);border-color:var(--color-ink,#272734);color:var(--color-cream,#ffffff)}.ds-pill:focus-visible{outline:2px solid var(--color-bronze,#087b80);outline-offset:4px;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
       "refersTo": "filter-pill"
     },
     {
@@ -253,31 +271,46 @@
       "kind": "card",
       "description": "Light archive card using an actual source article.",
       "html": "<article class=\"ds-card\"><p class=\"ds-meta\"><time datetime=\"2021-08-04\">4 août 2021</time></p><h3 class=\"ds-card-title\"><a href=\"/fr/analyses/du-neuf-en-matiere-dinsolvabilite-des-entreprises\">Du neuf en matière d’insolvabilité des entreprises</a></h3><div class=\"ds-card-tags\"><span class=\"ds-card-chip\">Droit des affaires</span></div><p class=\"ds-excerpt\">Le failli personne physique peut demander au tribunal d’être libéré de ses dettes résiduelles en vertu du Code de droit économique.</p><p class=\"ds-card-footer\"><span>Lire la suite</span><svg aria-hidden=\"true\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></p></article>",
-      "css": ".ds-card{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);position:relative;display:flex;flex-direction:column;min-height:300px;padding:1.65rem;border:1px solid var(--color-line,#dce2d3);border-radius:12px;background:var(--color-cream,#ffffff);color:var(--color-ink,#262626);transition:border-color 180ms}.ds-card:hover{border-color:var(--color-bronze,#4e7028)}.ds-meta{margin:0;color:var(--color-ink-soft,#5d6358);font-size:0.8rem;line-height:1.55;font-variant-numeric:tabular-nums}.ds-card-title{font-family:var(--font-serif,Fraunces,Georgia,serif);margin:1.25rem 0 0;font-weight:400;letter-spacing:-0.025em;font-size:1.5rem;line-height:1.25}.ds-card-title a{color:inherit;text-decoration:none}.ds-card-title a::after{content:\"\";position:absolute;inset:0}.ds-card-title a:focus-visible{outline:2px solid var(--color-bronze,#4e7028);outline-offset:4px;}.ds-card-tags{margin-top:1.25rem}.ds-card-chip{display:inline-flex;padding:0.3rem 0.65rem;background:var(--color-paper-warm,#f0f3e9);color:#425436;border-radius:999px;font-size:0.75rem;line-height:1.4}.ds-excerpt{margin:1.25rem 0;color:var(--color-ink-soft,#5d6358);font-size:0.875rem;line-height:1.625}.ds-card-footer{display:flex;align-items:center;justify-content:space-between;gap:0.75rem;margin:auto 0 0;padding-top:2.75rem;border-top:1px solid var(--color-line,#dce2d3);font-size:0.875rem}.ds-card-footer svg{transition:transform 200ms cubic-bezier(0.22,1,0.36,1)}.ds-card:hover .ds-card-footer svg{transform:translateX(4px)}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
+      "css": ".ds-card{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);position:relative;display:flex;flex-direction:column;min-height:300px;padding:1.65rem;border:1px solid var(--color-line,#dce4e1);border-radius:12px;background:var(--color-cream,#ffffff);color:var(--color-ink,#272734);transition:border-color 180ms}.ds-card:hover{border-color:var(--color-bronze,#087b80)}.ds-meta{margin:0;color:var(--color-ink-soft,#5d6170);font-size:0.8rem;line-height:1.55;font-variant-numeric:tabular-nums}.ds-card-title{font-family:var(--font-serif,Fraunces,Georgia,serif);margin:1.25rem 0 0;font-weight:400;letter-spacing:-0.025em;font-size:1.5rem;line-height:1.25}.ds-card-title a{color:inherit;text-decoration:none}.ds-card-title a::after{content:\"\";position:absolute;inset:0}.ds-card-title a:focus-visible{outline:2px solid var(--color-bronze,#087b80);outline-offset:4px;}.ds-card-tags{margin-top:1.25rem}.ds-card-chip{display:inline-flex;padding:0.3rem 0.65rem;background:var(--color-paper-warm,#edf3f1);color:#326866;border-radius:999px;font-size:0.75rem;line-height:1.4}.ds-excerpt{margin:1.25rem 0;color:var(--color-ink-soft,#5d6170);font-size:0.875rem;line-height:1.625}.ds-card-footer{display:flex;align-items:center;justify-content:space-between;gap:0.75rem;margin:auto 0 0;padding-top:2.75rem;border-top:1px solid var(--color-line,#dce4e1);font-size:0.875rem}.ds-card-footer svg{transition:transform 200ms cubic-bezier(0.22,1,0.36,1)}.ds-card:hover .ds-card-footer svg{transform:translateX(4px)}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}",
       "refersTo": "insight-card"
     },
     {
       "name": "Dark insight card",
       "kind": "card",
-      "description": "Editorial variant with pale copy and lime reading arrow.",
+      "description": "Editorial variant with pale copy and soft-green reading arrow.",
       "html": "<div class=\"ds-dark\"><article class=\"ds-card\"><p class=\"ds-meta\"><time datetime=\"2021-08-04\">4 août 2021</time></p><h3 class=\"ds-card-title\"><a href=\"/fr/analyses/du-neuf-en-matiere-dinsolvabilite-des-entreprises\">Du neuf en matière d’insolvabilité des entreprises</a></h3><div class=\"ds-card-tags\"><span class=\"ds-card-chip\">Droit des affaires</span></div><p class=\"ds-excerpt\">Le failli personne physique peut demander au tribunal d’être libéré de ses dettes résiduelles en vertu du Code de droit économique.</p><p class=\"ds-card-footer\"><span>Lire la suite</span><svg aria-hidden=\"true\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></p></article></div>",
-      "css": ".ds-card{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);position:relative;display:flex;flex-direction:column;min-height:300px;padding:1.65rem;border:1px solid var(--color-line,#dce2d3);border-radius:12px;background:var(--color-cream,#ffffff);color:var(--color-ink,#262626);transition:border-color 180ms}.ds-card:hover{border-color:var(--color-bronze,#4e7028)}.ds-meta{margin:0;color:var(--color-ink-soft,#5d6358);font-size:0.8rem;line-height:1.55;font-variant-numeric:tabular-nums}.ds-card-title{font-family:var(--font-serif,Fraunces,Georgia,serif);margin:1.25rem 0 0;font-weight:400;letter-spacing:-0.025em;font-size:1.5rem;line-height:1.25}.ds-card-title a{color:inherit;text-decoration:none}.ds-card-title a::after{content:\"\";position:absolute;inset:0}.ds-card-title a:focus-visible{outline:2px solid var(--color-bronze,#4e7028);outline-offset:4px;}.ds-card-tags{margin-top:1.25rem}.ds-card-chip{display:inline-flex;padding:0.3rem 0.65rem;background:var(--color-paper-warm,#f0f3e9);color:#425436;border-radius:999px;font-size:0.75rem;line-height:1.4}.ds-excerpt{margin:1.25rem 0;color:var(--color-ink-soft,#5d6358);font-size:0.875rem;line-height:1.625}.ds-card-footer{display:flex;align-items:center;justify-content:space-between;gap:0.75rem;margin:auto 0 0;padding-top:2.75rem;border-top:1px solid var(--color-line,#dce2d3);font-size:0.875rem}.ds-card-footer svg{transition:transform 200ms cubic-bezier(0.22,1,0.36,1)}.ds-card:hover .ds-card-footer svg{transform:translateX(4px)}.ds-dark{padding:1.5rem;background:var(--color-forest,#0d0d13)}.ds-dark .ds-card{background:#171520;border-color:#393246;color:#f2eff8}.ds-dark .ds-card:hover{border-color:var(--color-lime,#a4e82a)}.ds-dark .ds-meta,.ds-dark .ds-excerpt{color:#c3bdcf}.ds-dark .ds-card-footer{border-color:#393246}.ds-dark .ds-card-footer svg{color:var(--color-lime,#a4e82a)}.ds-dark .ds-card-chip{background:#24212f;color:#d1cadd;border:1px solid #494355;border-radius:5px}.ds-dark .ds-card-title a:focus-visible{outline-color:var(--color-lime,#a4e82a)}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}"
+      "css": ".ds-card{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);position:relative;display:flex;flex-direction:column;min-height:300px;padding:1.65rem;border:1px solid var(--color-line,#dce4e1);border-radius:12px;background:var(--color-cream,#ffffff);color:var(--color-ink,#272734);transition:border-color 180ms}.ds-card:hover{border-color:var(--color-bronze,#087b80)}.ds-meta{margin:0;color:var(--color-ink-soft,#5d6170);font-size:0.8rem;line-height:1.55;font-variant-numeric:tabular-nums}.ds-card-title{font-family:var(--font-serif,Fraunces,Georgia,serif);margin:1.25rem 0 0;font-weight:400;letter-spacing:-0.025em;font-size:1.5rem;line-height:1.25}.ds-card-title a{color:inherit;text-decoration:none}.ds-card-title a::after{content:\"\";position:absolute;inset:0}.ds-card-title a:focus-visible{outline:2px solid var(--color-bronze,#087b80);outline-offset:4px;}.ds-card-tags{margin-top:1.25rem}.ds-card-chip{display:inline-flex;padding:0.3rem 0.65rem;background:var(--color-paper-warm,#edf3f1);color:#326866;border-radius:999px;font-size:0.75rem;line-height:1.4}.ds-excerpt{margin:1.25rem 0;color:var(--color-ink-soft,#5d6170);font-size:0.875rem;line-height:1.625}.ds-card-footer{display:flex;align-items:center;justify-content:space-between;gap:0.75rem;margin:auto 0 0;padding-top:2.75rem;border-top:1px solid var(--color-line,#dce4e1);font-size:0.875rem}.ds-card-footer svg{transition:transform 200ms cubic-bezier(0.22,1,0.36,1)}.ds-card:hover .ds-card-footer svg{transform:translateX(4px)}.ds-dark{padding:1.5rem;background:var(--color-forest,#111019)}.ds-dark .ds-card{background:#1a1725;border-color:#453b55;color:#f2eff8}.ds-dark .ds-card:hover{border-color:var(--color-lime,#087b80)}.ds-dark .ds-meta,.ds-dark .ds-excerpt{color:#c3bdcf}.ds-dark .ds-card-footer{border-color:#453b55}.ds-dark .ds-card-footer svg{color:var(--color-sage,#b5d7a7)}.ds-dark .ds-card-chip{background:#24212f;color:#d1cadd;border:1px solid #494355;border-radius:5px}.ds-dark .ds-card-title a:focus-visible{outline-color:var(--color-sage,#b5d7a7)}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}"
     },
     {
       "name": "Lexentia wordmark",
       "kind": "custom",
-      "description": "Shared lime initial tile and uppercase firm name.",
-      "html": "<a class=\"ds-wordmark\" href=\"/en\" aria-label=\"Lexentia\"><span class=\"ds-tile\">L</span><span>LEXENTIA</span></a>",
-      "css": ".ds-wordmark{font-family:var(--font-sans,Geist,\"Helvetica Neue\",Arial,sans-serif);display:inline-flex;align-items:center;gap:0.55rem;color:var(--color-ink,#262626);text-decoration:none;font-size:1.05rem;font-weight:650;letter-spacing:-0.035em}.ds-tile{display:grid;place-items:center;width:31px;height:31px;background:var(--color-lime,#a4e82a);border:1px solid var(--color-ink,#262626);border-radius:5px;font-size:1.45rem;font-weight:600}.ds-wordmark:focus-visible{outline:2px solid var(--color-bronze,#4e7028);outline-offset:4px;}@media(prefers-reduced-motion:reduce){[class^=\"ds-\"]{transition-duration:0.01ms!important;animation-duration:0.01ms!important}}"
+      "description": "SVG reconstruction of the supplied serif teal-to-purple mark, bilingual tagline and all eight animated squares; source raster bytes were unavailable.",
+      "html": "<a class=\"ds-wordmark\" href=\"/en\" aria-label=\"Lexentia\"><svg viewBox=\"0 0 180 60\" width=\"166\" height=\"52\" role=\"img\" aria-label=\"Lexentia — Avocats · Attorneys at Law\"><defs><linearGradient id=\"ds-logo\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0%\" stop-color=\"#008c90\"/><stop offset=\"34%\" stop-color=\"#008c90\"/><stop offset=\"75%\" stop-color=\"#77549c\"/><stop offset=\"100%\" stop-color=\"#77549c\"/></linearGradient></defs><text x=\"0\" y=\"45\" font-family=\"Georgia, Times New Roman, serif\" font-size=\"43\" letter-spacing=\"-1.5\" textLength=\"172\" lengthAdjust=\"spacingAndGlyphs\" fill=\"url(#ds-logo)\">Lexentıa</text><text x=\"2\" y=\"58\" font-family=\"Arial, sans-serif\" font-size=\"7\" font-weight=\"600\" letter-spacing=\"0.7\" textLength=\"169\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#77549c\">AVOCATS - ATTORNEYS AT LAW</text><rect x=\"157\" y=\"1\" width=\"4.5\" height=\"4.5\" fill=\"#efa93a\" class=\"ds-logo-pixel\" style=\"animation-delay:0ms\"/><rect x=\"151\" y=\"7\" width=\"4.5\" height=\"4.5\" fill=\"#8daf66\" class=\"ds-logo-pixel\" style=\"animation-delay:90ms\"/><rect x=\"157\" y=\"7\" width=\"4.5\" height=\"4.5\" fill=\"#008d91\" class=\"ds-logo-pixel\" style=\"animation-delay:180ms\"/><rect x=\"145\" y=\"13\" width=\"4.5\" height=\"4.5\" fill=\"#72529b\" class=\"ds-logo-pixel\" style=\"animation-delay:270ms\"/><rect x=\"151\" y=\"13\" width=\"4.5\" height=\"4.5\" fill=\"#658e8a\" class=\"ds-logo-pixel\" style=\"animation-delay:360ms\"/><rect x=\"139\" y=\"19\" width=\"4.5\" height=\"4.5\" fill=\"#8064a6\" class=\"ds-logo-pixel\" style=\"animation-delay:450ms\"/><rect x=\"145\" y=\"19\" width=\"4.5\" height=\"4.5\" fill=\"#99b273\" class=\"ds-logo-pixel\" style=\"animation-delay:540ms\"/><rect x=\"151\" y=\"19\" width=\"4.5\" height=\"4.5\" fill=\"#72529b\" class=\"ds-logo-pixel\" style=\"animation-delay:630ms\"/></svg></a>",
+      "css": ".ds-wordmark{display:inline-flex;align-items:center;vertical-align:middle;width:166px;height:52px;text-decoration:none}.ds-wordmark svg{display:block;max-width:100%;overflow:visible}.ds-wordmark:focus-visible{outline:2px solid var(--color-bronze,#087b80);outline-offset:4px}.ds-logo-pixel{animation:ds-logo-pixel-arrive 2.8s ease-out both}@keyframes ds-logo-pixel-arrive{0%,100%{opacity:1;transform:translateY(0)}28%{opacity:0.45;transform:translateY(-2px)}62%{opacity:1;transform:translateY(1px)}}@media(prefers-reduced-motion:reduce){.ds-logo-pixel{animation:none;opacity:1;transform:none}}"
+    },
+    {
+      "name": "Homepage Insights carousel",
+      "kind": "custom",
+      "refersTo": "carousel-card",
+      "description": "Five latest Insights: left title and 48px circular controls, one white 28px-radius card at right. Pointer swipe and bounded buttons; 750ms slide, 650ms fade, no autoplay, inactive slides inert. Static snippet shows the first state.",
+      "html": "<section class=\"ds-carousel\"><div class=\"ds-carousel-copy\"><h2>Insights</h2><p>Recent European court rulings and perspectives from the firm.</p><div class=\"ds-carousel-nav\"><button type=\"button\" class=\"ds-carousel-arrow ds-carousel-prev\" aria-label=\"Previous insight\" disabled><svg aria-hidden=\"true\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button><button type=\"button\" class=\"ds-carousel-arrow\" aria-label=\"Next insight\"><svg aria-hidden=\"true\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></button><span>1 / 5</span></div><a class=\"ds-carousel-archive\" href=\"/en/insights\">All insights <svg aria-hidden=\"true\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a></div><div class=\"ds-carousel-viewport\"><article class=\"ds-carousel-card\"><p class=\"ds-carousel-meta\">C-343/23 P · <time datetime=\"2026-04-16\">16 April 2026</time></p><h3 lang=\"en\">Jean-Marc Colombani v European External Action Service (EEAS)</h3><p class=\"ds-carousel-excerpt\">Judgment of the Court (Second Chamber) of 16 April 2026</p><p class=\"ds-carousel-court\">Court of Justice of the European Union</p><a class=\"ds-carousel-action\" href=\"/en/insights/court-62023cj0343\">Explore this ruling <svg aria-hidden=\"true\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></a></article></div></section>",
+      "css": ".ds-carousel{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);align-items:center;gap:clamp(3rem,6vw,7rem);padding:2rem;background:var(--color-paper-warm,#edf3f1);color:var(--color-ink,#272734);font-family:var(--font-sans,Geist,Arial,sans-serif)}.ds-carousel-copy h2{max-width:12ch;margin:0;font-family:var(--font-serif,Fraunces,Georgia,serif);font-weight:400;font-size:clamp(2.5rem,3.8vw,3.7rem);line-height:1.07;letter-spacing:-.035em}.ds-carousel-copy p{max-width:37ch;margin:24px 0 0;line-height:1.625;color:var(--color-ink-soft,#5d6170)}.ds-carousel-nav{display:flex;align-items:center;gap:16px;margin-top:28px}.ds-carousel-nav span{font-size:.8rem;color:var(--color-ink-soft,#5d6170)}.ds-carousel-arrow{display:grid;place-items:center;width:48px;height:48px;border:1px solid var(--color-ink,#272734);border-radius:50%;color:var(--color-ink,#272734);background:transparent;cursor:pointer;transition:background-color 180ms,color 180ms}.ds-carousel-prev svg{transform:rotate(180deg)}.ds-carousel-arrow:disabled{opacity:.35;cursor:default}.ds-carousel-arrow:hover:not(:disabled){background:var(--color-bronze,#087b80);border-color:var(--color-bronze,#087b80);color:white}.ds-carousel-archive{display:inline-flex;align-items:center;gap:8px;min-height:44px;margin-top:28px;font-size:.875rem;color:inherit;text-decoration:none}.ds-carousel-archive:hover{text-decoration:underline}.ds-carousel-viewport{min-width:0;overflow:hidden;border-radius:28px;touch-action:pan-y pinch-zoom}.ds-carousel-card{display:flex;flex-direction:column;align-items:flex-start;min-height:400px;padding:clamp(1.75rem,3vw,2.5rem);background:var(--color-cream,#fff);border-radius:28px;transition:opacity 650ms cubic-bezier(.22,1,.36,1)}.ds-carousel-meta{margin:0;font-size:.8rem;line-height:1.55;color:var(--color-ink-soft,#5d6170);font-variant-numeric:tabular-nums}.ds-carousel-card h3{margin:12px 0 0;font-family:var(--font-serif,Fraunces,Georgia,serif);font-weight:400;font-size:clamp(1.55rem,2.3vw,2rem);line-height:1.2;letter-spacing:-.035em}.ds-carousel-excerpt{margin:20px 0 0;line-height:1.625;color:var(--color-ink-soft,#5d6170)}.ds-carousel-court{margin:20px 0 28px;font-size:.8rem;line-height:1.55;color:var(--color-purple,#77549c)}.ds-carousel-action{display:inline-flex;align-items:center;gap:.7rem;min-height:46px;margin-top:auto;padding:12px 1.2rem;border:1px solid var(--color-line-strong,#baccca);border-radius:var(--radius-sm,6px);color:inherit;font-size:.9rem;font-weight:600;text-decoration:none;transition:background-color 180ms}.ds-carousel-action:hover{background:var(--color-paper-warm,#edf3f1);border-color:var(--color-ink,#272734)}.ds-carousel :focus-visible{outline:2px solid var(--color-bronze,#087b80);outline-offset:4px}@media(max-width:767px){.ds-carousel{grid-template-columns:minmax(0,1fr);gap:2rem}.ds-carousel-copy h2{max-width:15ch}.ds-carousel-card{min-height:430px}}@media(prefers-reduced-motion:reduce){.ds-carousel-card,.ds-carousel-arrow,.ds-carousel-action{transition:none}}"
+    },
+    {
+      "name": "Court ruling row",
+      "kind": "custom",
+      "description": "Fine-rule catalogue row: date, official English title/formation and matched-topic tags, then right-aligned case number, court and teal SVG arrow. Opens a local source page; mobile places date and case number above the title.",
+      "html": "<a class=\"ds-ruling-row\" href=\"/en/insights/court-62023cj0343\"><time class=\"ds-ruling-date\" datetime=\"2026-04-16\"><span>16 Apr</span><span>2026</span></time><div class=\"ds-ruling-body\"><h3 lang=\"en\">Jean-Marc Colombani v European External Action Service (EEAS)</h3><p lang=\"en\">Judgment of the Court (Second Chamber) of 16 April 2026</p><span class=\"ds-ruling-chip\">Workplace harassment</span></div><div class=\"ds-ruling-reference\"><strong>C-343/23 P</strong><span>Court of Justice of the European Union</span><svg aria-hidden=\"true\" width=\"19\" height=\"19\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.6\" stroke-linecap=\"round\" stroke-linejoin=\"round\"><path d=\"M5 12h14m-6-6 6 6-6 6\"/></svg></div></a>",
+      "css": ".ds-ruling-row{display:grid;grid-template-columns:100px minmax(0,1fr) 180px;gap:1.5rem;align-items:start;padding-block:1.75rem;border-top:1px solid var(--color-line,#dce4e1);color:var(--color-ink,#272734);font-family:var(--font-sans,Geist,Arial,sans-serif);text-decoration:none}.ds-ruling-date{display:flex;flex-direction:column;gap:.2rem;font-size:.8rem;line-height:1.55;font-variant-numeric:tabular-nums;color:var(--color-ink-soft,#5d6170)}.ds-ruling-body h3{margin:0;font-family:var(--font-serif,Fraunces,Georgia,serif);font-weight:400;letter-spacing:-.035em;font-size:1.6rem;line-height:1.25}.ds-ruling-body p{margin:12px 0;font-size:.875rem;line-height:1.625;color:var(--color-ink-soft,#5d6170)}.ds-ruling-chip{display:inline-flex;align-items:center;padding:.3rem .65rem;background:var(--color-paper-warm,#edf3f1);color:#326866;border-radius:999px;font-size:.75rem;line-height:1.4}.ds-ruling-reference{display:flex;flex-direction:column;gap:.5rem;align-items:flex-end;text-align:right}.ds-ruling-reference strong{font-size:.875rem;font-weight:500}.ds-ruling-reference span{font-size:.8rem;line-height:1.55;color:var(--color-ink-soft,#5d6170)}.ds-ruling-reference svg{margin-top:.75rem;color:var(--color-bronze,#087b80);transition:transform 200ms cubic-bezier(.22,1,.36,1)}.ds-ruling-row:hover h3{text-decoration:underline;text-underline-offset:5px}.ds-ruling-row:hover svg,.ds-ruling-row:focus-visible svg{transform:translateX(4px)}.ds-ruling-row:focus-visible{outline:2px solid var(--color-bronze,#087b80);outline-offset:4px}@media(max-width:767px){.ds-ruling-row{grid-template-columns:minmax(0,1fr) auto;gap:.8rem}.ds-ruling-date{flex-direction:row;grid-column:1}.ds-ruling-body{grid-column:1/-1;grid-row:2}.ds-ruling-body h3{font-size:1.35rem}.ds-ruling-reference{grid-column:2;grid-row:1}.ds-ruling-reference span,.ds-ruling-reference svg{display:none}}@media(prefers-reduced-motion:reduce){.ds-ruling-reference svg{transition:none}}"
     }
   ],
   "narrative": {
-    "overview": "The user-selected visual reference is [EU JUST](https://eujust.online). Its pale canvas, upright serif headlines, lime controls, fine borders, and dark editorial passages define the implemented atmosphere. Lexentia keeps its own wordmark, firm content, and French/English routes.\n\nThe system pairs spacious page introductions with compact navigation, filters, and article metadata. Motion supports reading and navigation; reduced-motion users receive visible content without waiting for the introductory animation.",
+    "overview": "The user-selected visual reference is [EU JUST](https://eujust.online). Its pale canvas, upright serif headlines, teal controls, fine borders, and dark editorial passages define the implemented atmosphere. Lexentia keeps its own wordmark, firm content, and French/English routes.\n\nThe system pairs spacious page introductions with compact navigation, filters, and article metadata. Lexentia’s supplied logo guides the teal and purple palette. Motion supports reading and navigation; reduced-motion users receive visible content without waiting for the introductory animation. The homepage Insights carousel follows the user’s WhatsApp screenshot layout; its easing is an implemented interpretation because the live reference could not be loaded under the cloud network allowlist.",
     "keyCharacteristics": [
-      "Pale surfaces with ink text and lime actions.",
+      "Pale surfaces with ink text and teal actions.",
       "Upright Fraunces headings paired with Geist interface text.",
       "Fine borders, gently rounded panels, and offset control shadows.",
-      "Dark editorial sections with lime navigation cues.",
+      "Dark editorial sections with soft-green navigation cues.",
       "Equivalent French/English layouts and explicit article-language labels."
     ],
     "rules": [],

@@ -1,3 +1,4 @@
+import { Reveal } from "@/components/motion/Reveal";
 import type { ReactNode } from "react";
 
 type Props = {
@@ -18,7 +19,7 @@ const tones = {
 export function Section({ children, className = "", id, tone = "paper", labelledBy }: Props) {
   return (
     <section id={id} aria-labelledby={labelledBy} className={`${tones[tone]} site-section ${className}`}>
-      <div className="section-inner">{children}</div>
+      <Reveal className="section-inner" y={18}>{children}</Reveal>
     </section>
   );
 }
