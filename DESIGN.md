@@ -181,7 +181,7 @@ Controls use the small radius; panels and cards use the medium radius. Filters a
 
 ### Landmark and editorial motion
 
-The homepage uses a pale-green Brussels Palace of Justice illustration. Slow architectural drift, small walking pedestrians, and sparse drifting leaves stay in the artwork region, with a pause control. The analysis section uses a flowing wave and a once-on-entry scan with staggered card highlights, plus pause/replay controls. All decorative motion pauses offscreen and in hidden tabs; reduced-motion preferences keep the artwork static and cards visible.
+The homepage uses a pale-green Brussels Palace of Justice illustration. Slow architectural drift and sparse drifting leaves stay in the artwork region, with a pause control. The analysis section uses a flowing wave and a once-on-entry scan with staggered card highlights, plus pause/replay controls. All decorative motion pauses offscreen and in hidden tabs; reduced-motion preferences keep the artwork static and cards visible.
 
 ## Do's and Don'ts
 

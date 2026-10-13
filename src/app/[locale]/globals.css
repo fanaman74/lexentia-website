@@ -182,32 +182,14 @@ html.js:not(.intro-done) [data-intro] { opacity: 0; }
   .analysis-grid .insight-card-content { clip-path: none !important; }
 }
 
-/* Tiny pedestrians use authored walk-cycle frames; leaves follow the same slow breeze. */
-.pedestrian-track { position: absolute; bottom: 14%; left: 54%; width: 42px; height: 60px; pointer-events: none; animation: pedestrian-crossing 32s linear infinite; animation-delay: -4s; animation-play-state: paused; }
-.pedestrian { width: 100%; height: 100%; background-image: url("/images/brussels-walker.png"); background-size: 400% 200%; background-repeat: no-repeat; animation: pedestrian-gait 1s steps(1, end) infinite; animation-play-state: paused; }
-.pedestrian-track-two { left: 79%; bottom: 11%; width: 34px; height: 49px; animation-name: pedestrian-return; animation-duration: 38s; animation-delay: -14s; }
-.pedestrian-track-two .pedestrian { transform: scaleX(-1); animation-delay: -0.5s; }
+/* Sparse leaves drift in the landmark illustration and obey its pause control. */
 .brussels-leaves { position: absolute; inset: 0; pointer-events: none; }
 .blowing-leaf { position: absolute; width: 13px; height: 21px; left: 56%; top: 70%; opacity: 0; animation: leaf-breeze 15s ease-in-out infinite; animation-play-state: paused; }
 .blowing-leaf-2 { top: 54%; left: 66%; width: 10px; animation-delay: -5s; animation-duration: 18s; }
 .blowing-leaf-3 { top: 82%; left: 70%; width: 15px; animation-delay: -9s; }
 .blowing-leaf-4 { top: 62%; left: 74%; width: 9px; animation-delay: -12s; animation-duration: 20s; }
 .blowing-leaf-5 { top: 77%; left: 62%; width: 11px; animation-delay: -3s; animation-duration: 17s; }
-.brussels-hero[data-running="true"] .pedestrian-track,
-.brussels-hero[data-running="true"] .pedestrian,
 .brussels-hero[data-running="true"] .blowing-leaf { animation-play-state: running; }
-@keyframes pedestrian-gait {
-  0% { background-position: 0% 0%; }
-  12.5% { background-position: 33.333% 0%; }
-  25% { background-position: 66.666% 0%; }
-  37.5% { background-position: 100% 0%; }
-  50% { background-position: 0% 100%; }
-  62.5% { background-position: 33.333% 100%; }
-  75% { background-position: 66.666% 100%; }
-  87.5%, 100% { background-position: 100% 100%; }
-}
-@keyframes pedestrian-crossing { 0% { transform: translateX(0); opacity: 0; } 8%, 90% { opacity: 1; } 100% { transform: translateX(280px); opacity: 0; } }
-@keyframes pedestrian-return { 0% { transform: translateX(0); opacity: 0; } 8%, 90% { opacity: 0.8; } 100% { transform: translateX(-240px); opacity: 0; } }
 @keyframes leaf-breeze {
   0% { transform: translate(0, 0) rotate(-35deg); opacity: 0; }
   15% { opacity: 0.75; }
@@ -216,13 +198,10 @@ html.js:not(.intro-done) [data-intro] { opacity: 0; }
   100% { transform: translate(230px, 45px) rotate(360deg); opacity: 0; }
 }
 @media (max-width: 767px) {
-  .pedestrian-track-one { left: 18%; bottom: 12%; animation-duration: 38s; }
-  .pedestrian-track-two { left: 79%; bottom: 9%; }
   .blowing-leaf { left: 20%; }
   .blowing-leaf-2, .blowing-leaf-4 { left: 48%; }
   .blowing-leaf-3, .blowing-leaf-5 { left: 32%; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .pedestrian-track, .pedestrian { animation: none !important; opacity: 0.85; }
   .blowing-leaf { display: none; }
 }

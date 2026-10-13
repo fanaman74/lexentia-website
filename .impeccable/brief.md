@@ -4,7 +4,7 @@ Mode: Persuade on firm pages; Read on insight and legal pages.
 
 Reference: EU JUST, visually reviewed in Chromium. User explicitly requested its UI/UX style.
 
-First viewport: a compact pale header, lime-tile Lexentia wordmark, large upright Fraunces headline and plain-language introduction at left, and a pale-green illustration of Brussels’ Palace of Justice at right. On mobile, the headline leads and the landmark sits beneath it. The hero includes a slow architectural camera move, tiny walking pedestrians, and sparse wind-blown leaves with a pause control. Two clear expertise/contact actions preserve the firm site's purpose.
+First viewport: a compact pale header, lime-tile Lexentia wordmark, large upright Fraunces headline and plain-language introduction at left, and a pale-green illustration of Brussels’ Palace of Justice at right. On mobile, the headline leads and the landmark sits beneath it. The hero includes a slow architectural camera move and sparse wind-blown leaves with a pause control. Two clear expertise/contact actions preserve the firm site's purpose.
 
 Shared grammar: pale #fcfff7 canvas, Geist body type, Fraunces headings, lime calls to action, hairline borders, 12px panels, muted green secondary text, dark violet-black editorial passages, restrained pink/mint practice panels. Reference offset shadows are retained on primary buttons and the homepage feed. No grid backdrop or italic green hero.
 

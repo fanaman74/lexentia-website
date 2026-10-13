@@ -13,8 +13,6 @@ export function BrusselsHero({ locale }: { locale: Locale }) {
     <div className="brussels-art" aria-hidden="true">
       <Image src="/images/brussels-palace-of-justice.png" alt="" fill preload sizes="100vw" className="brussels-illustration" />
       <div className="brussels-light" />
-      <div className="pedestrian-track pedestrian-track-one"><div className="pedestrian" /></div>
-      <div className="pedestrian-track pedestrian-track-two"><div className="pedestrian" /></div>
       <div className="brussels-leaves">
         {Array.from({ length: 5 }, (_, index) => <svg key={index} className={`blowing-leaf blowing-leaf-${index + 1}`} viewBox="0 0 20 32" fill="none">
           <path d="M10 2C-1 10-1 21 10 28C21 21 21 10 10 2Z" fill={index % 2 ? "#d6edaa" : "#c2dc8e"} stroke="#9dab89" strokeWidth="0.8" />

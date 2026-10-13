@@ -163,11 +163,6 @@
         "purpose": "Once-on-entry scan; replay re-runs the scan and card highlight."
       },
       {
-        "name": "pedestrian-gait",
-        "value": "1s steps(1, end) infinite",
-        "purpose": "Eight authored sprite frames for small walking pedestrians."
-      },
-      {
         "name": "leaf-breeze",
         "value": "15–20s ease-in-out infinite",
         "purpose": "Sparse leaf movement confined to the landmark illustration."
