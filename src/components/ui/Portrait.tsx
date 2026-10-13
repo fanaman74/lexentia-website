@@ -26,9 +26,10 @@ export function Portrait({ name, src, alt, pendingLabel, className = "", priorit
           src={src}
           alt={alt ?? ""}
           fill
+          unoptimized={src.startsWith("https://")}
           preload={priority}
           sizes="(min-width: 1024px) 40vw, 100vw"
-          className="object-cover transition-transform duration-500 ease-[var(--ease-editorial)] group-hover:scale-[1.02]"
+          className="object-cover object-[center_20%] transition-transform duration-500 ease-[var(--ease-editorial)] group-hover:scale-[1.02]"
         />
       ) : (
         <div className="absolute inset-0 flex flex-col justify-between p-6" role="img" aria-label={`${name}, ${pendingLabel.toLowerCase()}`}>

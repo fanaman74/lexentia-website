@@ -27,7 +27,7 @@ Reviewed 12 October 2026 against the live lexentia.eu (EN and FR). The brief is 
 - The footer disclaimer, and whether to show VAT and Bar details.
 - Whether "Brussels Bar" and the language list are the right proof points for the hero.
 - Whether the lecturing at ESI-HE2B (since 2019) and the lecture series are still current.
-- Commissioned photography: 2–3 portraits per lawyer, office details, and Brussels architecture. Until then, profiles show monogram placeholders.
+- Commissioned photography: 2–3 portraits per lawyer, office details, and Brussels architecture. Nathalie’s current official portrait is now linked from the live site; Magali retains a monogram placeholder.
 - A general firm inbox, and a mail provider for the contact form (the form validates and rate-limits, but it does not deliver yet).
 - Whether to publish new Insights regularly, or keep the homepage block evergreen.
 - The FR article URLs on the old site are assumed to be `/<slug>/`, and redirects are built on that assumption. Check them against the old sitemap.

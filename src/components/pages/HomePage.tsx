@@ -1,5 +1,6 @@
-import Image from "next/image";
 import Link from "next/link";
+import { BrusselsHero } from "@/components/motion/BrusselsHero";
+import { AnimatedInsights } from "@/components/motion/AnimatedInsights";
 import { PageIntro } from "@/components/motion/PageIntro";
 import { RevealLines } from "@/components/motion/RevealLines";
 import { StaggerGroup } from "@/components/motion/StaggerGroup";
@@ -31,7 +32,7 @@ export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary })
     <JsonLd data={{ "@context": "https://schema.org", "@type": "LegalService", name: site.legalName, url: `${site.url}${href(locale, "home")}`, telephone: site.phone.tel, email: site.email, vatID: site.vat, foundingDate: String(site.founded), address: { "@type": "PostalAddress", streetAddress: site.address.street, postalCode: site.address.postalCode, addressLocality: "Schaerbeek", addressRegion: "Brussels", addressCountry: site.address.country }, openingHours: "Mo-Fr 08:30-17:00", areaServed: "EU", knowsLanguage: ["fr", "en", "nl", "es"], employee: lawyers.map(l => ({ "@type": "Person", name: l.name, jobTitle: l.role[locale] })), sameAs: [site.linkedin] }} />
 
     <section className="home-hero">
-      <div className="hero-map" aria-hidden="true"><Image src="/images/europe-map.png" alt="" fill preload sizes="100vw" /></div>
+      <BrusselsHero locale={locale} />
       <PageIntro className="section-inner">
         <div className="hero-copy">
           <h1 data-intro="line" className="display text-hero">{t.headline.join(" ")}</h1>
@@ -42,8 +43,27 @@ export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary })
           </div>
         </div>
       </PageIntro>
-      <a className="hero-attribution underline" href="https://www.naturalearthdata.com/about/terms-of-use/" target="_blank" rel="noopener noreferrer">Map: Natural Earth</a>
     </section>
+
+    <Section labelledBy="welcome-title" className="!pb-0">
+      <div className="grid gap-8 border-t border-[var(--color-line)] pt-9 lg:grid-cols-[1fr_2fr] lg:gap-16">
+        <h2 id="welcome-title" className="display text-h2">{t.welcomeTitle}</h2>
+        <div className="max-w-[70ch] space-y-5 text-lg leading-relaxed text-[var(--color-ink-soft)]">
+          {t.welcomeBody.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
+          <ArrowLink href={href(locale, "about")} className="text-sm text-[var(--color-ink)]">{dict.footer.aboutLink}</ArrowLink>
+        </div>
+      </div>
+    </Section>
+
+    <Section labelledBy="team-title">
+      <div className="section-heading"><h2 id="team-title" className="display text-h2">{t.teamTitle}</h2><ArrowLink href={href(locale, "team")}>{dict.nav.team}</ArrowLink></div>
+      <StaggerGroup className="grid gap-8 md:grid-cols-2">{lawyers.map(lawyer => <LawyerCard key={lawyer.slug} lawyer={lawyer} locale={locale} dict={dict} large />)}</StaggerGroup>
+    </Section>
+
+    <Section labelledBy="expertise-title">
+      <div className="section-heading"><h2 id="expertise-title" className="display text-h2 max-w-[24ch]">{t.expertiseTitle}</h2><ArrowLink href={href(locale, "expertise")}>{dict.nav.expertise}</ArrowLink></div>
+      <StaggerGroup className="grid gap-5 md:grid-cols-2">{practiceAreas.map((area, i) => <PracticePanel key={area.id} area={area} locale={locale} index={pad(i + 1)} cta={area.id === "eu-civil-service" ? t.exploreEu : t.explorePrivate} />)}</StaggerGroup>
+    </Section>
 
     <Section className="!pt-4 !pb-12" labelledBy="feed-title">
       <div className="home-feed">
@@ -63,16 +83,9 @@ export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary })
       </Link>)}</div>
     </Section>
 
-    <Section tone="forest" className="wave-section" labelledBy="insights-title">
-      <svg aria-hidden="true" viewBox="0 0 1440 32" preserveAspectRatio="none" className="section-wave"><path d="M0 15C190 0 260 0 400 14S620 30 790 13s350 2 650 2v17H0Z" fill="currentColor" /></svg>
-      <div className="section-heading"><h2 id="insights-title" className="display text-h2 max-w-[20ch]">{t.insightsTitle}</h2><ArrowLink href={href(locale, "insights")} className="text-[var(--color-sage)]">{dict.common.allInsights}</ArrowLink></div>
-      <StaggerGroup className="grid gap-5 md:grid-cols-3">{selected.map(insight => <InsightCard key={insight.slug} insight={insight} locale={locale} dict={dict} />)}</StaggerGroup>
-    </Section>
-
-    <Section labelledBy="expertise-title">
-      <div className="section-heading"><h2 id="expertise-title" className="display text-h2 max-w-[24ch]">{t.expertiseTitle}</h2><ArrowLink href={href(locale, "expertise")}>{dict.nav.expertise}</ArrowLink></div>
-      <StaggerGroup className="grid gap-5 md:grid-cols-2">{practiceAreas.map((area, i) => <PracticePanel key={area.id} area={area} locale={locale} index={pad(i + 1)} cta={area.id === "eu-civil-service" ? t.exploreEu : t.explorePrivate} />)}</StaggerGroup>
-    </Section>
+    <AnimatedInsights locale={locale} title={t.insightsTitle} archiveHref={href(locale, "insights")} archiveLabel={dict.common.allInsights}>
+      {selected.map(insight => <InsightCard key={insight.slug} insight={insight} locale={locale} dict={dict} />)}
+    </AnimatedInsights>
 
     <Section className="!pt-0" labelledBy="needs-title">
       <h2 id="needs-title" className="display text-h3 max-w-[42ch]">{t.needsTitle}</h2>
@@ -87,11 +100,6 @@ export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary })
         <div><RevealLines id="eu-title" lines={[t.euTitle]} className="display text-h2" /><p className="mt-7 max-w-[58ch] leading-relaxed text-[#c3bdcf]">{t.euBody}</p><ArrowLink href={pathFor(locale, { key: "euCivilService" })} className="mt-8 text-[var(--color-sage)]">{t.euCta}</ArrowLink></div>
         <ProcessRail steps={t.euSteps} />
       </div>
-    </Section>
-
-    <Section labelledBy="team-title">
-      <div className="section-heading"><h2 id="team-title" className="display text-h2">{t.teamTitle}</h2><ArrowLink href={href(locale, "team")}>{dict.nav.team}</ArrowLink></div>
-      <StaggerGroup className="grid gap-8 md:grid-cols-2">{lawyers.map(lawyer => <LawyerCard key={lawyer.slug} lawyer={lawyer} locale={locale} dict={dict} />)}</StaggerGroup>
     </Section>
 
     <Section className="!pt-0" labelledBy="firm-title">

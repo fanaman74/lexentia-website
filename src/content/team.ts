@@ -7,6 +7,10 @@ export const lawyers: Lawyer[] = [
     slug: "nathalie-de-montigny",
     name: "Nathalie de Montigny",
     order: 1,
+    portrait: {
+      src: "https://www.lexentia.eu/wp-content/uploads/2015/10/ndm-2024.jpeg",
+      alt: { en: "Portrait of Nathalie de Montigny", fr: "Portrait de Nathalie de Montigny" },
+    },
     role: { en: "Founding Partner", fr: "Associée fondatrice" },
     descriptor: {
       en: "EU & international civil service law · Economic and business law",

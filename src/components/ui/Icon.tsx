@@ -1,4 +1,6 @@
 const paths = {
+  pause: "M8 5v14M16 5v14",
+  play: "m8 5 11 7-11 7V5Z",
   external: "M15 3h6v6m0-6-10 10M10 3H3v18h18v-7",
   arrow: "M5 12h14m-6-6 6 6-6 6",
   chevron: "m6 9 6 6 6-6",

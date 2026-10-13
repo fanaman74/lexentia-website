@@ -146,6 +146,31 @@
         "name": "reduced-motion",
         "value": "0.01ms",
         "purpose": "Animation and transition duration override under prefers-reduced-motion: reduce; introductory content stays visible."
+      },
+      {
+        "name": "brussels-pan",
+        "value": "18s ease-in-out infinite alternate",
+        "purpose": "Subtle landmark camera move, paused when offscreen/hidden/user-paused or reduced motion."
+      },
+      {
+        "name": "analysis-wave-flow",
+        "value": "30s linear infinite",
+        "purpose": "Reference-matched flowing edge, paused with section visibility and controls."
+      },
+      {
+        "name": "analysis-scan",
+        "value": "3s linear forwards",
+        "purpose": "Once-on-entry scan; replay re-runs the scan and card highlight."
+      },
+      {
+        "name": "pedestrian-gait",
+        "value": "1s steps(1, end) infinite",
+        "purpose": "Eight authored sprite frames for small walking pedestrians."
+      },
+      {
+        "name": "leaf-breeze",
+        "value": "15–20s ease-in-out infinite",
+        "purpose": "Sparse leaf movement confined to the landmark illustration."
       }
     ],
     "breakpoints": [
