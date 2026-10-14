@@ -15,3 +15,9 @@
 - `landmark-bruges-belfry.png`: generated editorial Belgian landmark illustration for the homepage situation buttons, preserving the existing pale sage architecture style. Original: `/workspace/generated_images/exec-aed064e2-60db-48ab-aa91-91096ed36ecb.png`. Exact generation prompt embedded in the PNG. Illustrative rather than an architectural record.
 
 - `landmark-cinquantenaire.png`: generated editorial Belgian landmark illustration for the homepage situation buttons, preserving the existing pale sage architecture style. Original: `/workspace/generated_images/exec-92ad2e53-345b-4735-b089-2313987ad1e2.png`. Exact generation prompt embedded in the PNG. Illustrative rather than an architectural record.
+
+- `article-documents.png`: generated editorial illustration for the firm's article archive and readers, in the existing sage architectural style. Original: `/workspace/generated_images/exec-241aa3ff-64c7-4aac-af25-9436fd8b4eb3.png`. Exact generation prompt embedded in the PNG. Decorative illustration, not the original article photograph or an architectural record.
+
+- `article-eu-court.png`: generated editorial illustration for the firm's article archive and readers, in the existing sage architectural style. Original: `/workspace/generated_images/exec-598c9ed1-b637-464b-b7b8-b0d6940d2881.png`. Exact generation prompt embedded in the PNG. Decorative illustration, not the original article photograph or an architectural record.
+
+- `article-finance.png`: generated editorial illustration for the firm's article archive and readers, in the existing sage architectural style. Original: `/workspace/generated_images/exec-ef7b0b92-a83a-4b2a-87d8-06be719e8c2d.png`. Exact generation prompt embedded in the PNG. Decorative illustration, not the original article photograph or an architectural record.

@@ -57,6 +57,22 @@ typography:
     fontWeight: 400
     lineHeight: 1.18
     letterSpacing: "-0.025em"
+  article-preview-title:
+    fontFamily: "Fraunces, Georgia, serif"
+    fontSize: "clamp(1.25rem, 1.65vw, 1.55rem)"
+    fontWeight: 400
+    lineHeight: 1.24
+    letterSpacing: "-0.025em"
+  article-heading:
+    fontFamily: "Fraunces, Georgia, serif"
+    fontSize: "clamp(2rem, 4.2vw, 4rem)"
+    fontWeight: 400
+    lineHeight: 1.1
+    letterSpacing: "-0.035em"
+  article-body:
+    fontFamily: 'Geist, "Helvetica Neue", Arial, sans-serif'
+    fontSize: "1.0625rem"
+    lineHeight: 1.8
   body:
     fontFamily: 'Geist, "Helvetica Neue", Arial, sans-serif'
     fontSize: "1.0625rem"
@@ -152,6 +168,37 @@ components:
   situation-image:
     rounded: "{rounded.lg}"
     width: "100%"
+  article-preview:
+    textColor: "{colors.ink}"
+    typography: "{typography.article-preview-title}"
+  article-preview-image:
+    backgroundColor: "{colors.paper-warm}"
+    rounded: "{rounded.lg}"
+    width: "100%"
+  article-date:
+    backgroundColor: "{colors.bronze}"
+    textColor: "{colors.cream}"
+    rounded: "{rounded.sm}"
+    padding: "9px 12px"
+  article-action:
+    textColor: "#06666b"
+  article-heading:
+    backgroundColor: "{colors.forest}"
+    textColor: "{colors.cream}"
+    typography: "{typography.article-heading}"
+    padding: "145px 24px 3.5rem"
+  article-source-note:
+    backgroundColor: "{colors.paper-warm}"
+    rounded: "{rounded.md}"
+    padding: "{spacing.panel}"
+  article-filter-summary:
+    backgroundColor: "{colors.paper-warm}"
+    rounded: "{rounded.sm}"
+    padding: "0.75rem 1rem"
+  article-page-selected:
+    backgroundColor: "{colors.bronze}"
+    textColor: "{colors.cream}"
+    rounded: "{rounded.pill}"
 ---
 
 # Design System: Lexentia
@@ -172,6 +219,7 @@ The system pairs spacious page introductions with compact navigation, filters, a
 - Square practice panels with architectural images above compact summaries and controlled distant bird flocks.
 - Separate source-backed Latest News and firm-authored Insights archives; a forward-looping Latest News carousel.
 - Illustrated situation links and native practice-section disclosures with direct fragment navigation.
+- Illustrated firm-article previews with compact date badges, dark reader headings and explicit source-note panels.
 
 ## Colors
 
@@ -196,7 +244,7 @@ The frontmatter preserves the CSS token names; several names predate the referen
 
 ## Typography
 
-Fraunces and Geist are self-hosted through `next/font/google` with swap loading. Use the frontmatter hierarchy for headings; the body token describes the legal reading style, whose measure is capped at 70 characters. Introductions use larger sans-serif text, while metadata uses tabular numerals.
+Fraunces and Geist are self-hosted through `next/font/google` with swap loading. Use the frontmatter hierarchy for headings; the body token describes the legal reading style, whose measure is capped at 70 characters. Introductions use larger sans-serif text, while metadata uses tabular numerals. Article preview and reader headings use their dedicated frontmatter roles; phone preview titles increase to 1.5rem. Article prose uses the article-body role with a 70-character measure, serif subheadings, semantic lists and warm quote panels.
 
 Hero and page headlines use balanced wrapping and upright, regular-weight Fraunces. Page headlines can break long words at narrow widths with `overflow-wrap: anywhere`. Insight-card titles use a tighter card-specific treatment (1.5rem, 1.25 line height, −0.025em tracking). Eyebrows remain mixed-case sans-serif labels. The footer repeats the name at a fluid, oversized sans-serif scale.
 
@@ -211,6 +259,8 @@ The homepage carousel uses a two-column layout: heading and navigation at left, 
 Practice cards sit within a centered group capped at 864px, with a 20px gap. Individual cards are centered and capped at 420px, reduced to 320px below 768px. The homepage pair becomes two columns at 768px; the expertise page does so at 1024px. Cards retain a 1:1 aspect ratio with dedicated artwork above the text: 44%/56% rows on desktop and 38%/62% below 768px. The original summaries use three clamped lines, reduced to two below 360px; titles and the reading footer remain visible. Full service descriptions and tags stay on the practice pages.
 
 The homepage situation heading sits above a full-width grid of six illustrated links. The grid has three equal columns from 1024px, two from 768px and one below 768px. It starts 2.5rem below the heading, with 3rem row gaps and 1.5rem column gaps; phone row gaps reduce to 2.5rem. The heading spans up to 38 characters, and image panels retain a 4:3 aspect ratio.
+
+The firm-article archive uses four equal columns from 1024px, two from 768px and one below 768px, with 3.5rem row gaps and 1.5rem column gaps. Reading pages pair a flexible article column with a 280px sidebar and a fluid 2.5–5rem gap. Below 1024px the sidebar stacks beneath the article as two groups; below 768px those groups form one column. Lead artwork retains a 4:3 ratio and is capped at 600px wide. Related previews use three columns from 768px and one below, with 2rem gaps. The dark heading band reduces its top padding to 125px on phones.
 
 Practice detail pages group all content sections into fine-rule disclosures. Summary rows have an 88px minimum height, reduced to 76px below 768px, so wrapped labels expand naturally. Fragment targets reserve 144px above them for the fixed header and sticky section navigation.
 
@@ -231,7 +281,7 @@ Controls use the small radius; panels and archive cards use the medium radius. H
 - **Buttons:** dark-teal primary actions with an ink border and offset shadow; transparent secondary actions with a stronger neutral border. Both include visible keyboard focus. Primary hover deepens the teal; active state compresses its shadow. Dark-section secondary buttons use violet-gray borders and hover surfaces.
 - **Fields:** white search, select, and contact fields with a small radius, a 48px minimum height, and a strong neutral border. Focus changes the border to teal; invalid contact fields use a red border. Keep visible labels.
 - **Tags and filters:** light tags identify categories or languages. Category filter buttons expose selection through `aria-pressed`, switching from white to ink with white text. Filtering, search, and sorting update immediately with a visible live result count and clear-filters actions.
-- **Cards:** insight cards have serif titles, muted metadata, category tags, and a ruled reading footer. The linked title covers the card. Dark variants preserve the structure with violet-black surfaces, pale text, and soft-green arrows. Lawyer cards use bordered white panels and truthful portrait placeholders while commissioned images are pending.
+- **Cards:** shared compact insight cards have serif titles, muted metadata, category tags, and a ruled reading footer. The firm archive and reader-related sections use the illustrated ArticlePreview pattern described below. The linked title covers the card. Dark variants preserve the structure with violet-black surfaces, pale text, and soft-green arrows. Lawyer cards use bordered white panels and truthful portrait placeholders while commissioned images are pending.
 - **Navigation:** the fixed header includes separate Insights and Latest News destinations with an underlined active destination, equivalent-route language switching, and a compact contact action. The mobile disclosure exposes `aria-expanded`; Escape closes it and returns focus to its toggle. Route changes close it. The footer also links to both archives; its links underline on hover and keyboard focus.
 - **Wordmark and icons:** preserve the supplied serif Lexentia mark and coloured-square pattern. Use the shared stroked SVG icons, including external-link arrows, rather than relying on font glyph coverage.
 - **Disclosures:** both practice detail pages use native `details`/`summary` rows for their overview, service groups, approach, related analyses where present, and lawyers. Their content remains available through native interaction without JavaScript.
@@ -266,7 +316,25 @@ Automatic advance runs every 6.5 seconds. A copy of the leading card follows the
 
 Latest News (`/en/latest-news`, `/fr/actualites`) holds 84 imported Court of Justice and General Court records, presented as fine-rule date/title/case-reference rows. Search, court and matched-topic filters, decision-date/name sorting, a live result count, clear-filter recovery and 20-row pagination support scanning. Each row opens a local case page under the same archive with official English text, decision date, case number, CELEX, translated navigation and breadcrumbs, source links and import-date/topic-match disclosures. This is a dated static snapshot, with no automatic monitoring claim or attributed firm author. Legacy court detail URLs under Insights redirect with HTTP 301 to the new canonical routes; equivalent-language links and sitemap entries use those routes.
 
-Insights (`/en/insights`, `/fr/analyses`) contains the 28 firm-authored analyses and keeps its existing category/search/sort controls. Related firm-analysis blocks exclude imported court records. Each archive remains accessible from header and footer navigation.
+Insights (`/en/insights`, `/fr/analyses`) contains the 28 firm-authored analyses in an illustrated archive with category/search/sort controls and pagination. It remains separate from the 84 court records in Latest News. Related firm-analysis blocks exclude imported court records. Each archive remains accessible from header and footer navigation.
+
+### Illustrated firm-article archive
+
+The user’s supplied old Lexentia archive and article screenshots guide these supporting-page structures within the existing pale canvas, Fraunces/Geist typography and teal palette. The archive uses the short Insights / Analyses heading and existing introduction. Its enhanced browser shows 12 articles per page; category, search (`q`), newest/oldest sort and page state persist in the URL and restore on arrival or browser history navigation. Filtering and sorting reset pagination. Previous/next controls disable at the boundaries; numbered buttons expose the current page through `aria-current="page"` and use the teal selected-page treatment. Page changes scroll immediately to the results with 105px header clearance. A polite result status reports the current range; clear-filter and empty-result recovery remain available.
+
+On phones, a native initially closed filter disclosure replaces the expanded desktop controls. Its warm 48px-minimum summary includes an 18px chevron that rotates when open. Search and sort keep visible labels; category pills use `aria-pressed`. Without JavaScript, all 28 article links render and inactive filter controls are hidden; pagination begins only after enhancement.
+
+Each ArticlePreview is a whole-card link with a decorative 4:3 image panel, compact date badge, categories, original-language serif title, localized summary and a language note when the title language differs from the interface. Summary excerpts clamp to three lines. The badge sits 14px from the image’s top-left corner, has a 64px minimum width and stacks localized month, serif day and original year; its accessible label gives the full date. It uses the frontmatter dark-teal background and white text. The underlined reading action and title hover/focus use the same darker teal as situation actions; the arrow shifts 4px over 180ms with editorial easing and remains still under reduced motion. Keep one link per card, visible focus and the original publication date.
+
+### Firm-article reader and source note
+
+The reader opens with a dark heading band, pale original-language title and muted breadcrumbs. Below it, decorative lead artwork and the date badge precede author, original publication date and linked categories. The sidebar lists counts for seven normalized categories and four recent firm articles, excluding the current article; category links open the archive with its category parameter. Recent items retain their original-language titles and dates. A back link returns to Insights / Analyses, and up to three related illustrated previews sit on a warm section beneath the reader.
+
+Full original article bodies have **not** been migrated. Current readers show a clearly labeled Summary / Résumé and a warm source-note panel linking to the original Lexentia article URL. The panel distinguishes the local summary from the full text. The original website could not be fetched in this session because the cloud network allowlist blocked browser access; do not describe the summaries as reproduced full articles.
+
+When verified content becomes available, the renderer accepts original-language paragraph, level-two/three heading, ordered/unordered list and quote blocks. Text is escaped rather than injected as HTML; the prose region identifies the original language. Existing localized paragraph bodies remain supported as a separate fallback. Neither capability establishes that full text is already present.
+
+The archive and readers use three generated editorial illustrations: documents, EU court and finance, chosen by topic. They extend the existing sage illustration family; original assets remain preserved. Exact generation prompts are embedded in the PNGs, and [SOURCES.md](public/images/SOURCES.md) records provenance. These decorative assets do not claim to reproduce the old article photographs. Sidecar specimens show labeled plain image slots so they remain self-contained without embedding the raster files.
 
 ### Practice artwork and section reveals
 

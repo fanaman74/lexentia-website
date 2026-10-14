@@ -85,6 +85,8 @@ export type Insight = {
   excerpt?: Localised;
   /** Full body is migrated from the old site in Phase 6; until then we link to it. */
   body?: LocalisedRichText;
+  /** Original-language article content: no implicit machine translation. */
+  originalBody?: ArticleBlock[];
   author: string;
   publishedAt: string;
   updatedAt?: string;
@@ -95,6 +97,12 @@ export type Insight = {
   /** Source record, separate from a lawyer-authored analysis. */
   courtRecord?: CourtRuling;
 };
+
+export type ArticleBlock =
+  | { type: "paragraph"; text: string }
+  | { type: "heading"; text: string; level: 2 | 3 }
+  | { type: "list"; items: string[]; ordered?: boolean }
+  | { type: "quote"; text: string };
 
 export type CourtRuling = {
   title: string;

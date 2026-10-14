@@ -21,6 +21,7 @@ import { LatestNewsPage } from "@/components/pages/LatestNewsPage";
 import { InsightPage } from "@/components/pages/InsightPage";
 import { ContactPage } from "@/components/pages/ContactPage";
 import { LegalTextPage } from "@/components/pages/LegalTextPage";
+import { articleImage } from "@/lib/article-images";
 import {
   defaultLocale,
   isLocale,
@@ -101,6 +102,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/[[...slu
   const { locale, ref } = await resolve(params);
   const { title, description } = pageSeo(locale, ref);
   const canonical = pathFor(locale, ref);
+  const article = ref.key === "insight" ? getInsight(ref.slug) : undefined;
   return {
     title: ref.key === "home" ? title : `${title} | Lexentia`,
     description,
@@ -120,6 +122,7 @@ export async function generateMetadata({ params }: PageProps<"/[locale]/[[...slu
       locale: locale === "fr" ? "fr_BE" : "en_GB",
       alternateLocale: locale === "fr" ? "en_GB" : "fr_BE",
       type: ref.key === "insight" ? "article" : "website",
+      ...(article && !article.courtRecord ? { images: [{ url: articleImage(article), alt: locale === "fr" ? "Illustration éditoriale" : "Editorial illustration" }] } : {}),
     },
     twitter: { card: "summary_large_image", title, description },
   };

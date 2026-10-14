@@ -168,7 +168,7 @@ const en = {
     title: "Notes on EU staff law and business law.",
     intro: "Analysis of case law and legislative changes, written by the firm's lawyers.",
     all: "All",
-    empty: "No articles in this category yet.",
+    empty: "No articles match these filters.",
     migrationNotice:
       "This article is being migrated from the previous site. The summary above is provisional; the full text remains available at its original address.",
     contactCta: "Discuss a related matter",
@@ -407,7 +407,7 @@ const fr: Dictionary = {
     title: "Chroniques de fonction publique européenne et de droit des affaires.",
     intro: "Analyses de jurisprudence et d'évolutions législatives, rédigées par les avocates du cabinet.",
     all: "Toutes",
-    empty: "Aucun article dans cette catégorie pour le moment.",
+    empty: "Aucun article ne correspond à ces filtres.",
     migrationNotice:
       "Cet article est en cours de migration depuis l'ancien site. Le résumé ci-dessus est provisoire ; le texte complet reste disponible à son adresse d'origine.",
     contactCta: "Parler d'un dossier similaire",

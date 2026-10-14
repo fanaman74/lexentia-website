@@ -34,3 +34,11 @@ npm run build
 ```
 
 `CHROMIUM_PATH` can select an installed Chromium executable. The importer respects `HTTPS_PROXY`, follows all result pages and imports each record’s source metadata. It validates counts, unique CELEX identifiers, dates and official URLs before atomically replacing `src/content/court-rulings-snapshot.json`. Failed or incomplete imports leave the previous collection intact. Review and commit the updated snapshot, then rebuild to publish it. This is a dated collection, not an automatic monitoring service; its coverage disclosure links to the current EU JUST feed. Source: https://github.com/fanaman74/eujust and https://www.eujust.online/cases.
+
+## Firm article archive and reading pages
+
+The firm's 28 articles have an illustrated archive at `/en/insights` and `/fr/analyses`, with category/search/date filters and 12 articles per page. Filters and page position are retained in the URL; category links from article sidebars open the corresponding filtered archive. Without JavaScript, all 28 article links are rendered. External court records remain on Latest News.
+
+Each article has a bilingual reading-page interface, while the original title and full article language are retained. Author, original publication date, category counts, recent and related articles are sourced from the existing inventory. Decorative editorial illustrations replace the old photographs; see `public/images/SOURCES.md`. The original article bodies are still pending migration, so pages explicitly show the available summary and link to the original site.
+
+To add verified original-language text, set `originalBody` on an entry in `src/content/insights.ts`. Blocks support paragraphs (`type: "paragraph", text`), headings (`type: "heading", level: 2 | 3, text`), lists (`type: "list", items, ordered`) and quotations (`type: "quote", text`). Plain strings are escaped by React. Once nonempty full text exists, the reading page renders it in the article's original language and removes the summary/source fallback. The existing localized `body` field is also supported. Do not expand the current summaries into invented full articles.

@@ -9,9 +9,9 @@ export function InsightsPage({ locale, dict }: { locale: Locale; dict: Dictionar
   const t = dict.insights;
   return (
     <>
-      <PageHero eyebrow={t.eyebrow} lines={[t.title]} intro={t.intro} />
+      <PageHero eyebrow={t.eyebrow} lines={[dict.nav.insights]} intro={t.intro} />
       <Section className="!pt-0" id="practice-insights">
-        <InsightsBrowser insights={insightsByDate().filter(item => !item.courtRecord)} locale={locale} dict={dict} />
+        <InsightsBrowser insights={insightsByDate().filter(item => !item.courtRecord).map(({ body, originalBody, ...summary }) => summary)} locale={locale} dict={dict} />
       </Section>
       <ContactCta locale={locale} dict={dict} />
     </>
