@@ -5,6 +5,7 @@
   --color-ink-soft: #5d6170;
   --color-paper: #fafcfb;
   --color-paper-warm: #edf3f1;
+  --color-news-card: #e7e9ec;
   --color-cream: #ffffff;
   --color-forest: #111019;
   --color-forest-deep: #1b1828;
@@ -189,6 +190,8 @@ html.js:not(.intro-done) [data-intro] { opacity: 0; }
 
 /* Square editorial practice cards: dedicated sky/artwork above a compact summary. */
 .practice-grid { max-width: 864px; margin-inline: auto; }
+.practice-grid.home-practice-grid { max-width: none; }
+.home-practice-grid .practice-panel { max-width: none; height: var(--matched-team-height, auto); }
 .practice-panel { display: grid; grid-template-rows: 44% 56%; width: 100%; max-width: 420px; justify-self: center; aspect-ratio: 1; container-type: inline-size; }
 .practice-panel-europe { background: #eaf5f0; border-color: #c8e0d5; }
 .practice-panel-private { background: #f5eff9; border-color: #e0d3e9; }
@@ -369,7 +372,7 @@ html:not(.js) .article-filter-controls, html:not(.js) .article-filters-mobile { 
 .insights-carousel-viewport { min-width: 0; margin-left: calc(-85% - clamp(3rem, 6vw, 7rem)); padding-left: calc(85% + clamp(3rem, 6vw, 7rem)); overflow: hidden; touch-action: pan-y pinch-zoom; mask-image: linear-gradient(to right, transparent, #000 45%, #000); }
 .insights-carousel-track { display: flex; align-items: stretch; gap: 24px; transition: transform 900ms cubic-bezier(0.22,1,0.36,1); }
 .insights-carousel-track.is-dragging, .insights-carousel-track.is-resetting { transition: none; }
-.insights-carousel-card { flex: 0 0 100%; min-width: 0; min-height: 400px; display: flex; flex-direction: column; align-items: flex-start; padding: clamp(1.75rem, 3vw, 2.5rem); background: white; border-radius: 28px; transition: opacity 900ms linear; }
+.insights-carousel-card { flex: 0 0 100%; min-width: 0; min-height: 400px; display: flex; flex-direction: column; align-items: flex-start; padding: clamp(1.75rem, 3vw, 2.5rem); background: var(--color-news-card); border-radius: 28px; transition: opacity 900ms linear; }
 .insights-carousel-card[aria-hidden="false"] { transition: opacity 650ms cubic-bezier(0.22,1,0.36,1); }
 .insights-carousel-card-content { display: flex; flex: 1; flex-direction: column; align-items: flex-start; opacity: 0; transition: opacity 180ms ease-out; }
 .insights-carousel-card[aria-hidden="false"] .insights-carousel-card-content { opacity: 1; transition-duration: 350ms; }

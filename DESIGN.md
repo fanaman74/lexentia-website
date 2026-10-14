@@ -6,6 +6,7 @@ colors:
   ink-soft: "#5d6170"
   paper: "#fafcfb"
   paper-warm: "#edf3f1"
+  news-card: "#e7e9ec"
   cream: "#ffffff"
   forest: "#111019"
   forest-deep: "#1b1828"
@@ -137,7 +138,7 @@ components:
     rounded: "{rounded.md}"
     padding: "{spacing.panel}"
   carousel-card:
-    backgroundColor: "{colors.cream}"
+    backgroundColor: "{colors.news-card}"
     textColor: "{colors.ink}"
     rounded: "{rounded.carousel}"
     padding: "clamp(1.75rem, 3vw, 2.5rem)"
@@ -151,6 +152,9 @@ components:
     width: "min(100%, 420px)"
   practice-panel-mobile:
     width: "min(100%, 320px)"
+  practice-panel-home:
+    width: "100%"
+    height: "var(--matched-team-height, auto)"
   practice-disclosure-summary:
     backgroundColor: "transparent"
     textColor: "{colors.ink}"
@@ -216,7 +220,7 @@ The system pairs spacious page introductions with compact navigation, filters, a
 - Fine borders, gently rounded panels, and offset control shadows.
 - Dark editorial sections with soft-green navigation cues.
 - Equivalent French/English layouts and explicit article-language labels.
-- Square practice panels with architectural images above compact summaries and controlled distant bird flocks.
+- Architectural practice panels above compact summaries and controlled distant bird flocks; homepage dimensions match team cards.
 - Separate source-backed Latest News and firm-authored Insights archives; a forward-looping Latest News carousel.
 - Illustrated situation links and native practice-section disclosures with direct fragment navigation.
 - Illustrated firm-article previews with compact date badges, dark reader headings and explicit source-note panels.
@@ -238,6 +242,7 @@ The frontmatter preserves the CSS token names; several names predate the referen
 ### Neutral
 
 - **Paper / paper-warm / cream:** page canvas, grouped controls, and white cards respectively.
+- **News-card:** neutral grey reserved for the homepage Latest News carousel cards; the surrounding section uses the page-paper canvas.
 - **Ink / ink-soft:** primary copy and secondary metadata.
 - **Forest / forest-deep:** violet-black editorial surfaces.
 - **Line / line-strong / line-dark:** dividers and surface boundaries appropriate to their context.
@@ -254,9 +259,11 @@ Content is centered within a 1144px maximum width, with 24px horizontal section 
 
 Desktop hero copy sits beside the Brussels landmark. Below 768px it centers above the illustration; section headings stack, and article rows move the date above the title. At 1024px the header replaces its disclosure menu with full navigation. Footer columns expand at 640px and 1024px. Filters wrap, and search/sort fields become a two-column group at 768px.
 
-The homepage carousel uses a two-column layout: heading and navigation at left, one white card at right. Columns are proportioned 0.85fr/1fr with a fluid 3–7rem gap; below 768px they stack with a 2rem gap. Slides are separated by 24px. On desktop the viewport extends across the entire left copy column using `margin-left: calc(-85% - clamp(3rem, 6vw, 7rem))` and equal positive left padding. Its mask becomes fully opaque at 45% of the expanded window, allowing the entire departing white card to travel beneath the fixed copy at z-index 2. The outer carousel contains the moving track. On phones the viewport has no extension and retains a 24px fade edge. Court catalogue rows use a 100px date column, a flexible title/body column and a 180px case-reference column. Below 768px the date and case number share the top line above the title; secondary court metadata and the row arrow are hidden. Court search spans the filter panel above three fields at desktop widths.
+The homepage section sequence is hero, Welcome, the “Specialist advice. Human-scale practice.” firm section, Team, Practice, Latest News, Situations, EU and Contact. The complete firm section follows Welcome, including its introduction and principles.
 
-Practice cards sit within a centered group capped at 864px, with a 20px gap. Individual cards are centered and capped at 420px, reduced to 320px below 768px. The homepage pair becomes two columns at 768px; the expertise page does so at 1024px. Cards retain a 1:1 aspect ratio with dedicated artwork above the text: 44%/56% rows on desktop and 38%/62% below 768px. The original summaries use three clamped lines, reduced to two below 360px; titles and the reading footer remain visible. Full service descriptions and tags stay on the practice pages.
+The homepage carousel uses a two-column layout: heading and navigation at left, one grey card at right. Columns are proportioned 0.85fr/1fr with a fluid 3–7rem gap; below 768px they stack with a 2rem gap. Slides are separated by 24px. On desktop the viewport extends across the entire left copy column using `margin-left: calc(-85% - clamp(3rem, 6vw, 7rem))` and equal positive left padding. Its mask becomes fully opaque at 45% of the expanded window, allowing the entire departing grey card to travel beneath the fixed copy at z-index 2. The outer carousel contains the moving track. On phones the viewport has no extension and retains a 24px fade edge. Court catalogue rows use a 100px date column, a flexible title/body column and a 180px case-reference column. Below 768px the date and case number share the top line above the title; secondary court metadata and the row arrow are hidden. Court search spans the filter panel above three fields at desktop widths.
+
+On the expertise page, practice cards sit within a centered group capped at 864px, with a 20px gap. Individual cards are centered and capped at 420px, reduced to 320px below 768px; the group becomes two columns at 1024px. These compact panels retain a 1:1 aspect ratio. The homepage team and practice grids both span the full 1144px content width, use a 32px gap and form two columns from 768px, with one column below. Each homepage practice card fills its column and matches the height of the corresponding team card through the home-only variant; without JavaScript it remains a full-width square. Both variants keep dedicated artwork above the text: 44%/56% rows on desktop and 38%/62% below 768px. The original summaries use three clamped lines, reduced to two below 360px; titles and the reading footer remain visible. Full service descriptions and tags stay on the practice pages.
 
 The homepage situation heading sits above a full-width grid of six illustrated links. The grid has three equal columns from 1024px, two from 768px and one below 768px. It starts 2.5rem below the heading, with 3rem row gaps and 1.5rem column gaps; phone row gaps reduce to 2.5rem. The heading spans up to 38 characters, and image panels retain a 4:3 aspect ratio.
 
@@ -274,7 +281,7 @@ Exact shadows, focus treatments, easing, and responsive boundaries are recorded 
 
 ## Shapes
 
-Controls use the small radius; panels and archive cards use the medium radius. Homepage carousel cards use 28px corners; navigation controls are 48px circles. Situation-image panels use the large radius with 4:3 artwork. Square practice panels use 12px corners and separate artwork/text regions; their image-region pause controls are 34px circles. Filters and light tags use fully rounded ends. Dark editorial tags instead have compact, lightly rounded rectangular silhouettes. The wordmark uses serif teal-to-purple lettering and an eight-square pattern. Dark sections have straight boundaries.
+Controls use the small radius; panels and archive cards use the medium radius. Homepage carousel cards use 28px corners; navigation controls are 48px circles. Situation-image panels use the large radius with 4:3 artwork. Practice panels use 12px corners and separate artwork/text regions; expertise panels keep a square silhouette, while homepage panels match the team-card height; their image-region pause controls are 34px circles. Filters and light tags use fully rounded ends. Dark editorial tags instead have compact, lightly rounded rectangular silhouettes. The wordmark uses serif teal-to-purple lettering and an eight-square pattern. Dark sections have straight boundaries.
 
 ## Components
 
@@ -308,7 +315,7 @@ The homepage uses a pale-green Brussels Palace of Justice illustration. Slow arc
 
 ### Homepage Latest News carousel
 
-The five latest external court records are ordered by decision date. Each card contains a date and case number, an upright serif official title, a source excerpt, purple court metadata and a bordered reading action. Cards are white on the warm section, with a 400px minimum height (430px below 768px). The parent track moves the entire card horizontally over 900ms with `cubic-bezier(0.22, 1, 0.36, 1)`. Departing articles fade over 900ms linearly as the full white surface passes under the left copy; incoming articles fade over 650ms with the track easing. A separate content wrapper clears outgoing glyphs over 180ms with `ease-out`, keeping the fixed heading and controls readable, and restores incoming content over 350ms. Mouse/touch drag tracks the pointer directly and proportionally crossfades adjacent articles while keeping their content opaque and disabling transitions. A horizontal swipe beyond 45px advances one card; vertical scroll and pinch zoom remain available.
+The five latest external court records are ordered by decision date. Each card contains a date and case number, an upright serif official title, a source excerpt, purple court metadata and a bordered reading action. Cards use the neutral-grey news-card surface on the page-paper section, with a 400px minimum height (430px below 768px). The parent track moves the entire card horizontally over 900ms with `cubic-bezier(0.22, 1, 0.36, 1)`. Departing articles fade over 900ms linearly as the full grey surface passes under the left copy; incoming articles fade over 650ms with the track easing. A separate content wrapper clears outgoing glyphs over 180ms with `ease-out`, keeping the fixed heading and controls readable, and restores incoming content over 350ms. Mouse/touch drag tracks the pointer directly and proportionally crossfades adjacent articles while keeping their content opaque and disabling transitions. A horizontal swipe beyond 45px advances one card; vertical scroll and pinch zoom remain available.
 
 Automatic advance runs every 6.5 seconds. A copy of the leading card follows the fifth card, allowing each cycle to continue left; after 950ms the track resets to the identical first card without a backward animation. Track, article and content transitions are disabled during that reset. Previous/next controls reflect the current bounds; a dedicated pause control exposes the manual pause state. Autoplay also pauses on hover, focus, dragging, offscreen visibility and hidden tabs. The slide count uses `aria-live="off"` during autoplay and `polite` otherwise. Inactive cards are inert and hidden from assistive technology. Reduced motion disables autoplay and changes slides immediately. The archive link opens Latest News. The earlier homepage Insights preview and four quick-link cards have been removed.
 
@@ -336,9 +343,13 @@ When verified content becomes available, the renderer accepts original-language 
 
 The archive and readers use three generated editorial illustrations: documents, EU court and finance, chosen by topic. They extend the existing sage illustration family; original assets remain preserved. Exact generation prompts are embedded in the PNGs, and [SOURCES.md](public/images/SOURCES.md) records provenance. These decorative assets do not claim to reproduce the old article photographs. Sidecar specimens show labeled plain image slots so they remain self-contained without embedding the raster files.
 
+### Homepage practice-card matching
+
+Homepage practice panels share the team grid’s width, column boundaries and 32px gaps. Their heights match the corresponding team card rather than a fixed desktop estimate. The MatchedPracticeCards wrapper reads each visible team card and sets its matching practice card’s `--matched-team-height`; a ResizeObserver tracks subsequent size changes from responsive layout, font loading and content. Locale changes refresh the pairing. Cleanup disconnects the observer and removes the height overrides. This behavior is scoped to the homepage; the expertise page retains its compact square caps, and the no-JavaScript homepage fallback is a full-width square. Existing artwork, bird pause controls, summaries and reading actions keep their styles and behavior.
+
 ### Practice artwork and section reveals
 
-Both square practice cards carry decorative architectural images above their text in the hero’s fine-line style. European institutions illustrate civil-service law; Brussels townhouses illustrate private law. Artwork is contained at the bottom of its dedicated panel with 0.85 opacity, rather than placed behind copy. Each sky contains three small geometric birds, drawn as two stroked wing paths; staggered 15s, 19s and 17s flights and 0.9–1.25s wingbeats give them quiet movement. Each image panel has its own translated 34px circular pause/resume control. Wing marks remain static under reduced motion, and the controls are then hidden. Original compact summaries and the reading footer sit below, without tag chips; the practice detail pages retain all services and tags. Ordinary sections reveal once as they enter the viewport; reduced motion keeps them visible immediately.
+Both practice cards carry decorative architectural images above their text in the hero’s fine-line style. European institutions illustrate civil-service law; Brussels townhouses illustrate private law. Artwork is contained at the bottom of its dedicated panel with 0.85 opacity, rather than placed behind copy. Each sky contains three small geometric birds, drawn as two stroked wing paths; staggered 15s, 19s and 17s flights and 0.9–1.25s wingbeats give them quiet movement. Each image panel has its own translated 34px circular pause/resume control. Wing marks remain static under reduced motion, and the controls are then hidden. Original compact summaries and the reading footer sit below, without tag chips; the practice detail pages retain all services and tags. Ordinary sections reveal once as they enter the viewport; reduced motion keeps them visible immediately.
 
 ### Supplied logo
 
