@@ -199,6 +199,11 @@ components:
     backgroundColor: "{colors.paper-warm}"
     rounded: "{rounded.sm}"
     padding: "0.75rem 1rem"
+  news-update-chip:
+    backgroundColor: "{colors.paper-warm}"
+    textColor: "{colors.ink}"
+    rounded: "{rounded.pill}"
+    padding: "0.3rem 0.65rem"
   article-page-selected:
     backgroundColor: "{colors.bronze}"
     textColor: "{colors.cream}"
@@ -311,6 +316,8 @@ The static grid presents all six translated situation titles and descriptions be
 
 The six images, in order, show the Brussels Palace of Justice, Cinquantenaire, Atomium, European institutions, Brussels townhouses and the Bruges belfry. The Atomium, Cinquantenaire and Bruges assets extend the existing generated landmark family; exact prompts and provenance accompany the assets in [SOURCES.md](public/images/SOURCES.md). Images have empty alt text because the link title supplies the meaning. Their matching section fragments are `career`, `investigations`, `medical`, `career`, `business` and `private-international`; the first four open civil-service sections, and the last two open private-law sections in the selected locale.
 
+Each situation image also holds three small decorative bird marks using the existing two-wing geometry. The flock starts on fine-pointer hover or visible keyboard focus on the link, stays within the image sky and resets when that interaction ends. Three flights cross from the left over 4.8s, 5.3s and 4.3s, with offsets of 0s, −0.7s and −1.5s; their 0.85s alternating wingbeats share the interaction gate. The travel spans the image width plus 60px (`100cqi + 60px`), rising from 8px to −10px and fading at each end. The visibility hook also gates the birds offscreen and in hidden tabs. Reduced motion hides these situation flocks, and without JavaScript they remain hidden. Touch-only hover does not start them; keyboard focus still exposes the same interaction. They add no control or accessible reading content.
+
 All six cards appear in normal document flow and remain directly reachable by keyboard and touch. The situation grid has no horizontal scrolling, next-card preview, snap track, navigation controls, visible-range status or autoplay. Its links and layout work without JavaScript; reduced motion disables the action-arrow transition. The separate Latest News carousel retains its existing behavior.
 
 ### Landmark and editorial motion
@@ -325,9 +332,15 @@ Automatic advance runs every 6.5 seconds. A copy of the leading card follows the
 
 ### Court catalogue and source pages
 
-Latest News (`/en/latest-news`, `/fr/actualites`) holds 84 imported Court of Justice and General Court records, presented as fine-rule date/title/case-reference rows. Search, court and matched-topic filters, decision-date/name sorting, a live result count, clear-filter recovery and 20-row pagination support scanning. Each row opens a local case page under the same archive with official English text, decision date, case number, CELEX, translated navigation and breadcrumbs, source links and import-date/topic-match disclosures. This is a dated static snapshot, with no automatic monitoring claim or attributed firm author. Legacy court detail URLs under Insights redirect with HTTP 301 to the new canonical routes; equivalent-language links and sitemap entries use those routes.
+Latest News (`/en/latest-news`, `/fr/actualites`) holds 84 imported Court of Justice and General Court records, presented as fine-rule date/title/case-reference rows. Search, court and matched-topic filters, decision-date/name sorting, a live result count, clear-filter recovery and 20-row pagination support scanning. Each row opens a local case page under the same archive with official English text, decision date, case number, CELEX, translated navigation and breadcrumbs, source links and import-date/topic-match disclosures. This is a source-bounded dated snapshot without an attributed firm author; its connected daily verification workflow prepares validated workspace updates rather than automatically publishing the hosted website. Legacy court detail URLs under Insights redirect with HTTP 301 to the new canonical routes; equivalent-language links and sitemap entries use those routes.
 
 Insights (`/en/insights`, `/fr/analyses`) contains the 28 firm-authored analyses in an illustrated archive with category/search/sort controls and pagination. It remains separate from the 84 court records in Latest News. Related firm-analysis blocks exclude imported court records. Each archive remains accessible from header and footer navigation.
+
+### Latest News verification chip
+
+A compact warm, rounded update chip appears below the homepage carousel introduction and above the full Latest News catalogue. It uses ink text and a semantic `time` element to display the localized last successful source-refresh date from the snapshot. The date describes verification/import of this source collection, not an individual judgment date or the viewer’s current day. The current 84-record collection was successfully verified through Chromium on 14 October 2026 and remained unchanged.
+
+The connected daily verification automation is enabled from 15 October 2026 at 08:00 Europe/London. Only a successful complete source check may update the validated snapshot and its date in the working project; incomplete checks or failures retain the prior snapshot/date. Notifications are reserved for new records, material changes, failures or required action; unchanged successful checks remain quiet. The date does not promise complete court coverage beyond the published source collection, a live feed or automatic hosting deployment. Publishing an updated snapshot still requires the site’s build and deployment workflow.
 
 ### Illustrated firm-article archive
 
@@ -355,7 +368,7 @@ Homepage practice panels share the team grid’s width, column boundaries and 32
 
 Both practice cards carry decorative architectural images above their text in the hero’s fine-line style. European institutions illustrate civil-service law; Brussels townhouses illustrate private law. Artwork is contained at the bottom of its dedicated panel with 0.85 opacity, rather than placed behind copy. Each sky contains three small geometric birds, drawn as two stroked wing paths; staggered 15s, 19s and 17s flights and 0.9–1.25s wingbeats give them quiet movement. Each image panel has its own translated 34px circular pause/resume control. Wing marks remain static under reduced motion, and the controls are then hidden. Original compact summaries and the reading footer sit below, without tag chips; the practice detail pages retain all services and tags. Ordinary sections reveal once as they enter the viewport; reduced motion keeps them visible immediately.
 
-Homepage team cards, firm principles, practice cards and situation links use the opt-in individual reveal mode: each item starts its own once-only animation when its top reaches 85% of the viewport. The two team cards, three principles, two practice cards and six situation links each move from 16px below their resting position and hidden opacity/visibility to their visible position over 650ms with `power3.out`. This mode has no group stagger delays, so lower rows wait for their own viewport entry, including on phones. Other StaggerGroup instances keep their existing group-triggered behavior. The shared Section reveal remains in place; reduced-motion and no-JavaScript states keep the content visible by default. Sidecar specimens show the visible resting state rather than recreating scroll-triggered animation.
+Homepage team cards, firm principles, practice cards and situation links use the opt-in individual reveal mode: each item starts its own once-only animation when its top reaches 85% of the viewport. The two team cards, three principles, two practice cards and six situation links each move from 28px below their resting position and hidden opacity/visibility to their visible position over 850ms with `power3.out`. This mode has no group stagger delays, so lower rows wait for their own viewport entry, including on phones. Other StaggerGroup instances keep their existing group-triggered 16px / 650ms behavior. The seven homepage sections—Welcome, Team, Firm, Practice, Latest News, Situations and EU—opt into a stronger 40px / 950ms section entrance, once at top 88% of the viewport with `power3.out`. Regular Sections retain their 18px / 800ms reveal. Reduced-motion and no-JavaScript states keep all content visible by default. Sidecar specimens show the visible resting state rather than recreating scroll-triggered animation.
 
 ### Supplied logo
 

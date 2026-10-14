@@ -276,7 +276,7 @@ html.js:not(.intro-done) [data-intro] { opacity: 0; }
 .situation-copy h2 { max-width: 38ch; font-size: clamp(1.8rem, 3.2vw, 2.7rem); }
 .situation-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem 1.5rem; margin-top: 2.5rem; }
 .situation-link { display: flex; flex-direction: column; align-items: start; min-width: 0; }
-.situation-image { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 14px; background: #e6f0e5; }
+.situation-image { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 14px; background: #e6f0e5; container-type: inline-size; }
 .situation-image img { object-fit: cover; }
 .situation-image-0 img { width: 145% !important; max-width: none; left: -45% !important; }
 .situation-image-3 img, .situation-image-4 img { width: 135% !important; max-width: none; left: -35% !important; object-fit: contain; object-position: right bottom; }
@@ -286,6 +286,28 @@ html.js:not(.intro-done) [data-intro] { opacity: 0; }
 .situation-action { display: inline-flex; align-items: center; gap: 0.75rem; min-height: 44px; margin-top: auto; font-size: 0.9rem; color: #06666b; text-decoration: underline; text-underline-offset: 6px; }
 .situation-link:hover h3, .situation-link:focus-visible h3 { color: #06666b; }
 .situation-link:hover .situation-action svg { transform: translateX(4px); }
+.situation-birds { position: absolute; inset: 0; pointer-events: none; }
+.situation-birds .flying-birds { opacity: 0; color: #435f58; }
+.situation-birds .sky-bird { left: -8%; top: 14%; width: 26px; animation: none; }
+.situation-birds .sky-bird-2 { top: 24%; width: 22px; }
+.situation-birds .sky-bird-3 { top: 8%; width: 18px; }
+.situation-birds .bird-wing { animation: none; }
+.situation-birds .flying-birds[data-running="true"] { opacity: var(--flock-opacity, 0); }
+.situation-birds .flying-birds[data-running="true"] .sky-bird { animation: var(--flock-flight, none) 4.8s linear infinite; }
+.situation-birds .flying-birds[data-running="true"] .sky-bird-2 { animation-duration: 5.3s; animation-delay: -0.7s; }
+.situation-birds .flying-birds[data-running="true"] .sky-bird-3 { animation-duration: 4.3s; animation-delay: -1.5s; }
+.situation-birds .flying-birds[data-running="true"] .bird-wing { animation: var(--flock-wing, none) 0.85s ease-in-out infinite alternate; }
+.situation-link:focus-visible { --flock-opacity: 1; --flock-flight: situation-bird-flight; --flock-wing: bird-wingbeat; }
+@media (hover: hover) and (pointer: fine) {
+  .situation-link:hover { --flock-opacity: 1; --flock-flight: situation-bird-flight; --flock-wing: bird-wingbeat; }
+}
+@keyframes situation-bird-flight {
+  0% { transform: translate(0, 8px); opacity: 0; }
+  12%, 80% { opacity: 0.85; }
+  100% { transform: translate(calc(100cqi + 60px), -10px); opacity: 0; }
+}
+@media (prefers-reduced-motion: reduce) { .situation-birds { display: none; } }
+.news-update-chip { gap: 0.35rem; flex-wrap: wrap; max-width: 100%; color: var(--color-ink); }
 .situation-action svg { transition: transform 180ms var(--ease-editorial); }
 
 /* The firm's illustrated archive stays separate from the court-ruling feed. */

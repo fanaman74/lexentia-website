@@ -7,6 +7,7 @@ type Props = {
   id?: string;
   tone?: "paper" | "warm" | "forest" | "cream";
   labelledBy?: string;
+  reveal?: "subtle" | "prominent";
 };
 
 const tones = {
@@ -16,10 +17,10 @@ const tones = {
   forest: "on-dark bg-[var(--color-forest)] text-[var(--color-cream)]",
 };
 
-export function Section({ children, className = "", id, tone = "paper", labelledBy }: Props) {
+export function Section({ children, className = "", id, tone = "paper", labelledBy, reveal = "subtle" }: Props) {
   return (
     <section id={id} aria-labelledby={labelledBy} className={`${tones[tone]} site-section ${className}`}>
-      <Reveal className="section-inner" y={18}>{children}</Reveal>
+      <Reveal className="section-inner" y={reveal === "prominent" ? 40 : 18} seconds={reveal === "prominent" ? 0.95 : 0.8}>{children}</Reveal>
     </section>
   );
 }

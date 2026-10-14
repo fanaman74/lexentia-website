@@ -10,10 +10,11 @@ type Props = {
   className?: string;
   delay?: number;
   y?: number;
+  seconds?: number;
 };
 
 /** Fades content up once as it enters the viewport. Visible without JS. */
-export function Reveal({ children, as: Tag = "div", className, delay = 0, y = distance.reveal }: Props) {
+export function Reveal({ children, as: Tag = "div", className, delay = 0, y = distance.reveal, seconds = duration.base + 0.15 }: Props) {
   const ref = useRef<HTMLElement>(null);
 
   useLayoutEffect(() => {
@@ -27,14 +28,14 @@ export function Reveal({ children, as: Tag = "div", className, delay = 0, y = di
           autoAlpha: 1,
           y: 0,
           delay,
-          duration: duration.base + 0.15,
+          duration: seconds,
           ease: ease.smooth,
           scrollTrigger: { trigger: el, start: "top 88%", once: true },
         },
       );
     }, el);
     return () => ctx.revert();
-  }, [delay, y]);
+  }, [delay, y, seconds]);
 
   return (
     <Tag ref={ref} className={className}>

@@ -8,6 +8,7 @@ import { insightCategories } from "@/content/insights";
 import { formatDate } from "@/lib/format";
 import { pathFor, type Locale } from "@/lib/i18n";
 import { Icon } from "@/components/ui/Icon";
+import { CourtUpdateChip } from "@/components/ui/CourtUpdateChip";
 import { useAnimationState } from "./useAnimationState";
 
 export function InsightsCarousel({ items, locale, dict, title, archiveHref }: { items: Insight[]; locale: Locale; dict: Dictionary; title: string; archiveHref: string }) {
@@ -91,6 +92,7 @@ export function InsightsCarousel({ items, locale, dict, title, archiveHref }: { 
     <div className="insights-carousel-copy">
       <h2 id="insights-title" className="display text-h2">{title}</h2>
       <p className="mt-6 max-w-[37ch] leading-relaxed text-[var(--color-ink-soft)]">{fr ? "Les dernières décisions de la Cour de justice et du Tribunal de l’Union européenne." : "The latest Court of Justice and General Court rulings."}</p>
+      <div className="mt-5"><CourtUpdateChip locale={locale} /></div>
       <div className="insights-carousel-navigation mt-7">
         <button type="button" aria-label={previous} aria-controls="insights-carousel-slides" disabled={logicalIndex === 0} onClick={() => go(index - 1)} className="carousel-arrow"><Icon name="arrow" size={19} className="rotate-180" /></button>
         <button type="button" aria-label={next} aria-controls="insights-carousel-slides" disabled={index >= items.length} onClick={() => go(index + 1)} className="carousel-arrow"><Icon name="arrow" size={19} /></button>

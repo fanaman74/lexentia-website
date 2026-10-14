@@ -25,11 +25,11 @@ export function StaggerGroup({ children, as: Tag = "div", className, id, stagger
       if (revealEach) {
         // Each card waits for its own viewport entry, including lower mobile rows.
         items.forEach(item => gsap.fromTo(item,
-          { autoAlpha: 0, y: distance.card },
+          { autoAlpha: 0, y: 28 },
           {
             autoAlpha: 1,
             y: 0,
-            duration: duration.base,
+            duration: 0.85,
             ease: ease.smooth,
             scrollTrigger: { trigger: item, start: "top 85%", once: true },
           },
