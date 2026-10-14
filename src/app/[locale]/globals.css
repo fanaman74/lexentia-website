@@ -267,14 +267,10 @@ html.js:not(.intro-done) [data-intro] { opacity: 0; }
 .practice-disclosure-body { padding: 0 0 2.5rem; }
 .practice-disclosure-body :target { scroll-margin-top: 144px; }
 
-/* Image buttons follow the supplied two-up feature-browser reference. */
-.situation-browser { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.5fr); align-items: start; gap: clamp(2rem, 5vw, 5rem); }
-.situation-copy h2 { max-width: 18ch; font-size: clamp(1.8rem, 3.2vw, 2.7rem); }
-.situation-navigation { display: flex; align-items: center; gap: 1rem; margin-top: 2rem; }
-html:not(.js) .situation-navigation { display: none; }
-.situation-track { position: relative; display: grid; grid-auto-flow: column; grid-auto-columns: calc((100% - 1.5rem) / 2); gap: 1.5rem; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding: 4px; margin: -4px; scroll-padding-inline: 4px; }
-.situation-track::-webkit-scrollbar { display: none; }
-.situation-link { display: flex; flex-direction: column; align-items: start; min-width: 0; scroll-snap-align: start; }
+/* All six situation links remain visible in a responsive three-column grid. */
+.situation-copy h2 { max-width: 38ch; font-size: clamp(1.8rem, 3.2vw, 2.7rem); }
+.situation-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 3rem 1.5rem; margin-top: 2.5rem; }
+.situation-link { display: flex; flex-direction: column; align-items: start; min-width: 0; }
 .situation-image { position: relative; width: 100%; aspect-ratio: 4 / 3; overflow: hidden; border-radius: 14px; background: #e6f0e5; }
 .situation-image img { object-fit: cover; }
 .situation-image-0 img { width: 145% !important; max-width: none; left: -45% !important; }
@@ -287,12 +283,10 @@ html:not(.js) .situation-navigation { display: none; }
 .situation-link:hover .situation-action svg { transform: translateX(4px); }
 .situation-action svg { transition: transform 180ms var(--ease-editorial); }
 @media (max-width: 1023px) {
-  .situation-browser { grid-template-columns: minmax(0, 1fr); gap: 2rem; }
-  .situation-copy h2 { max-width: 28ch; }
-  .situation-navigation { margin-top: 1.5rem; }
+  .situation-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 @media (max-width: 767px) {
-  .situation-track { grid-auto-columns: 86%; gap: 1rem; }
+  .situation-grid { grid-template-columns: minmax(0, 1fr); row-gap: 2.5rem; }
   .situation-link h3 { font-size: 1.5rem; }
   .practice-disclosure > summary { min-height: 76px; padding-block: 1.25rem; }
 }
