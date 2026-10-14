@@ -259,7 +259,7 @@ Content is centered within a 1144px maximum width, with 24px horizontal section 
 
 Desktop hero copy sits beside the Brussels landmark. Below 768px it centers above the illustration; section headings stack, and article rows move the date above the title. At 1024px the header replaces its disclosure menu with full navigation. Footer columns expand at 640px and 1024px. Filters wrap, and search/sort fields become a two-column group at 768px.
 
-The homepage section sequence is hero, Welcome, Team, the “Specialist advice. Human-scale practice.” firm section, Practice, Latest News, Situations, EU and Contact. The complete firm section follows Team, including its introduction and principles.
+The homepage section sequence is hero, Welcome, Team, the “Specialist advice. Human-scale practice.” firm section, Practice, Latest News, Situations, EU and Contact. The complete firm section follows Team, including its introduction and principles. Welcome uses a stacked layout at every width: its title, body paragraphs and About link share the same left edge. A fine top rule has 36px of inset before the title; the body begins 20px beneath it, keeps 20px spacing between its children and a 70-character maximum measure.
 
 The homepage carousel uses a two-column layout: heading and navigation at left, one grey card at right. Columns are proportioned 0.85fr/1fr with a fluid 3–7rem gap; below 768px they stack with a 2rem gap. Slides are separated by 24px. On desktop the viewport extends across the entire left copy column using `margin-left: calc(-85% - clamp(3rem, 6vw, 7rem))` and equal positive left padding. Its mask becomes fully opaque at 45% of the expanded window, allowing the entire departing grey card to travel beneath the fixed copy at z-index 2. The outer carousel contains the moving track. On phones the viewport has no extension and retains a 24px fade edge. Court catalogue rows use a 100px date column, a flexible title/body column and a 180px case-reference column. Below 768px the date and case number share the top line above the title; secondary court metadata and the row arrow are hidden. Court search spans the filter panel above three fields at desktop widths.
 
@@ -288,12 +288,16 @@ Controls use the small radius; panels and archive cards use the medium radius. H
 - **Buttons:** dark-teal primary actions with an ink border and offset shadow; transparent secondary actions with a stronger neutral border. Both include visible keyboard focus. Primary hover deepens the teal; active state compresses its shadow. Dark-section secondary buttons use violet-gray borders and hover surfaces.
 - **Fields:** white search, select, and contact fields with a small radius, a 48px minimum height, and a strong neutral border. Focus changes the border to teal; invalid contact fields use a red border. Keep visible labels.
 - **Tags and filters:** light tags identify categories or languages. Category filter buttons expose selection through `aria-pressed`, switching from white to ink with white text. Filtering, search, and sorting update immediately with a visible live result count and clear-filters actions.
-- **Cards:** shared compact insight cards have serif titles, muted metadata, category tags, and a ruled reading footer. The firm archive and reader-related sections use the illustrated ArticlePreview pattern described below. The linked title covers the card. Dark variants preserve the structure with violet-black surfaces, pale text, and soft-green arrows. Lawyer cards use bordered white panels and truthful portrait placeholders while commissioned images are pending.
+- **Cards:** shared compact insight cards have serif titles, muted metadata, category tags, and a ruled reading footer. The firm archive and reader-related sections use the illustrated ArticlePreview pattern described below. The linked title covers the card. Dark variants preserve the structure with violet-black surfaces, pale text, and soft-green arrows. Lawyer cards use bordered white panels with the supplied portrait where available and truthful monogram placeholders where no portrait is supplied.
 - **Navigation:** the fixed header includes separate Insights and Latest News destinations with an underlined active destination, equivalent-route language switching, and a compact contact action. The mobile disclosure exposes `aria-expanded`; Escape closes it and returns focus to its toggle. Route changes close it. The footer also links to both archives; its links underline on hover and keyboard focus.
 - **Wordmark and icons:** preserve the supplied serif Lexentia mark and coloured-square pattern. Use the shared stroked SVG icons, including external-link arrows, rather than relying on font glyph coverage.
 - **Disclosures:** both practice detail pages use native `details`/`summary` rows for their overview, service groups, approach, related analyses where present, and lawyers. Their content remains available through native interaction without JavaScript.
 - **Situation links:** the six homepage situations are whole-card links with architectural artwork, the existing title and description, and an underlined Explore action. They lead directly to the matching practice disclosure.
 
+
+### Portraits
+
+The shared Portrait component fits Nathalie de Montigny’s complete source photograph inside its existing frame with centered `object-fit: contain` and `object-position: center`. The pale grouped-surface background remains visible as letterboxing when the photograph and frame have different proportions. The photograph has no hover zoom. Frame proportions and card sizes stay unchanged: homepage large cards use 4:3 frames, compact lawyer cards use 16:9 and the profile’s default frame uses 4:5. The same fitting treatment applies wherever the portrait appears, including home, team, profile and expertise pages. Preserve the source URL and localized alt text. Magali’s monogram placeholder and its existing behavior remain unchanged; do not substitute stock or generated people.
 
 ### Practice-section disclosures
 
@@ -355,7 +359,9 @@ Homepage team cards, firm principles, practice cards and situation links use the
 
 ### Supplied logo
 
-The header and footer use a crisp SVG reconstruction of the supplied Lexentia wordmark: serif teal-to-purple lettering, its bilingual tagline, and eight coloured squares above the dotless i. The squares make one short, staggered movement on entry; reduced motion leaves the mark static. Unique gradient IDs allow both instances to coexist.
+The header and footer use a crisp SVG reconstruction of the supplied Lexentia wordmark: serif teal-to-purple lettering, its bilingual tagline, and eight coloured squares above the dotless i. The squares repeat a gentle 4.8s ease-in-out loop with 90ms offsets, each rotating around its own center (`transform-box: fill-box`). At 0%, 12%, 65% and 100% they retain their original opacity and position; at 28% they shift 1px right and 3px up, rotate 90 degrees and soften to 0.6 opacity; at 44% they shift 1px down, keep the rotation and return to full opacity. The lettering and tagline stay fixed.
+
+The loop is paused by default and runs only while the visibility hook sets `data-running="true"`. Hover or visible keyboard focus on the enclosing link pauses it; offscreen artwork and hidden tabs also pause. Reduced motion removes the animation and restores the original opaque, untransformed squares. Without JavaScript, the paused original mark remains visible. Unique gradient IDs allow header and footer instances to coexist.
 
 The original raster bytes were unavailable; the reconstruction preserves the supplied mark’s composition without claiming exact type outlines.
 
@@ -367,6 +373,7 @@ The original raster bytes were unavailable; the reconstruction preserves the sup
 - **Do** use upright Fraunces headings, Geist interface text, and the implemented palette.
 - **Do** preserve visible focus, reduced-motion behavior, translated labels, and equivalent language routes.
 - **Do** retain source links, draft notices, article-language labels, and truthful portrait placeholders.
+- **Do** preserve the full framing of supplied portraits with a centered fit and a pale frame background.
 
 ### Don't:
 

@@ -178,11 +178,13 @@ html.js:not(.intro-done) [data-intro] { opacity: 0; }
 /* The supplied serif wordmark and its eight-square accent above the i. */
 .wordmark-brand { display: inline-flex; align-items: center; vertical-align: middle; width: 166px; height: 52px; }
 .wordmark-brand svg { display: block; max-width: 100%; overflow: visible; }
-.wordmark-brand[data-running="true"] .logo-pixel { animation: logo-pixel-arrive 2.8s ease-out both; }
-@keyframes logo-pixel-arrive {
-  0%, 100% { opacity: 1; transform: translateY(0); }
-  28% { opacity: 0.45; transform: translateY(-2px); }
-  62% { opacity: 1; transform: translateY(1px); }
+.wordmark-brand .logo-pixel { transform-box: fill-box; transform-origin: center; animation: logo-pixel-flow 4.8s ease-in-out infinite both; animation-play-state: paused; }
+.wordmark-brand[data-running="true"] .logo-pixel { animation-play-state: running; }
+.wordmark-brand:hover .logo-pixel, a:focus-visible .wordmark-brand .logo-pixel { animation-play-state: paused; }
+@keyframes logo-pixel-flow {
+  0%, 12%, 65%, 100% { opacity: 1; transform: translate(0, 0) rotate(0deg); }
+  28% { opacity: 0.6; transform: translate(1px, -3px) rotate(90deg); }
+  44% { opacity: 1; transform: translate(0, 1px) rotate(90deg); }
 }
 @media (prefers-reduced-motion: reduce) {
   .wordmark-brand .logo-pixel { animation: none !important; opacity: 1; transform: none; }

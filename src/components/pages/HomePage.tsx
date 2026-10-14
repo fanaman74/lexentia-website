@@ -39,9 +39,9 @@ export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary })
     </section>
 
     <Section labelledBy="welcome-title" className="!pb-0">
-      <div className="grid gap-8 border-t border-[var(--color-line)] pt-9 lg:grid-cols-[1fr_2fr] lg:gap-16">
+      <div className="border-t border-[var(--color-line)] pt-9">
         <h2 id="welcome-title" className="display text-h2">{t.welcomeTitle}</h2>
-        <div className="max-w-[70ch] space-y-5 text-lg leading-relaxed text-[var(--color-ink-soft)]">
+        <div className="mt-5 max-w-[70ch] space-y-5 text-lg leading-relaxed text-[var(--color-ink-soft)]">
           {t.welcomeBody.map(paragraph => <p key={paragraph}>{paragraph}</p>)}
           <ArrowLink href={href(locale, "about")} className="text-sm text-[var(--color-ink)]">{dict.footer.aboutLink}</ArrowLink>
         </div>

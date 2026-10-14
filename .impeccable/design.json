@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-14T09:19:38Z",
+  "generatedAt": "2026-10-14T09:40:58Z",
   "title": "Design System: Lexentia",
   "extensions": {
     "colorMeta": {
@@ -180,9 +180,9 @@
         "purpose": "Sparse leaf movement confined to the landmark illustration."
       },
       {
-        "name": "logo-pixel-arrive",
-        "value": "2.8s ease-out once, 90ms stagger",
-        "purpose": "Small square motif above the supplied wordmark i, with reduced-motion and visibility handling."
+        "name": "logo-pixel-flow",
+        "value": "4.8s ease-in-out infinite both; 90ms stagger",
+        "purpose": "Eight wordmark squares rotate around their own fill-box center. At 0/12/65/100% opacity is 1 and transform is translate(0,0) rotate(0deg); at 28% opacity is .6 and transform is translate(1px,-3px) rotate(90deg); at 44% opacity is 1 and transform is translate(0,1px) rotate(90deg). Paused by default; data-running=true enables the loop. Hover, enclosing-link keyboard focus, offscreen visibility and hidden tabs pause it. Reduced motion removes animation and restores the original mark; no JavaScript keeps the static paused mark. Glyphs and tagline remain fixed."
       },
       {
         "name": "section-reveal",
@@ -338,9 +338,9 @@
     {
       "name": "Lexentia wordmark",
       "kind": "custom",
-      "description": "SVG reconstruction of the supplied serif teal-to-purple mark, bilingual tagline and all eight animated squares; source raster bytes were unavailable.",
+      "description": "SVG reconstruction of the supplied serif teal-to-purple mark, bilingual tagline and eight squares above the i. Only the squares repeat a 4.8s ease-in-out loop with 90ms offsets; glyphs and tagline stay fixed. The loop defaults to paused, runs under data-running=true, and pauses on hover or keyboard focus. Production visibility handling also pauses offscreen/in hidden tabs; reduced motion and no JavaScript keep the original static mark. This self-contained specimen shows the paused state; adding data-running=true demonstrates the loop. Source raster bytes were unavailable.",
       "html": "<a class=\"ds-wordmark\" href=\"/en\" aria-label=\"Lexentia\"><svg viewBox=\"0 0 180 60\" width=\"166\" height=\"52\" role=\"img\" aria-label=\"Lexentia — Avocats · Attorneys at Law\"><defs><linearGradient id=\"ds-logo\" x1=\"0\" y1=\"0\" x2=\"1\" y2=\"0\"><stop offset=\"0%\" stop-color=\"#008c90\"/><stop offset=\"34%\" stop-color=\"#008c90\"/><stop offset=\"75%\" stop-color=\"#77549c\"/><stop offset=\"100%\" stop-color=\"#77549c\"/></linearGradient></defs><text x=\"0\" y=\"45\" font-family=\"Georgia, Times New Roman, serif\" font-size=\"43\" letter-spacing=\"-1.5\" textLength=\"172\" lengthAdjust=\"spacingAndGlyphs\" fill=\"url(#ds-logo)\">Lexentıa</text><text x=\"2\" y=\"58\" font-family=\"Arial, sans-serif\" font-size=\"7\" font-weight=\"600\" letter-spacing=\"0.7\" textLength=\"169\" lengthAdjust=\"spacingAndGlyphs\" fill=\"#77549c\">AVOCATS - ATTORNEYS AT LAW</text><rect x=\"157\" y=\"1\" width=\"4.5\" height=\"4.5\" fill=\"#efa93a\" class=\"ds-logo-pixel\" style=\"animation-delay:0ms\"/><rect x=\"151\" y=\"7\" width=\"4.5\" height=\"4.5\" fill=\"#8daf66\" class=\"ds-logo-pixel\" style=\"animation-delay:90ms\"/><rect x=\"157\" y=\"7\" width=\"4.5\" height=\"4.5\" fill=\"#008d91\" class=\"ds-logo-pixel\" style=\"animation-delay:180ms\"/><rect x=\"145\" y=\"13\" width=\"4.5\" height=\"4.5\" fill=\"#72529b\" class=\"ds-logo-pixel\" style=\"animation-delay:270ms\"/><rect x=\"151\" y=\"13\" width=\"4.5\" height=\"4.5\" fill=\"#658e8a\" class=\"ds-logo-pixel\" style=\"animation-delay:360ms\"/><rect x=\"139\" y=\"19\" width=\"4.5\" height=\"4.5\" fill=\"#8064a6\" class=\"ds-logo-pixel\" style=\"animation-delay:450ms\"/><rect x=\"145\" y=\"19\" width=\"4.5\" height=\"4.5\" fill=\"#99b273\" class=\"ds-logo-pixel\" style=\"animation-delay:540ms\"/><rect x=\"151\" y=\"19\" width=\"4.5\" height=\"4.5\" fill=\"#72529b\" class=\"ds-logo-pixel\" style=\"animation-delay:630ms\"/></svg></a>",
-      "css": ".ds-wordmark{display:inline-flex;align-items:center;vertical-align:middle;width:166px;height:52px;text-decoration:none}.ds-wordmark svg{display:block;max-width:100%;overflow:visible}.ds-wordmark:focus-visible{outline:2px solid var(--color-bronze,#087b80);outline-offset:4px}.ds-logo-pixel{animation:ds-logo-pixel-arrive 2.8s ease-out both}@keyframes ds-logo-pixel-arrive{0%,100%{opacity:1;transform:translateY(0)}28%{opacity:0.45;transform:translateY(-2px)}62%{opacity:1;transform:translateY(1px)}}@media(prefers-reduced-motion:reduce){.ds-logo-pixel{animation:none;opacity:1;transform:none}}"
+      "css": ".ds-wordmark{display:inline-flex;align-items:center;vertical-align:middle;width:166px;height:52px;text-decoration:none}.ds-wordmark svg{display:block;max-width:100%;overflow:visible}.ds-wordmark:focus-visible{outline:2px solid var(--color-bronze,#087b80);outline-offset:4px}.ds-logo-pixel{transform-box:fill-box;transform-origin:center;animation:ds-logo-pixel-flow 4.8s ease-in-out infinite both;animation-play-state:paused}.ds-wordmark[data-running=\"true\"] .ds-logo-pixel{animation-play-state:running}.ds-wordmark:hover .ds-logo-pixel,.ds-wordmark:focus-visible .ds-logo-pixel,a:focus-visible .ds-wordmark .ds-logo-pixel{animation-play-state:paused}@keyframes ds-logo-pixel-flow{0%,12%,65%,100%{opacity:1;transform:translate(0,0) rotate(0deg)}28%{opacity:.6;transform:translate(1px,-3px) rotate(90deg)}44%{opacity:1;transform:translate(0,1px) rotate(90deg)}}@media(prefers-reduced-motion:reduce){.ds-logo-pixel{animation:none!important;opacity:1;transform:none}}"
     },
     {
       "name": "Homepage Latest News carousel",
@@ -408,7 +408,8 @@
       "**Do** retain the EU JUST reference grammar across shared routes and components.",
       "**Do** use upright Fraunces headings, Geist interface text, and the implemented palette.",
       "**Do** preserve visible focus, reduced-motion behavior, translated labels, and equivalent language routes.",
-      "**Do** retain source links, draft notices, article-language labels, and truthful portrait placeholders."
+      "**Do** retain source links, draft notices, article-language labels, and truthful portrait placeholders.",
+      "**Do** preserve the full framing of supplied portraits with a centered fit and a pale frame background."
     ],
     "donts": [
       "**Don't** restore the replaced grid backdrop or italic green hero treatment.",
