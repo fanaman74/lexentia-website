@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Icon } from "@/components/ui/Icon";
+import { StaggerGroup } from "@/components/motion/StaggerGroup";
 import type { Dictionary } from "@/content";
 import { href, type Locale } from "@/lib/i18n";
 
@@ -20,13 +21,13 @@ export function SituationLinks({ locale, dict }: { locale: Locale; dict: Diction
     <div className="situation-copy">
       <h2 id="needs-title" className="display text-h2">{dict.home.needsTitle}</h2>
     </div>
-    <div id="situation-links" className="situation-grid">
-      {dict.home.needs.map((need, i) => <Link key={need.title} href={href(locale, destinations[i].page, destinations[i].section)} className="situation-link">
+    <StaggerGroup id="situation-links" className="situation-grid" revealEach>
+      {dict.home.needs.map((need, i) => <Link data-stagger key={need.title} href={href(locale, destinations[i].page, destinations[i].section)} className="situation-link">
         <div className={`situation-image situation-image-${i}`}><Image src={`/images/${destinations[i].image}`} alt="" fill sizes="(min-width: 1200px) 366px, (min-width: 1024px) calc(33vw - 32px), (min-width: 768px) calc(50vw - 36px), calc(100vw - 48px)" /></div>
         <h3 className="display">{need.title}</h3>
         <p>{need.body}</p>
         <span className="situation-action">{fr ? "Explorer" : "Explore"}<Icon name="arrow" size={18} /></span>
       </Link>)}
-    </div>
+    </StaggerGroup>
   </div>;
 }

@@ -48,22 +48,22 @@ export function HomePage({ locale, dict }: { locale: Locale; dict: Dictionary })
       </div>
     </Section>
 
+    <Section labelledBy="team-title">
+      <div className="section-heading"><h2 id="team-title" className="display text-h2">{t.teamTitle}</h2><ArrowLink href={href(locale, "team")}>{dict.nav.team}</ArrowLink></div>
+      <StaggerGroup className="home-team-grid grid gap-8 md:grid-cols-2" revealEach>{lawyers.map(lawyer => <LawyerCard key={lawyer.slug} lawyer={lawyer} locale={locale} dict={dict} large />)}</StaggerGroup>
+    </Section>
+
     <Section labelledBy="firm-title">
       <h2 id="firm-title" className="display text-h2">{t.firmTitle}</h2>
       <p className="mt-5 max-w-[70ch] leading-relaxed text-[var(--color-ink-soft)]">{t.firmBody}</p>
-      <dl className="mt-10 grid gap-8 md:grid-cols-3">{t.principles.map(p => <div key={p.title} className="border-t border-[var(--color-line)] pt-5"><dt className="display text-h3">{p.title}</dt><dd className="mt-4 leading-relaxed text-[var(--color-ink-soft)]">{p.body}</dd></div>)}</dl>
+      <StaggerGroup as="dl" className="mt-10 grid gap-8 md:grid-cols-3" revealEach>{t.principles.map(p => <div data-stagger key={p.title} className="border-t border-[var(--color-line)] pt-5"><dt className="display text-h3">{p.title}</dt><dd className="mt-4 leading-relaxed text-[var(--color-ink-soft)]">{p.body}</dd></div>)}</StaggerGroup>
       <ArrowLink href={href(locale, "about")} className="mt-9">{dict.footer.aboutLink}</ArrowLink>
-    </Section>
-
-    <Section labelledBy="team-title">
-      <div className="section-heading"><h2 id="team-title" className="display text-h2">{t.teamTitle}</h2><ArrowLink href={href(locale, "team")}>{dict.nav.team}</ArrowLink></div>
-      <StaggerGroup className="home-team-grid grid gap-8 md:grid-cols-2">{lawyers.map(lawyer => <LawyerCard key={lawyer.slug} lawyer={lawyer} locale={locale} dict={dict} large />)}</StaggerGroup>
     </Section>
 
     <Section labelledBy="expertise-title">
       <div className="section-heading"><h2 id="expertise-title" className="display text-h2 max-w-[24ch]">{t.expertiseTitle}</h2><ArrowLink href={href(locale, "expertise")}>{dict.nav.expertise}</ArrowLink></div>
       <MatchedPracticeCards locale={locale}>
-        <StaggerGroup className="practice-grid home-practice-grid grid gap-8 md:grid-cols-2">{practiceAreas.map((area, i) => <PracticePanel key={area.id} area={area} locale={locale} index={pad(i + 1)} cta={area.id === "eu-civil-service" ? t.exploreEu : t.explorePrivate} />)}</StaggerGroup>
+        <StaggerGroup className="practice-grid home-practice-grid grid gap-8 md:grid-cols-2" revealEach>{practiceAreas.map((area, i) => <PracticePanel key={area.id} area={area} locale={locale} index={pad(i + 1)} cta={area.id === "eu-civil-service" ? t.exploreEu : t.explorePrivate} />)}</StaggerGroup>
       </MatchedPracticeCards>
     </Section>
 
