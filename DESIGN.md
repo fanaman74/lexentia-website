@@ -297,7 +297,7 @@ Controls use the small radius; panels and archive cards use the medium radius. H
 
 ### Portraits
 
-The shared Portrait component fits Nathalie de Montigny’s complete source photograph inside its existing frame with centered `object-fit: contain` and `object-position: center`. The pale grouped-surface background remains visible as letterboxing when the photograph and frame have different proportions. The photograph has no hover zoom. Frame proportions and card sizes stay unchanged: homepage large cards use 4:3 frames, compact lawyer cards use 16:9 and the profile’s default frame uses 4:5. The same fitting treatment applies wherever the portrait appears, including home, team, profile and expertise pages. Preserve the source URL and localized alt text. Magali’s monogram placeholder and its existing behavior remain unchanged; do not substitute stock or generated people.
+The shared Portrait component fills Nathalie de Montigny’s existing image frame with centered `object-fit: cover` and `object-position: center`. Proportional scaling preserves the photograph’s aspect ratio; overflow is cropped around the center when the photograph and frame have different proportions, so the image fills the box without distortion or letterboxing. The photograph has no hover zoom. Frame proportions and card sizes stay unchanged: homepage large cards use 4:3 frames, compact lawyer cards use 16:9 and the profile’s default frame uses 4:5. The same fitting treatment applies wherever the portrait appears, including home, team, profile and expertise pages. Preserve the source URL and localized alt text. Magali’s monogram placeholder and its existing behavior remain unchanged; do not substitute stock or generated people.
 
 ### Practice-section disclosures
 
@@ -373,7 +373,7 @@ The original raster bytes were unavailable; the reconstruction preserves the sup
 - **Do** use upright Fraunces headings, Geist interface text, and the implemented palette.
 - **Do** preserve visible focus, reduced-motion behavior, translated labels, and equivalent language routes.
 - **Do** retain source links, draft notices, article-language labels, and truthful portrait placeholders.
-- **Do** preserve the full framing of supplied portraits with a centered fit and a pale frame background.
+- **Do** fill supplied portrait frames with centered cover, preserving proportional scaling and cropping overflow without distortion.
 
 ### Don't:
 

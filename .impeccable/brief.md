@@ -39,3 +39,5 @@ Wordmark motion update: the eight coloured squares above the i now repeat a quie
 Portrait fit update: fit Nathalie's full source photo centered inside the existing portrait frames using object-contain, with the pale frame visible beside a narrower image. Remove the photo's hover scale so neither its resting nor hovered state crops or zooms the image. Preserve card/frame dimensions, original source and alt text; Magali's truthful placeholder remains.
 
 Welcome layout update: stack the existing introduction and About link directly beneath the Welcome heading at every viewport. Both share the left content edge; keep the top rule, 36px inset, 20px heading-to-copy gap and 70ch copy measure.
+
+Portrait fill update supersedes the earlier contain request: fill the existing portrait box edge to edge using centered object-cover, preserving the photograph's proportions. Crop only the overflow where photo and frame proportions differ; retain no hover zoom, original source/alt text, frame sizes and Magali's placeholder.

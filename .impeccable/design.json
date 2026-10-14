@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-10-14T09:40:58Z",
+  "generatedAt": "2026-10-14T09:54:25Z",
   "title": "Design System: Lexentia",
   "extensions": {
     "colorMeta": {
@@ -409,7 +409,7 @@
       "**Do** use upright Fraunces headings, Geist interface text, and the implemented palette.",
       "**Do** preserve visible focus, reduced-motion behavior, translated labels, and equivalent language routes.",
       "**Do** retain source links, draft notices, article-language labels, and truthful portrait placeholders.",
-      "**Do** preserve the full framing of supplied portraits with a centered fit and a pale frame background."
+      "**Do** fill supplied portrait frames with centered cover, preserving proportional scaling and cropping overflow without distortion."
     ],
     "donts": [
       "**Don't** restore the replaced grid backdrop or italic green hero treatment.",

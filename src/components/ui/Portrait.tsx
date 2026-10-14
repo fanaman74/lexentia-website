@@ -29,7 +29,7 @@ export function Portrait({ name, src, alt, pendingLabel, className = "", priorit
           unoptimized={src.startsWith("https://")}
           preload={priority}
           sizes="(min-width: 1024px) 40vw, 100vw"
-          className="object-contain object-center"
+          className="object-cover object-center"
         />
       ) : (
         <div className="absolute inset-0 flex flex-col justify-between p-6" role="img" aria-label={`${name}, ${pendingLabel.toLowerCase()}`}>
