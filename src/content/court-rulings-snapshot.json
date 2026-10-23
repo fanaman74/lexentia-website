@@ -1,7 +1,22 @@
 {
-  "importedAt": "2026-10-22",
+  "importedAt": "2026-10-23",
   "source": "https://www.eujust.online/cases",
   "records": [
+    {
+      "title": "IO v European Investment Bank",
+      "date": "2026-10-21",
+      "caseNumber": "T-199/25",
+      "court": "General Court of the European Union",
+      "eujustUrl": "https://www.eujust.online/cases/1737",
+      "topics": [
+        "Workplace harassment"
+      ],
+      "officialTitle": "Judgment of the General Court (Third Chamber) of 21 October 2026.#IO v European Investment Bank.#Civil service – EIB staff – Psychological harassment – Dignity at Work Policy – Complaint alleging psychological harassment – Decision rejecting the complaint – Prima facie evidence of the alleged psychological harassment – Liability – Non-material damage.#Case T-199/25.",
+      "formation": "Judgment of the General Court (Third Chamber) of 21 October 2026",
+      "subjects": [],
+      "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62025TJ0199",
+      "celex": "62025TJ0199"
+    },
     {
       "title": "Jean-Marc Colombani v European External Action Service (EEAS)",
       "date": "2026-04-16",
