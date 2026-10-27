@@ -1,5 +1,5 @@
 {
-  "importedAt": "2026-10-24",
+  "importedAt": "2026-10-27",
   "source": "https://www.eujust.online/cases",
   "records": [
     {
@@ -290,22 +290,6 @@
     {
       "title": "BZ v European Central Bank",
       "date": "2023-10-18",
-      "caseNumber": "T-631/21",
-      "court": "General Court of the European Union",
-      "eujustUrl": "https://www.eujust.online/cases/20",
-      "topics": [
-        "Employment discrimination",
-        "Workplace harassment"
-      ],
-      "officialTitle": "Order of the General Court (First Chamber) of 18 October 2023.#BZ v European Central Bank.#Civil service – ECB staff – Complaint of discrimination and psychological harassment – Internal administrative inquiry – Compliance with a judgment of the General Court – Time limit for bringing proceedings – Point from which time starts to run – Pre-litigation procedure – Liability – Action in part manifestly inadmissible and in part manifestly lacking any foundation in law.#Case T-631/21.",
-      "formation": "Order of the General Court (First Chamber) of 18 October 2023",
-      "subjects": [],
-      "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62021TO0631",
-      "celex": "62021TO0631"
-    },
-    {
-      "title": "BZ v European Central Bank",
-      "date": "2023-10-18",
       "caseNumber": "T-162/21",
       "court": "General Court of the European Union",
       "eujustUrl": "https://www.eujust.online/cases/19",
@@ -318,6 +302,22 @@
       "subjects": [],
       "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62021TJ0162",
       "celex": "62021TJ0162"
+    },
+    {
+      "title": "BZ v European Central Bank",
+      "date": "2023-10-18",
+      "caseNumber": "T-631/21",
+      "court": "General Court of the European Union",
+      "eujustUrl": "https://www.eujust.online/cases/20",
+      "topics": [
+        "Employment discrimination",
+        "Workplace harassment"
+      ],
+      "officialTitle": "Order of the General Court (First Chamber) of 18 October 2023.#BZ v European Central Bank.#Civil service – ECB staff – Complaint of discrimination and psychological harassment – Internal administrative inquiry – Compliance with a judgment of the General Court – Time limit for bringing proceedings – Point from which time starts to run – Pre-litigation procedure – Liability – Action in part manifestly inadmissible and in part manifestly lacking any foundation in law.#Case T-631/21.",
+      "formation": "Order of the General Court (First Chamber) of 18 October 2023",
+      "subjects": [],
+      "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62021TO0631",
+      "celex": "62021TO0631"
     },
     {
       "title": "TL v European Commission",
@@ -500,7 +500,7 @@
       "celex": "62021TJ0438"
     },
     {
-      "title": "AI and Others v European Centre for Disease Prevention and Control",
+      "title": "AI and Others v European Centre for Disease Prevention and Control",
       "date": "2022-07-13",
       "caseNumber": "T-864/19",
       "court": "General Court of the European Union",
@@ -508,7 +508,7 @@
       "topics": [
         "Workplace harassment"
       ],
-      "officialTitle": "Judgment of the General Court (Seventh Chamber) of 13 July 2022.#AI and Others v European Centre for Disease Prevention and Control.#Civil service – ECDC staff members – Psychological harassment – Request for assistance – Prior warnings – Article 31 of the Charter of Fundamental Rights – Article 24 of the Staff Regulations – Scope of the duty to provide assistance – Duty to have regard for the welfare of officials – Opening of an investigation – Reasonable time period – Liability – Unlawfulness.#Case T-864/19.",
+      "officialTitle": "Judgment of the General Court (Seventh Chamber) of 13 July 2022.#AI and Others v European Centre for Disease Prevention and Control.#Civil service – ECDC staff members – Psychological harassment – Request for assistance – Prior warnings – Article 31 of the Charter of Fundamental Rights – Article 24 of the Staff Regulations – Scope of the duty to provide assistance – Duty to have regard for the welfare of officials – Opening of an investigation – Reasonable time period – Liability – Unlawfulness.#Case T-864/19.",
       "formation": "Judgment of the General Court (Seventh Chamber) of 13 July 2022",
       "subjects": [],
       "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62019TJ0864",
@@ -698,21 +698,6 @@
     {
       "title": "AI v European Centre for Disease Prevention and Control",
       "date": "2021-07-14",
-      "caseNumber": "T-79/20",
-      "court": "General Court of the European Union",
-      "eujustUrl": "https://www.eujust.online/cases/46",
-      "topics": [
-        "Workplace harassment"
-      ],
-      "officialTitle": "Order of the General Court (Seventh Chamber) of 14 July 2021.#AI v European Centre for Disease Prevention and Control.#Action for annulment and for damages – Civil service – ECDC staff – Psychological harassment – Article 12a of the Staff Regulations – Damage to reputation – Request for assistance – Article 24 of the Staff Regulations – Dismissal of application – Right to be heard – Absence of prima facie evidence – Duty of care – Action in part manifestly inadmissible and in part manifestly lacking any foundation in law.#Case T-79/20.",
-      "formation": "Order of the General Court (Seventh Chamber) of 14 July 2021",
-      "subjects": [],
-      "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62020TO0079",
-      "celex": "62020TO0079"
-    },
-    {
-      "title": "AI v European Centre for Disease Prevention and Control",
-      "date": "2021-07-14",
       "caseNumber": "T-65/19",
       "court": "General Court of the European Union",
       "eujustUrl": "https://www.eujust.online/cases/45",
@@ -724,6 +709,21 @@
       "subjects": [],
       "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62019TJ0065",
       "celex": "62019TJ0065"
+    },
+    {
+      "title": "AI v European Centre for Disease Prevention and Control",
+      "date": "2021-07-14",
+      "caseNumber": "T-79/20",
+      "court": "General Court of the European Union",
+      "eujustUrl": "https://www.eujust.online/cases/46",
+      "topics": [
+        "Workplace harassment"
+      ],
+      "officialTitle": "Order of the General Court (Seventh Chamber) of 14 July 2021.#AI v European Centre for Disease Prevention and Control.#Action for annulment and for damages – Civil service – ECDC staff – Psychological harassment – Article 12a of the Staff Regulations – Damage to reputation – Request for assistance – Article 24 of the Staff Regulations – Dismissal of application – Right to be heard – Absence of prima facie evidence – Duty of care – Action in part manifestly inadmissible and in part manifestly lacking any foundation in law.#Case T-79/20.",
+      "formation": "Order of the General Court (Seventh Chamber) of 14 July 2021",
+      "subjects": [],
+      "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62020TO0079",
+      "celex": "62020TO0079"
     },
     {
       "title": "FD v European Joint Undertaking for ITER and the Development of Fusion Energy",
@@ -742,21 +742,6 @@
       "celex": "62019TJ0641"
     },
     {
-      "title": "RJ v Stadt Offenbach am Main",
-      "date": "2021-03-09",
-      "caseNumber": "C-580/19",
-      "court": "Court of Justice of the European Union",
-      "eujustUrl": "https://www.eujust.online/cases/50",
-      "topics": [
-        "Psychosocial risks"
-      ],
-      "officialTitle": "Judgment of the Court (Grand Chamber) of 9 March 2021.#RJ v Stadt Offenbach am Main.#Request for a preliminary ruling from the Verwaltungsgericht Darmstadt.#Reference for a preliminary ruling – Protection of the safety and health of workers – Organisation of working time – Directive 2003/88/EC – Article 2 – Concept of ‘working time’ – Period of stand-by time according to a stand-by system – Professional firefighters – Directive 89/391/EEC – Articles 5 and 6 – Psychosocial risks – Obligation to prevent.#Case C-580/19.",
-      "formation": "Judgment of the Court (Grand Chamber) of 9 March 2021",
-      "subjects": [],
-      "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62019CJ0580",
-      "celex": "62019CJ0580"
-    },
-    {
       "title": "D. J. v Radiotelevizija Slovenija",
       "date": "2021-03-09",
       "caseNumber": "C-344/19",
@@ -770,6 +755,21 @@
       "subjects": [],
       "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62019CJ0344",
       "celex": "62019CJ0344"
+    },
+    {
+      "title": "RJ v Stadt Offenbach am Main",
+      "date": "2021-03-09",
+      "caseNumber": "C-580/19",
+      "court": "Court of Justice of the European Union",
+      "eujustUrl": "https://www.eujust.online/cases/50",
+      "topics": [
+        "Psychosocial risks"
+      ],
+      "officialTitle": "Judgment of the Court (Grand Chamber) of 9 March 2021.#RJ v Stadt Offenbach am Main.#Request for a preliminary ruling from the Verwaltungsgericht Darmstadt.#Reference for a preliminary ruling – Protection of the safety and health of workers – Organisation of working time – Directive 2003/88/EC – Article 2 – Concept of ‘working time’ – Period of stand-by time according to a stand-by system – Professional firefighters – Directive 89/391/EEC – Articles 5 and 6 – Psychosocial risks – Obligation to prevent.#Case C-580/19.",
+      "formation": "Judgment of the Court (Grand Chamber) of 9 March 2021",
+      "subjects": [],
+      "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62019CJ0580",
+      "celex": "62019CJ0580"
     },
     {
       "title": "EM v European Parliament",
@@ -832,33 +832,6 @@
       "celex": "62020TO0377"
     },
     {
-      "title": "HF v European Parliament",
-      "date": "2020-06-25",
-      "caseNumber": "C-570/18 P",
-      "court": "Court of Justice of the European Union",
-      "eujustUrl": "https://www.eujust.online/cases/56",
-      "topics": [
-        "Workplace harassment"
-      ],
-      "officialTitle": "Judgment of the Court (Second Chamber) of 25 June 2020.#HF v European Parliament.#Appeal — Civil service — European Parliament — Member of contract staff — Articles 12a and 24 of the Staff Regulations of Officials of the European Union — Psychological harassment — Request for assistance — Right to be heard — Rejection of a request for assistance — Article 41 of the Charter of Fundamental Rights of the European Union — Scope of judicial review.#Case C-570/18 P.",
-      "formation": "Judgment of the Court (Second Chamber) of 25 June 2020",
-      "subjects": [
-        "Appeal",
-        "Civil service",
-        "European Parliament",
-        "Member of contract staff",
-        "Articles 12a and 24 of the Staff Regulations of Officials of the European Union",
-        "Psychological harassment",
-        "Request for assistance",
-        "Right to be heard",
-        "Rejection of a request for assistance",
-        "Article 41 of the Charter of Fundamental Rights of the European Union",
-        "Scope of judicial review"
-      ],
-      "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62018CJ0570",
-      "celex": "62018CJ0570"
-    },
-    {
       "title": "European Union Satellite Centre v KF",
       "date": "2020-06-25",
       "caseNumber": "C-14/19 P",
@@ -902,6 +875,33 @@
       ],
       "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62019CJ0014",
       "celex": "62019CJ0014"
+    },
+    {
+      "title": "HF v European Parliament",
+      "date": "2020-06-25",
+      "caseNumber": "C-570/18 P",
+      "court": "Court of Justice of the European Union",
+      "eujustUrl": "https://www.eujust.online/cases/56",
+      "topics": [
+        "Workplace harassment"
+      ],
+      "officialTitle": "Judgment of the Court (Second Chamber) of 25 June 2020.#HF v European Parliament.#Appeal — Civil service — European Parliament — Member of contract staff — Articles 12a and 24 of the Staff Regulations of Officials of the European Union — Psychological harassment — Request for assistance — Right to be heard — Rejection of a request for assistance — Article 41 of the Charter of Fundamental Rights of the European Union — Scope of judicial review.#Case C-570/18 P.",
+      "formation": "Judgment of the Court (Second Chamber) of 25 June 2020",
+      "subjects": [
+        "Appeal",
+        "Civil service",
+        "European Parliament",
+        "Member of contract staff",
+        "Articles 12a and 24 of the Staff Regulations of Officials of the European Union",
+        "Psychological harassment",
+        "Request for assistance",
+        "Right to be heard",
+        "Rejection of a request for assistance",
+        "Article 41 of the Charter of Fundamental Rights of the European Union",
+        "Scope of judicial review"
+      ],
+      "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62018CJ0570",
+      "celex": "62018CJ0570"
     },
     {
       "title": "European External Action Service (EEAS) v Stéphane De Loecker",
@@ -1011,7 +1011,7 @@
       "celex": "62019CO0548"
     },
     {
-      "title": "DQ and Others v European Parliament",
+      "title": "DQ and Others v European Parliament",
       "date": "2019-10-03",
       "caseNumber": "T-730/18",
       "court": "General Court of the European Union",
@@ -1019,7 +1019,7 @@
       "topics": [
         "Workplace harassment"
       ],
-      "officialTitle": "Judgment of the General Court (First Chamber) of 3 October 2019.#DQ and Others v European Parliament.#Civil service – Officials – Article 24 of the Staff Regulations – Request for assistance – Article 12a of the Staff Regulations – Psychological harassment – Scope of the duty of assistance – Removal measure – Duration of the administrative procedure – Liability – Non-material damage.#Case T-730/18.",
+      "officialTitle": "Judgment of the General Court (First Chamber) of 3 October 2019.#DQ and Others v European Parliament.#Civil service – Officials – Article 24 of the Staff Regulations – Request for assistance – Article 12a of the Staff Regulations – Psychological harassment – Scope of the duty of assistance – Removal measure – Duration of the administrative procedure – Liability – Non-material damage.#Case T-730/18.",
       "formation": "Judgment of the General Court (First Chamber) of 3 October 2019",
       "subjects": [],
       "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62018TJ0730",
@@ -1250,21 +1250,6 @@
       "celex": "62017TJ0537"
     },
     {
-      "title": "CH v European Parliament",
-      "date": "2018-12-13",
-      "caseNumber": "T-83/18",
-      "court": "General Court of the European Union",
-      "eujustUrl": "https://www.eujust.online/cases/72",
-      "topics": [
-        "Workplace harassment"
-      ],
-      "officialTitle": "Judgment of the General Court (First Chamber) of 13 December 2018.#CH v European Parliament.#Civil service – Accredited parliamentary assistants – Article 24 of the Staff Regulations – Request for assistance – Article 12a of the Staff Regulations – Psychological harassment – Advisory Committee dealing with harassment complaints between accredited parliamentary assistants and Members of the European Parliament and its prevention at the workplace – Decision rejecting the request for assistance – Right to be heard – Audi alteram partem rule – Refusal to disclose the opinion of the Advisory Committee and the minutes of the hearing of witnesses – Refusal by the defendant institution to comply with a measure of inquiry of the General Court.#Case T-83/18.",
-      "formation": "Judgment of the General Court (First Chamber) of 13 December 2018",
-      "subjects": [],
-      "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62018TJ0083",
-      "celex": "62018TJ0083"
-    },
-    {
       "title": "CN v European Parliament",
       "date": "2018-12-13",
       "caseNumber": "T-76/18",
@@ -1291,6 +1276,21 @@
       ],
       "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62018TJ0076",
       "celex": "62018TJ0076"
+    },
+    {
+      "title": "CH v European Parliament",
+      "date": "2018-12-13",
+      "caseNumber": "T-83/18",
+      "court": "General Court of the European Union",
+      "eujustUrl": "https://www.eujust.online/cases/72",
+      "topics": [
+        "Workplace harassment"
+      ],
+      "officialTitle": "Judgment of the General Court (First Chamber) of 13 December 2018.#CH v European Parliament.#Civil service – Accredited parliamentary assistants – Article 24 of the Staff Regulations – Request for assistance – Article 12a of the Staff Regulations – Psychological harassment – Advisory Committee dealing with harassment complaints between accredited parliamentary assistants and Members of the European Parliament and its prevention at the workplace – Decision rejecting the request for assistance – Right to be heard – Audi alteram partem rule – Refusal to disclose the opinion of the Advisory Committee and the minutes of the hearing of witnesses – Refusal by the defendant institution to comply with a measure of inquiry of the General Court.#Case T-83/18.",
+      "formation": "Judgment of the General Court (First Chamber) of 13 December 2018",
+      "subjects": [],
+      "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62018TJ0083",
+      "celex": "62018TJ0083"
     },
     {
       "title": "The Minister for Justice and Equality and The Commissioner of An Garda Síochána v Workplace Relations Commission",
@@ -1367,30 +1367,6 @@
       "celex": "62017TJ0061"
     },
     {
-      "title": "SQ v European Investment Bank",
-      "date": "2018-07-13",
-      "caseNumber": "T-377/17",
-      "court": "General Court of the European Union",
-      "eujustUrl": "https://www.eujust.online/cases/78",
-      "topics": [
-        "Workplace harassment"
-      ],
-      "officialTitle": "Judgment of the General Court (First Chamber) of 13 July 2018.#SQ v European Investment Bank.#Civil Service — EIB staff — Complaint of psychological harassment — Administrative enquiry — Concept of ‘psychological harassment’ — Requirement that the conduct complained of must be repetitive in order to constitute ‘psychological harassment’ — Refusal to initiate disciplinary proceedings against the person responsible for that conduct — Duty of confidentiality in relation to an ongoing administrative enquiry and, subsequently, to the decision terminating the procedure finding that there had been psychological harassment.#Case T-377/17.",
-      "formation": "Judgment of the General Court (First Chamber) of 13 July 2018",
-      "subjects": [
-        "Civil Service",
-        "EIB staff",
-        "Complaint of psychological harassment",
-        "Administrative enquiry",
-        "Concept of ‘psychological harassment’",
-        "Requirement that the conduct complained of must be repetitive in order to constitute ‘psychological harassment’",
-        "Refusal to initiate disciplinary proceedings against the person responsible for that conduct",
-        "Duty of confidentiality in relation to an ongoing administrative enquiry and, subsequently, to the decision terminating the procedure finding that there had been psychological harassment"
-      ],
-      "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62017TJ0377",
-      "celex": "62017TJ0377"
-    },
-    {
       "title": "Michela Curto v European Parliament",
       "date": "2018-07-13",
       "caseNumber": "T-275/17",
@@ -1418,6 +1394,30 @@
       ],
       "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62017TJ0275",
       "celex": "62017TJ0275"
+    },
+    {
+      "title": "SQ v European Investment Bank",
+      "date": "2018-07-13",
+      "caseNumber": "T-377/17",
+      "court": "General Court of the European Union",
+      "eujustUrl": "https://www.eujust.online/cases/78",
+      "topics": [
+        "Workplace harassment"
+      ],
+      "officialTitle": "Judgment of the General Court (First Chamber) of 13 July 2018.#SQ v European Investment Bank.#Civil Service — EIB staff — Complaint of psychological harassment — Administrative enquiry — Concept of ‘psychological harassment’ — Requirement that the conduct complained of must be repetitive in order to constitute ‘psychological harassment’ — Refusal to initiate disciplinary proceedings against the person responsible for that conduct — Duty of confidentiality in relation to an ongoing administrative enquiry and, subsequently, to the decision terminating the procedure finding that there had been psychological harassment.#Case T-377/17.",
+      "formation": "Judgment of the General Court (First Chamber) of 13 July 2018",
+      "subjects": [
+        "Civil Service",
+        "EIB staff",
+        "Complaint of psychological harassment",
+        "Administrative enquiry",
+        "Concept of ‘psychological harassment’",
+        "Requirement that the conduct complained of must be repetitive in order to constitute ‘psychological harassment’",
+        "Refusal to initiate disciplinary proceedings against the person responsible for that conduct",
+        "Duty of confidentiality in relation to an ongoing administrative enquiry and, subsequently, to the decision terminating the procedure finding that there had been psychological harassment"
+      ],
+      "officialUrl": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:62017TJ0377",
+      "celex": "62017TJ0377"
     },
     {
       "title": "PV v European Commission",
